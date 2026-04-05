@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "tag": "OpenAI",
-    "headline": "GPT-4o gets real-time video and screen sharing",
-    "summary": "ChatGPT can now see your screen and talk you through problems in real time. It's basically a personal tutor that watches what you're doing.",
-    "source": "TechCrunch",
+    "tag": "AI",
+    "headline": "A folk musician became a target for AI fakes and a copyright troll",
+    "summary": "Murphy Campbell is at the center of a brewing storm around AI and a broken copyright system. | Image: Murphy Campbell\t\n\nIn January, folk artist Murphy Campbell...",
+    "source": "The Verge",
     "date": "Apr 2026",
-    "href": "https://techcrunch.com"
+    "href": "https://www.theverge.com/entertainment/907111/murphy-campbell-folk-music-ai-copyright"
   },
   {
     "id": 2,
-    "tag": "Microsoft",
-    "headline": "Microsoft ships three new in-house AI models",
-    "summary": "MAI-Transcribe, MAI-Voice, and MAI-Image — Microsoft is building its own AI stack to compete directly with OpenAI and Google.",
+    "tag": "Anthropic",
+    "headline": "Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage",
+    "summary": "It’s about to become more expensive for Claude Code subscribers to use Anthropic’s coding assistant with OpenClaw and other third-party tools.",
     "source": "TechCrunch",
     "date": "Apr 2026",
-    "href": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/"
+    "href": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/"
   },
   {
     "id": 3,
-    "tag": "Google",
-    "headline": "Gemini can now run inside your browser — no app needed",
-    "summary": "Google's AI assistant is now baked into Chrome. You can highlight any text on any page and ask Gemini about it instantly.",
+    "tag": "AI",
+    "headline": "Really, you made this without AI? Prove it",
+    "summary": "\"This looks like AI.\"\nIt's a phrase I dread seeing as a writer who dabbles in illustration and amateur photography. In a world where generative AI technology is...",
     "source": "The Verge",
     "date": "Apr 2026",
-    "href": "https://theverge.com"
+    "href": "https://www.theverge.com/tech/906453/human-made-ai-free-logo-creative-content"
   },
   {
     "id": 4,
-    "tag": "Tools",
-    "headline": "Canva launches AI video generation for everyone",
-    "summary": "No editing skills needed. Canva's new AI turns a text prompt into a finished short video in under a minute — free to try.",
-    "source": "The Verge",
+    "tag": "Anthropic",
+    "headline": "Anthropic is having a moment in the private markets; SpaceX could spoil the party",
+    "summary": "Glen Anderson, president of Rainmaker Securities, says the secondary market for private shares has never been more active — with Anthropic the hottest trade aro...",
+    "source": "TechCrunch",
     "date": "Apr 2026",
-    "href": "https://theverge.com"
+    "href": "https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/"
   }
 ]
