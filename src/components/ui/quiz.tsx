@@ -213,7 +213,7 @@ export function Quiz() {
                   <div className="flex-1 h-px bg-gray-200" />
                 </div>
                 <a
-                  href="sms:+14322790502&body=Hey Will, I found you through 1stbaseai.com"
+                  href="https://calendly.com/1stbaseai/30min"
                   className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-orange-500 font-bold text-gray-700 transition-all"
                 >
                   <span>Text me directly</span>
@@ -258,7 +258,7 @@ export function Quiz() {
 
                 {/* Text option */}
                 <a
-                  href="sms:+14322790502&body=Hey Will, I found you through 1stbaseai.com"
+                  href="https://calendly.com/1stbaseai/30min"
                   className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-orange-500 font-bold text-gray-700 transition-all mb-3"
                 >
                   <span>Or just text me</span>

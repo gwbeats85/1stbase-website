@@ -51,6 +51,7 @@ export function AiNews() {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
+    window.open(`https://1stbase.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`, "_blank");
     setSubmitted(true);
   }
 

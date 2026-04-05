@@ -99,7 +99,7 @@ export function About() {
           className="flex flex-col sm:flex-row gap-3 pt-2"
         >
           <a
-            href="sms:+14322790502"
+            href="https://calendly.com/1stbaseai/30min"
             className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide"
           >
             Book a free intro call

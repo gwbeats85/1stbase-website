@@ -87,7 +87,7 @@ export function ShuffleHero() {
           <a href="#about" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</a>
         </nav>
         <a
-          href="#quiz"
+          href="https://calendly.com/1stbaseai/30min"
           className="bg-gray-900 hover:bg-gray-700 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
         >
           Book a session
@@ -115,7 +115,7 @@ export function ShuffleHero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <a
-                href="#quiz"
+                href="https://calendly.com/1stbaseai/30min"
                 className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-base transition-colors"
               >
                 Book a free intro call →
