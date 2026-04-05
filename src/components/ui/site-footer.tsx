@@ -42,6 +42,8 @@ export function SiteFooter() {
       ]}
       mainLinks={[
         { href: "#news", label: "AI News" },
+        { href: "/blog", label: "Blog" },
+        { href: "/resources", label: "Resources" },
         { href: "sms:+14322790502", label: "Book a Call" },
         { href: "mailto:juantacosancho@gmail.com", label: "Contact" },
       ]}

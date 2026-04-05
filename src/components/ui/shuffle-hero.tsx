@@ -84,6 +84,8 @@ export function ShuffleHero() {
         <nav className="hidden md:flex items-center gap-7">
           <a href="#learn" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">What You'll Learn</a>
           <a href="#news" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">AI News</a>
+          <a href="/blog" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Blog</a>
+          <a href="/resources" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Resources</a>
           <a href="#about" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</a>
         </nav>
         <a
