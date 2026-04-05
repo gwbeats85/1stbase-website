@@ -3,46 +3,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import newsData from "@/data/news.json";
 
-// ── Update these stories weekly (or hook up n8n to do it automatically) ──
-const news = [
-  {
-    id: 1,
-    tag: "OpenAI",
-    headline: "GPT-4o gets real-time video and screen sharing",
-    summary: "ChatGPT can now see your screen and talk you through problems in real time. It's basically a personal tutor that watches what you're doing.",
-    source: "TechCrunch",
-    date: "Apr 2026",
-    href: "https://techcrunch.com",
-  },
-  {
-    id: 2,
-    tag: "Microsoft",
-    headline: "Microsoft ships three new in-house AI models",
-    summary: "MAI-Transcribe, MAI-Voice, and MAI-Image — Microsoft is building its own AI stack to compete directly with OpenAI and Google.",
-    source: "TechCrunch",
-    date: "Apr 2026",
-    href: "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
-  },
-  {
-    id: 3,
-    tag: "Google",
-    headline: "Gemini can now run inside your browser — no app needed",
-    summary: "Google's AI assistant is now baked into Chrome. You can highlight any text on any page and ask Gemini about it instantly.",
-    source: "The Verge",
-    date: "Apr 2026",
-    href: "https://theverge.com",
-  },
-  {
-    id: 4,
-    tag: "Tools",
-    headline: "Canva launches AI video generation for everyone",
-    summary: "No editing skills needed. Canva's new AI turns a text prompt into a finished short video in under a minute — free to try.",
-    source: "The Verge",
-    date: "Apr 2026",
-    href: "https://theverge.com",
-  },
-];
+// ── news.json is updated automatically by n8n every Monday ──
+const news = newsData;
 
 export function AiNews() {
   const [email, setEmail] = useState("");
