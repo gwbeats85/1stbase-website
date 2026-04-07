@@ -11,7 +11,7 @@ interface FooterProps {
 
 export function Footer({ logo, brandName, socialLinks, mainLinks, legalLinks, copyright }: FooterProps) {
   return (
-    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24 bg-gray-950 text-gray-400 border-t border-gray-800">
+    <footer className="pb-28 pt-16 lg:pb-32 lg:pt-24 bg-gray-950 text-gray-400 border-t border-gray-800">
       <div className="px-4 lg:px-8">
         <div className="md:flex md:items-start md:justify-between">
           <a href="/" className="flex items-center gap-x-2" aria-label={brandName}>
