@@ -269,6 +269,8 @@ export const posts: Post[] = [
   },
 ];
 
+const postsMap = new Map(posts.map((p) => [p.slug, p] as const));
+
 export function getPost(slug: string): Post | undefined {
-  return posts.find((p) => p.slug === slug);
+  return postsMap.get(slug);
 }
