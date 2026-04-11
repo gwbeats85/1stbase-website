@@ -137,7 +137,7 @@ export default function PromptsPage() {
                   }`}
                 >
                   {copied === prompt.id ? (
-                    <>✓ Copied</>
+                    <><svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg> Copied</>
                   ) : (
                     <>
                       <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -156,7 +156,9 @@ export default function PromptsPage() {
                 </pre>
                 {prompt.tip && (
                   <p className="text-xs text-gray-400 mt-3 flex gap-1.5 items-start">
-                    <span className="text-orange-400 shrink-0">💡</span>
+                    <svg className="w-3.5 h-3.5 text-orange-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                     {prompt.tip}
                   </p>
                 )}
@@ -177,7 +179,9 @@ export default function PromptsPage() {
 
         {filtered.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-3xl mb-2">⚡</p>
+            <svg className="w-8 h-8 mx-auto mb-2 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
             <p className="font-medium text-gray-600 mb-1">No prompts found</p>
             <button
               onClick={() => { setQuery(""); setActiveCategory("All"); setActiveAudience("all"); }}

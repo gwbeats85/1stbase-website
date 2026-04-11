@@ -129,7 +129,9 @@ export default function GlossaryPage() {
         {/* Terms List */}
         {filtered.length === 0 ? (
           <div className="text-center py-16 text-gray-400">
-            <p className="text-3xl mb-2">🔍</p>
+            <svg className="w-8 h-8 mx-auto mb-2 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
             <p className="font-medium text-gray-600">No terms found</p>
             <button
               onClick={() => { setQuery(""); setActiveTag("all"); setActiveLetter("All"); }}

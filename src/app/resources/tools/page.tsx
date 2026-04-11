@@ -156,7 +156,9 @@ export default function ToolsPage() {
         {/* Tool Cards Grid */}
         {filteredTools.length === 0 ? (
           <div className="text-center py-20 text-gray-400">
-            <p className="text-4xl mb-3">🔍</p>
+            <svg className="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
             <p className="font-bold text-gray-600 mb-1">No tools found</p>
             <p className="text-sm">Try a different search or clear your filters</p>
             <button
@@ -192,7 +194,7 @@ export default function ToolsPage() {
                         </span>
                         {tool.featured && (
                           <span className="text-xs font-semibold text-orange-500 bg-orange-50 px-2 py-0.5 rounded-full">
-                            ⭐ Featured
+                            Featured
                           </span>
                         )}
                       </div>

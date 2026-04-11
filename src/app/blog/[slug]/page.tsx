@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPost, posts } from "@/data/posts";
 import { SiteFooter } from "@/components/ui/site-footer";
+import { SiteNav } from "@/components/ui/site-nav";
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -24,24 +25,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
-      {/* Nav */}
-      <div className="flex items-center justify-between px-8 md:px-10 py-7">
-        <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
-          1stbaseai<span className="text-orange-500">.com</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-7">
-          <a href="/#learn" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">What You&apos;ll Learn</a>
-          <a href="/#news" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">AI News</a>
-          <Link href="/blog" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Blog</Link>
-          <a href="/#about" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</a>
-        </nav>
-        <a
-          href="https://calendly.com/1stbaseai/30min"
-          className="bg-gray-900 hover:bg-gray-700 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
-        >
-          Book a session
-        </a>
-      </div>
+      <SiteNav sticky activePage="blog" />
 
       {/* Article */}
       <article className="flex-1 px-8 md:px-10 pt-12 pb-24 max-w-2xl mx-auto w-full">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { posts } from "@/data/posts";
 import { SiteFooter } from "@/components/ui/site-footer";
+import { SiteNav } from "@/components/ui/site-nav";
 
 export const metadata = {
   title: "Blog — 1st Base AI",
@@ -10,24 +11,7 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
-      {/* Nav */}
-      <div className="flex items-center justify-between px-8 md:px-10 py-7">
-        <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
-          1stbaseai<span className="text-orange-500">.com</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-7">
-          <a href="/#learn" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">What You&apos;ll Learn</a>
-          <a href="/#news" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">AI News</a>
-          <Link href="/blog" className="text-sm font-medium text-gray-900 transition-colors">Blog</Link>
-          <a href="/#about" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</a>
-        </nav>
-        <a
-          href="https://calendly.com/1stbaseai/30min"
-          className="bg-gray-900 hover:bg-gray-700 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
-        >
-          Book a session
-        </a>
-      </div>
+      <SiteNav sticky activePage="blog" />
 
       {/* Header */}
       <div className="px-8 md:px-10 pt-16 pb-12 max-w-4xl mx-auto w-full">
