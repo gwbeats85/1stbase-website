@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { lessons, onlineResources, downloads, prompts } from "@/data/learn";
+import { SiteNav } from "@/components/ui/site-nav";
 
 export const metadata = {
   title: "Learn — 1st Base AI",
@@ -23,23 +24,7 @@ export default function LearnPage() {
 
   return (
     <div className="min-h-screen bg-[#fdfcfb]">
-      {/* Nav */}
-      <div className="flex items-center justify-between px-8 md:px-10 py-7 border-b border-gray-100">
-        <Link href="/" className="font-black text-xl tracking-tight text-gray-900">
-          1stbaseai<span className="text-orange-500">.com</span>
-        </Link>
-        <nav className="hidden md:flex items-center gap-7">
-          <Link href="/learn" className="text-sm font-bold text-gray-900">Classroom</Link>
-          <Link href="/blog" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Blog</Link>
-          <Link href="/resources" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Resources</Link>
-        </nav>
-        <a
-          href="https://calendly.com/1stbaseai/30min"
-          className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
-        >
-          Book a session
-        </a>
-      </div>
+      <SiteNav sticky activePage="learn" />
 
       <div className="max-w-5xl mx-auto px-8 md:px-10 py-14">
 
@@ -57,17 +42,33 @@ export default function LearnPage() {
         {/* Quick Nav */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16">
           {[
-            { label: "Lessons", href: "#lessons", emoji: "📚" },
-            { label: "Online Resources", href: "#resources", emoji: "🔗" },
-            { label: "Downloads", href: "#downloads", emoji: "⬇️" },
-            { label: "One-Shot Prompts", href: "#prompts", emoji: "⚡" },
+            {
+              label: "Lessons",
+              href: "#lessons",
+              icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>,
+            },
+            {
+              label: "Online Resources",
+              href: "#resources",
+              icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>,
+            },
+            {
+              label: "Downloads",
+              href: "#downloads",
+              icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
+            },
+            {
+              label: "One-Shot Prompts",
+              href: "#prompts",
+              icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" /></svg>,
+            },
           ].map((item) => (
             <a
               key={item.label}
               href={item.href}
               className="flex flex-col items-center gap-2 p-5 bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-sm transition-all text-center"
             >
-              <span className="text-2xl">{item.emoji}</span>
+              <span className="text-orange-500">{item.icon}</span>
               <span className="text-sm font-bold text-gray-900">{item.label}</span>
             </a>
           ))}
@@ -200,7 +201,9 @@ export default function LearnPage() {
                   <pre className="text-xs text-gray-600 font-mono leading-relaxed whitespace-pre-wrap bg-gray-50 rounded-xl p-4">{p.prompt}</pre>
                   {p.tip && (
                     <p className="text-xs text-gray-400 mt-3 flex gap-1.5 items-start">
-                      <span className="text-orange-400 shrink-0">💡</span>
+                      <svg className="w-3.5 h-3.5 text-orange-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                       {p.tip}
                     </p>
                   )}

@@ -55,14 +55,16 @@ export default function WelcomePage() {
 
           <ul className="space-y-3 mt-2">
             {[
-              ["📚 Lessons", "Step-by-step walkthroughs from foundations to full automation. Go in order — each one builds on the last."],
-              ["🔗 Online Resources", "The best free learning material straight from the AI companies themselves — Anthropic, Google, OpenAI, and more."],
-              ["⬇️ Downloads", "Cheat sheets, prompt packs, and guides you can save and reference anytime. Free for members."],
-              ["⚡ One-Shot Prompts", "Copy-paste prompts for the most common tasks. Fill in the brackets, paste into any AI, get results."],
-            ].map(([title, desc]) => (
-              <li key={String(title)} className="flex gap-3">
-                <span className="shrink-0 mt-0.5">{String(title).split(" ")[0]}</span>
-                <span><strong className="text-gray-900">{String(title).split(" ").slice(1).join(" ")}</strong> — {String(desc)}</span>
+              { label: "Lessons", desc: "Step-by-step walkthroughs from foundations to full automation. Go in order — each one builds on the last." },
+              { label: "Online Resources", desc: "The best free learning material straight from the AI companies themselves — Anthropic, Google, OpenAI, and more." },
+              { label: "Downloads", desc: "Cheat sheets, prompt packs, and guides you can save and reference anytime. Free for members." },
+              { label: "One-Shot Prompts", desc: "Copy-paste prompts for the most common tasks. Fill in the brackets, paste into any AI, get results." },
+            ].map(({ label, desc }) => (
+              <li key={label} className="flex gap-3">
+                <svg className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span><strong className="text-gray-900">{label}</strong> — {desc}</span>
               </li>
             ))}
           </ul>
