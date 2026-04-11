@@ -280,6 +280,9 @@ export const officialDocs: OfficialDoc[] = [
       { label: "Pricing", url: "https://openai.com/pricing", description: "ChatGPT Plus, Team, Enterprise plans" },
       { label: "System Status", url: "https://status.openai.com", description: "Real-time uptime and incident history" },
       { label: "Safety & Trust", url: "https://openai.com/safety", description: "Research and policies on AI safety" },
+      { label: "OpenAI Academy", url: "https://academy.openai.com", description: "Free learning paths and structured courses" },
+      { label: "Blog & Research", url: "https://openai.com/blog", description: "Latest news, research, and announcements" },
+      { label: "Community & Plugins", url: "https://platform.openai.com/docs/plugins/overview", description: "Community projects, plugins, and integrations" },
     ],
   },
   {
@@ -294,6 +297,9 @@ export const officialDocs: OfficialDoc[] = [
       { label: "Pricing", url: "https://www.anthropic.com/pricing", description: "Claude Pro, Team, and API pricing" },
       { label: "System Status", url: "https://status.anthropic.com", description: "Service uptime and incidents" },
       { label: "Safety & Research", url: "https://www.anthropic.com/research", description: "Constitutional AI and safety work" },
+      { label: "Anthropic Learn", url: "https://www.anthropic.com/learn", description: "Learning resources and guides for Claude" },
+      { label: "Blog & News", url: "https://www.anthropic.com/blog", description: "Latest announcements and technical posts" },
+      { label: "Research Papers", url: "https://www.anthropic.com/research", description: "Academic research and Constitutional AI papers" },
     ],
   },
   {
@@ -308,6 +314,9 @@ export const officialDocs: OfficialDoc[] = [
       { label: "AI Studio", url: "https://aistudio.google.com", description: "Free API playground — no code needed" },
       { label: "System Status", url: "https://status.cloud.google.com", description: "Google Cloud and API uptime" },
       { label: "Safety Principles", url: "https://ai.google/responsibility/principles/", description: "Google's AI responsibility work" },
+      { label: "Google AI Skills", url: "https://www.skills.google/paths/249", description: "Free structured learning paths for AI" },
+      { label: "Blog & Research", url: "https://blog.google/technology/ai", description: "Latest AI announcements and research from Google" },
+      { label: "Pricing & Quotas", url: "https://ai.google.dev/pricing", description: "Gemini API pricing and usage quotas" },
     ],
   },
   {
