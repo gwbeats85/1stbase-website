@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
+import { AboutModal } from "@/components/ui/about-modal";
 
 const logos = [
   { id: 1,  src: "/logos/chatgpt.svg",    label: "ChatGPT" },
@@ -74,19 +75,23 @@ function ShuffleGrid() {
 }
 
 export function ShuffleHero() {
+  const [aboutOpen, setAboutOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen bg-[#fdfcfb] flex flex-col">
+      <AboutModal isOpen={aboutOpen} onClose={() => setAboutOpen(false)} />
       {/* Nav */}
       <div className="flex items-center justify-between px-8 md:px-10 py-7">
         <div className="font-black text-xl tracking-tight text-gray-900">
           1stbaseai<span className="text-orange-500">.com</span>
         </div>
         <nav className="hidden md:flex items-center gap-7">
-          <a href="#learn" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">What You'll Learn</a>
-          <a href="#news" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">AI News</a>
+          <a href="#learn" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">What You&apos;ll Learn</a>
+          <a href="#newsletter" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Newsletter</a>
+          <a href="https://skool.com/1stbaseai" target="_blank" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Community</a>
           <a href="/blog" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Blog</a>
-          <a href="/resources" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Resources</a>
-          <a href="#about" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</a>
+          <a href="/resources" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Learning Center</a>
+          <button onClick={() => setAboutOpen(true)} className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</button>
         </nav>
         <a
           href="https://calendly.com/1stbaseai/30min"
@@ -123,10 +128,11 @@ export function ShuffleHero() {
                 Book a free intro call →
               </a>
               <a
-                href="#meetup"
+                href="https://skool.com/1stbaseai"
+                target="_blank"
                 className="text-gray-400 hover:text-gray-700 font-medium text-sm transition-colors"
               >
-                or come to the meetup ↓
+                or join the community free ↓
               </a>
             </div>
           </motion.div>

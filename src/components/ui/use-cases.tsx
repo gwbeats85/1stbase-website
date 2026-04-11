@@ -69,7 +69,7 @@ const cards = [
 ];
 
 export function UseCases() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(Math.floor(cards.length / 2));
   const [paused, setPaused] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);

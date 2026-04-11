@@ -61,52 +61,6 @@ export function AiNews() {
           ))}
         </div>
 
-        {/* Newsletter CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gray-900 rounded-3xl px-8 py-10 text-center max-w-2xl mx-auto"
-        >
-          <h3 className="text-2xl font-black text-white mb-2">Get the weekly digest</h3>
-          <p className="text-gray-400 text-sm mb-6">What&apos;s worth your attention in AI — every week, no fluff.</p>
-
-          <AnimatePresence mode="wait">
-            {!submitted ? (
-              <motion.form
-                key="form"
-                onSubmit={handleSubmit}
-                exit={{ opacity: 0 }}
-                className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-              >
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
-                  className="flex-1 bg-white/10 border border-white/20 focus:border-orange-400 rounded-full px-5 py-3.5 text-sm outline-none text-white placeholder:text-gray-500 transition-colors"
-                />
-                <button
-                  type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3.5 rounded-full transition-colors text-sm uppercase tracking-wide shrink-0"
-                >
-                  Subscribe →
-                </button>
-              </motion.form>
-            ) : (
-              <motion.div
-                key="done"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-              >
-                <p className="text-xl font-black text-white mb-1">You&apos;re in. 🤙</p>
-                <p className="text-gray-400 text-sm">First edition coming soon.</p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-
       </div>
     </section>
   );

@@ -41,10 +41,11 @@ export function SiteFooter() {
         { icon: <GitHubIcon />, href: "https://github.com/1stbaseai", label: "GitHub" },
       ]}
       mainLinks={[
+        { href: "#newsletter", label: "Newsletter" },
+        { href: "https://skool.com/1stbaseai", label: "Community" },
         { href: "#news", label: "AI News" },
         { href: "/blog", label: "Blog" },
-        { href: "/resources", label: "Resources" },
-        { href: "sms:+14322790502", label: "Book a Call" },
+        { href: "https://calendly.com/1stbaseai/30min", label: "Book a Session" },
         { href: "mailto:juantacosancho@gmail.com", label: "Contact" },
       ]}
       legalLinks={[
