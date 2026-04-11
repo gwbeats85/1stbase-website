@@ -33,7 +33,7 @@ export function LearningCenterNav() {
 
       {/* Sub-nav tabs */}
       <div className="border-t border-gray-100 overflow-x-auto scrollbar-hide">
-        <div className="flex items-center gap-1 px-6 md:px-10 min-w-max">
+        <div className="flex items-center gap-1 px-8 md:px-10 min-w-max">
           {navLinks.map((link) => (
             <Link
               key={link.href}
