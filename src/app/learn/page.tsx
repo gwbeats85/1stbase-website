@@ -213,19 +213,19 @@ export default function LearnPage() {
           </div>
         </section>
 
-        {/* ── Community ── */}
+        {/* ── Newsletter ── */}
         <div className="p-8 bg-gray-900 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="text-white font-black text-xl mb-1">Got a question? Join the community.</p>
-            <p className="text-gray-400 text-sm">Ask anything in Discord — I&apos;m in there daily.</p>
+            <p className="text-white font-black text-xl mb-1">Stay sharp. One email a week.</p>
+            <p className="text-gray-400 text-sm">The AI newsletter that doesn&apos;t waste your time. Free, always.</p>
           </div>
           <a
-            href="https://discord.gg/1stbaseai"
+            href="https://1stbase.beehiiv.com/subscribe"
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 bg-[#5865F2] hover:bg-[#4752c4] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
           >
-            Join Discord →
+            Subscribe Free →
           </a>
         </div>
 
