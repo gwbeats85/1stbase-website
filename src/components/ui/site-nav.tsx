@@ -32,31 +32,17 @@ export function SiteNav({ sticky = false, activePage }: SiteNavProps) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-7">
-          <a
-            href="/#learn"
-            className={linkClass()}
-          >
-            What You&apos;ll Learn
-          </a>
+          <Link href="/learn" className={linkClass("learn")}>
+            Learning Center
+          </Link>
           <a
             href="/#newsletter"
             className={linkClass()}
           >
             Newsletter
           </a>
-          <a
-            href="https://skool.com/1stbaseai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={linkClass()}
-          >
-            Community
-          </a>
           <Link href="/blog" className={linkClass("blog")}>
             Blog
-          </Link>
-          <Link href="/resources" className={linkClass("resources")}>
-            Learning Center
           </Link>
           <button
             onClick={() => setAboutOpen(true)}

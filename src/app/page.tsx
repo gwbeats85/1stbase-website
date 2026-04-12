@@ -7,6 +7,49 @@ import { AiNews } from "@/components/ui/ai-news";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { FloatingChat } from "@/components/ui/floating-chat";
 
+const learnBuckets = [
+  {
+    label: "Lessons",
+    href: "/learn#lessons",
+    description: "Structured lessons that go from zero to confident — go in order.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+  },
+  {
+    label: "Resources",
+    href: "/learn#resources",
+    description: "The best AI tools and links, curated and explained in plain English.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+      </svg>
+    ),
+  },
+  {
+    label: "Downloads",
+    href: "/learn#downloads",
+    description: "Free cheat sheets and guides you can save and reference any time.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+  },
+  {
+    label: "One-Shot Prompts",
+    href: "/learn#prompts",
+    description: "Copy, fill in the blanks, paste into any AI. Works instantly.",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+      </svg>
+    ),
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -17,7 +60,48 @@ export default function Home() {
       <Quiz />
       <AiNews />
 
-      {/* Newsletter + Community Section */}
+      {/* Learning Center Preview */}
+      <section id="learn" className="py-24 bg-[#fdfcfb] px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="mb-12 text-center">
+            <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Free to use</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4 tracking-tight">
+              Your AI Learning Center
+            </h2>
+            <p className="text-gray-500 text-lg max-w-xl mx-auto">
+              Lessons, resources, downloads, and prompts — everything in one place, no account needed.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            {learnBuckets.map((bucket) => (
+              <a
+                key={bucket.label}
+                href={bucket.href}
+                className="group flex items-start gap-5 p-6 bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-sm transition-all"
+              >
+                <span className="text-orange-500 shrink-0 mt-0.5">{bucket.icon}</span>
+                <div>
+                  <p className="font-bold text-gray-900 group-hover:text-orange-500 transition-colors mb-1">{bucket.label}</p>
+                  <p className="text-gray-500 text-sm leading-relaxed">{bucket.description}</p>
+                </div>
+                <span className="text-orange-400 ml-auto shrink-0 mt-0.5">→</span>
+              </a>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="/learn"
+              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-700 text-white font-bold px-8 py-4 rounded-full text-sm transition-colors"
+            >
+              Open the Learning Center →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
       <section id="newsletter" className="py-24 bg-gray-900 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Stay in the loop</span>
@@ -27,7 +111,7 @@ export default function Home() {
           <p className="text-gray-400 text-lg max-w-xl mx-auto mb-10">
             Real tools. Real workflows. Practical breakdowns every week — no hype, no filler. Free forever.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8">
+          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
               type="email"
               placeholder="your@email.com"
@@ -41,16 +125,6 @@ export default function Home() {
               Subscribe Free
             </button>
           </form>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <span className="text-gray-600 text-sm">or</span>
-            <a
-              href="https://skool.com/1stbaseai"
-              target="_blank"
-              className="inline-flex items-center gap-2 bg-white text-gray-900 font-bold px-7 py-3 rounded-full text-sm hover:bg-gray-100 transition-colors"
-            >
-              Join the Community on Skool →
-            </a>
-          </div>
         </div>
       </section>
 

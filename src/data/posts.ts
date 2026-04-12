@@ -17,6 +17,34 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    slug: "google-jitro-coding-agent-2026",
+    title: "Google's Next AI Agent Doesn't Wait for Instructions",
+    date: "April 11, 2026",
+    excerpt: "The shift from 'do this task' to 'achieve this goal' is coming — and it changes how you'll work with AI.",
+    readTime: "3 min read",
+    tag: "Industry",
+    content: [
+      {
+        body: "Most AI tools today work like a really fast intern. You tell them exactly what to do, they do it, you review it. That's useful. But Google is about to change the frame entirely.",
+      },
+      {
+        heading: "Jules is good. Jitro is different.",
+        body: "Google already has an agent called Jules — it runs in the background while developers code, handles tasks on its own, and helped produce 140,000+ code improvements during beta. It's real, it's available now, and it works well.\n\nBut it still operates the old way: you describe a task, it executes it.\n\nTheir next version — internally called Jitro — flips that. Instead of saying 'fix this bug' or 'write tests for this file,' you'd say 'I want 90% test coverage' or 'reduce error rates in checkout.' The agent figures out what needs to change and does it. That's a completely different relationship with AI.",
+      },
+      {
+        heading: "Why this is bigger than coding",
+        body: "This isn't just a developer story. The move from task-based to outcome-based AI is the shift that's coming everywhere.\n\nRight now, you use AI like a tool. You prompt it, it responds. It's reactive.\n\nWhat Google's describing is proactive AI. You set a goal, it figures out the steps, works toward it, and shows you what it's doing so you can steer it. That's a lot closer to a coworker than a calculator.\n\nAnd if that sounds like a lot of trust to put in a machine — you're right. Which is why Jitro is built around transparency: you review the plan before it runs, and you can course-correct mid-execution. The trust gets built in, not assumed.",
+      },
+      {
+        heading: "When to pay attention",
+        body: "Google I/O is May 19, 2026. That's likely when this gets announced formally, with waitlist access to follow. It's not out yet — but it's close.\n\nWhen it drops, pay attention to how they frame it. If the message is 'you set the goal, AI handles the path' — that model is about to spread beyond coding fast. Every SaaS tool, every workflow platform, every AI assistant is going to move this direction eventually.",
+      },
+      {
+        body: "The current wave of AI made us faster. The next wave is going to make us think differently about what we're even trying to accomplish. That's a bigger deal than another chatbot upgrade.",
+      },
+    ],
+  },
+  {
     slug: "ai-tools-for-beginners",
     title: "The 5 AI Tools Every Beginner Should Start With",
     date: "April 3, 2026",

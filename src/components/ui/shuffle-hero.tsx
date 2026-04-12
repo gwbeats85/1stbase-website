@@ -86,11 +86,9 @@ export function ShuffleHero() {
           1stbaseai<span className="text-orange-500">.com</span>
         </div>
         <nav className="hidden md:flex items-center gap-7">
-          <a href="#learn" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">What You&apos;ll Learn</a>
+          <a href="/learn" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Learning Center</a>
           <a href="#newsletter" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Newsletter</a>
-          <a href="https://skool.com/1stbaseai" target="_blank" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Community</a>
           <a href="/blog" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Blog</a>
-          <a href="/resources" className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">Learning Center</a>
           <button onClick={() => setAboutOpen(true)} className="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors">About</button>
         </nav>
         <a
@@ -128,11 +126,10 @@ export function ShuffleHero() {
                 Book a free intro call →
               </a>
               <a
-                href="https://skool.com/1stbaseai"
-                target="_blank"
+                href="/learn"
                 className="text-gray-400 hover:text-gray-700 font-medium text-sm transition-colors"
               >
-                or join the community free ↓
+                or start learning free →
               </a>
             </div>
           </motion.div>
