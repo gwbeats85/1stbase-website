@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 interface FooterProps {
@@ -11,17 +12,17 @@ interface FooterProps {
 
 export function Footer({ logo, brandName, socialLinks, mainLinks, legalLinks, copyright }: FooterProps) {
   return (
-    <footer className="pb-6 pt-16 lg:pb-8 lg:pt-24 bg-[#0e2829] text-[#7aadae] border-t border-[#1a3d3e]">
+    <footer className="border-t border-[color:rgb(255_253_247_/_0.12)] bg-[var(--brand-teal-deep)] pb-6 pt-16 text-[color:rgb(226_235_232_/_0.72)] lg:pb-8 lg:pt-24">
       <div className="px-4 lg:px-8">
         <div className="md:flex md:items-start md:justify-between">
-          <a href="/" className="flex items-center gap-x-2" aria-label={brandName}>
+          <Link href="/" className="flex items-center gap-x-2" aria-label={brandName}>
             {logo}
-            <span className="font-bold text-xl text-white">{brandName}</span>
-          </a>
+            <span className="font-bold text-xl text-[var(--brand-surface)]">{brandName}</span>
+          </Link>
           <ul className="flex list-none mt-6 md:mt-0 space-x-3">
             {socialLinks.map((link, i) => (
               <li key={i}>
-                <Button variant="secondary" size="icon" className="h-10 w-10 rounded-full bg-[#1e4546] hover:bg-[#183839] text-[#a8d0d1]" asChild>
+                <Button variant="secondary" size="icon" className="h-10 w-10 rounded-full border border-[color:rgb(255_253_247_/_0.12)] bg-[color:rgb(255_253_247_/_0.08)] text-[color:rgb(255_253_247_/_0.82)] hover:bg-[color:rgb(255_253_247_/_0.16)]" asChild>
                   <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
                     {link.icon}
                   </a>
@@ -30,12 +31,12 @@ export function Footer({ logo, brandName, socialLinks, mainLinks, legalLinks, co
             ))}
           </ul>
         </div>
-        <div className="border-t border-[#1a3d3e] mt-6 pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
+        <div className="mt-6 border-t border-[color:rgb(255_253_247_/_0.12)] pt-6 md:mt-4 md:pt-8 lg:grid lg:grid-cols-10">
           <nav className="lg:mt-0 lg:col-[4/11]">
             <ul className="list-none flex flex-wrap -my-1 -mx-2 lg:justify-end">
               {mainLinks.map((link, i) => (
                 <li key={i} className="my-1 mx-2 shrink-0">
-                  <a href={link.href} className="text-sm text-[#7aadae] hover:text-[#c4622d] transition-colors underline-offset-4 hover:underline">
+                  <a href={link.href} className="text-sm text-[color:rgb(226_235_232_/_0.72)] transition-colors underline-offset-4 hover:text-[var(--brand-gold)] hover:underline">
                     {link.label}
                   </a>
                 </li>
@@ -46,14 +47,14 @@ export function Footer({ logo, brandName, socialLinks, mainLinks, legalLinks, co
             <ul className="list-none flex flex-wrap -my-1 -mx-3 lg:justify-end">
               {legalLinks.map((link, i) => (
                 <li key={i} className="my-1 mx-3 shrink-0">
-                  <a href={link.href} className="text-sm text-gray-600 hover:text-[#7aadae] transition-colors underline-offset-4 hover:underline">
+                  <a href={link.href} className="text-sm text-[color:rgb(226_235_232_/_0.5)] transition-colors underline-offset-4 hover:text-[color:rgb(255_253_247_/_0.82)] hover:underline">
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="mt-6 text-sm leading-6 text-gray-600 whitespace-nowrap lg:mt-0 lg:row-[1/3] lg:col-[1/4]">
+          <div className="mt-6 whitespace-nowrap text-sm leading-6 text-[color:rgb(226_235_232_/_0.5)] lg:col-[1/4] lg:row-[1/3] lg:mt-0">
             <div>{copyright.text}</div>
             {copyright.license && <div>{copyright.license}</div>}
           </div>

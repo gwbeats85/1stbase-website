@@ -10,47 +10,47 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <SiteNav sticky activePage="blog" />
 
       {/* Header */}
       <div className="px-8 md:px-10 pt-16 pb-12 max-w-4xl mx-auto w-full">
-        <span className="block mb-4 text-xs uppercase tracking-widest text-[#c4622d] font-semibold">
+        <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">
           The Blog
         </span>
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight text-[#1a3738] leading-[0.95] mb-4">
+        <h1 className="mb-4 text-5xl font-black leading-[0.95] tracking-tight text-[var(--brand-teal)] md:text-6xl">
           AI tips for real people
         </h1>
-        <p className="text-lg text-gray-500 max-w-lg">
+        <p className="max-w-lg text-lg text-[color:var(--brand-muted)]">
           No fluff. Practical guides and breakdowns so you can actually use this stuff.
         </p>
       </div>
 
       {/* Posts */}
       <div className="flex-1 px-8 md:px-10 pb-24 max-w-4xl mx-auto w-full">
-        <div className="divide-y divide-gray-100">
+        <div className="divide-y divide-[color:var(--brand-line)]">
           {posts.map((post) => (
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col md:flex-row md:items-start gap-4 py-10 hover:opacity-80 transition-opacity"
+              className="group flex flex-col gap-4 py-10 transition-opacity hover:opacity-85 md:flex-row md:items-start"
             >
               {/* Tag + date */}
               <div className="md:w-48 shrink-0">
-                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#c4622d] bg-orange-50 px-2.5 py-1 rounded-full mb-2">
+                <span className="mb-2 inline-block rounded-full bg-[color:rgb(242_84_76_/_0.1)] px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-coral)]">
                   {post.tag}
                 </span>
-                <p className="text-sm text-gray-400">{post.date}</p>
-                <p className="text-sm text-gray-400">{post.readTime}</p>
+                <p className="text-sm text-[color:var(--brand-muted)]">{post.date}</p>
+                <p className="text-sm text-[color:var(--brand-muted)]">{post.readTime}</p>
               </div>
 
               {/* Content */}
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-[#1a3738] mb-2 group-hover:text-[#c4622d] transition-colors leading-snug">
+                <h2 className="mb-2 text-2xl font-bold leading-snug text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-coral)]">
                   {post.title}
                 </h2>
-                <p className="text-gray-500 leading-relaxed">{post.excerpt}</p>
-                <span className="inline-block mt-4 text-sm font-semibold text-[#c4622d]">
+                <p className="leading-relaxed text-[color:var(--brand-muted)]">{post.excerpt}</p>
+                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-teal)]">
                   Read →
                 </span>
               </div>

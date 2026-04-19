@@ -23,7 +23,7 @@ const points = [
 
 export function Fundamentals() {
   return (
-    <section className="bg-[#255253] pb-16 px-6">
+    <section className="bg-[var(--brand-canvas)] px-6 py-14">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {points.map((p, i) => (
           <motion.div
@@ -32,11 +32,11 @@ export function Fundamentals() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="flex flex-col gap-3"
+            className="flex flex-col gap-3 rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 shadow-[0_18px_42px_-30px_rgba(24,56,57,0.3)]"
           >
-            <p.icon className="w-6 h-6 text-[#c4622d]" strokeWidth={1.75} />
-            <h3 className="text-white font-bold text-lg leading-snug">{p.title}</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">{p.body}</p>
+            <p.icon className="h-6 w-6 text-[var(--brand-gold)]" strokeWidth={1.75} />
+            <h3 className="text-lg font-bold leading-snug text-[var(--brand-teal)]">{p.title}</h3>
+            <p className="text-sm leading-relaxed text-[color:var(--brand-muted)]">{p.body}</p>
           </motion.div>
         ))}
       </div>

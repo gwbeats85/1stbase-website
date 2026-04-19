@@ -99,14 +99,14 @@ export function Quiz() {
   }
 
   return (
-    <section id="quiz" className="py-24 px-6 bg-white">
+    <section id="quiz" className="bg-[color:rgb(255_253_247_/_0.58)] px-6 py-24">
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Quick Questionnaire</span>
-          <h2 className="text-4xl font-black text-[#1a3738] mt-3">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">Quick Questionnaire</span>
+          <h2 className="mt-3 text-4xl font-black text-[var(--brand-teal)]">
             Let&apos;s find your starting point
           </h2>
-          <p className="text-gray-500 mt-2">4 questions. No signup. Just vibes.</p>
+          <p className="mt-2 text-[color:var(--brand-muted)]">4 questions. No signup. Just vibes.</p>
         </div>
 
         {!done ? (
@@ -117,7 +117,7 @@ export function Quiz() {
                 <div
                   key={i}
                   className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
-                    i <= step ? "bg-[#c4622d]" : "bg-gray-200"
+                    i <= step ? "bg-[var(--brand-gold)]" : "bg-[color:rgb(33_71_72_/_0.14)]"
                   }`}
                 />
               ))}
@@ -131,13 +131,13 @@ export function Quiz() {
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.25 }}
               >
-                <h3 className="text-2xl font-bold text-[#1a3738] mb-6">{current.question}</h3>
+                <h3 className="mb-6 text-2xl font-bold text-[var(--brand-teal)]">{current.question}</h3>
                 <div className="space-y-3">
                   {current.options.map((option) => (
                     <button
                       key={option}
                       onClick={() => handleAnswer(option)}
-                      className="w-full text-left px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:bg-orange-50 transition-all duration-200 font-medium text-gray-700 hover:text-[#1a3738]"
+                      className="w-full rounded-[1.4rem] border-2 border-[color:var(--brand-line)] bg-[var(--brand-surface)] px-6 py-4 text-left font-medium text-[var(--brand-ink)] transition-all duration-200 hover:border-[color:rgb(243_193_16_/_0.6)] hover:bg-[color:rgb(243_193_16_/_0.08)] hover:text-[var(--brand-teal)]"
                     >
                       {option}
                     </button>
@@ -156,8 +156,8 @@ export function Quiz() {
                 className="text-center py-12"
               >
                 <div className="text-6xl mb-4">🦥✌️</div>
-                <h3 className="text-3xl font-black text-[#1a3738] mb-3">You&apos;re in.</h3>
-                <p className="text-gray-500">
+                <h3 className="mb-3 text-3xl font-black text-[var(--brand-teal)]">You&apos;re in.</h3>
+                <p className="text-[color:var(--brand-muted)]">
                   {resultType === "book"
                     ? `I'll hit you back soon. Talk soon, ${name}.`
                     : `Welcome to the crew, ${name}. You'll hear from me soon.`}
@@ -169,40 +169,48 @@ export function Quiz() {
                 key="book"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative bg-[#EAE9E0] rounded-3xl p-8 border border-gray-100"
+                className="relative rounded-[2rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-8 shadow-[0_18px_42px_-28px_rgba(24,56,57,0.45)]"
               >
                 <button
                   onClick={() => { setDone(false); setStep(0); setAnswers({}); }}
-                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-200 transition-all text-lg"
+                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-lg text-[color:var(--brand-muted)] transition-all hover:bg-[color:rgb(36_82_83_/_0.08)] hover:text-[var(--brand-teal)]"
                   aria-label="Start over"
                 >
                   ✕
                 </button>
                 <div className="text-4xl mb-4">🦥</div>
-                <h3 className="text-2xl font-black text-[#1a3738] mb-3">Let&apos;s make it happen.</h3>
-                <p className="text-gray-600 mb-8">
+                <h3 className="mb-3 text-2xl font-black text-[var(--brand-teal)]">Let&apos;s make it happen.</h3>
+                <p className="mb-8 text-[color:var(--brand-muted)]">
                   Drop your info and I&apos;ll reach out to set something up — a quick call, a session, whatever makes sense for where you&apos;re at.
                 </p>
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  <label htmlFor="quiz-name" className="sr-only">Your name</label>
                   <input
+                    id="quiz-name"
+                    name="name"
                     type="text"
                     placeholder="Your name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
+                    autoComplete="name"
                     required
-                    className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-orange-400 outline-none font-medium transition-colors"
+                    className="w-full rounded-xl border-2 border-[color:var(--brand-line)] px-5 py-4 font-medium transition-colors outline-none focus:border-[var(--brand-gold)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-gold)]"
                   />
+                  <label htmlFor="quiz-email" className="sr-only">Your email</label>
                   <input
+                    id="quiz-email"
+                    name="email"
                     type="email"
                     placeholder="Your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    autoComplete="email"
                     required
-                    className="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-orange-400 outline-none font-medium transition-colors"
+                    className="w-full rounded-xl border-2 border-[color:var(--brand-line)] px-5 py-4 font-medium transition-colors outline-none focus:border-[var(--brand-gold)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-gold)]"
                   />
                   <button
                     type="submit"
-                    className="w-full bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide"
+                    className="w-full rounded-xl bg-[var(--brand-gold)] py-4 text-sm font-bold uppercase tracking-wide text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
                   >
                     Hit me up →
                   </button>
@@ -214,14 +222,14 @@ export function Quiz() {
                 </div>
                 <a
                   href="https://calendly.com/1stbaseai/30min"
-                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-[#c4622d] font-bold text-gray-700 transition-all"
+                  className="flex w-full items-center justify-between rounded-2xl border-2 border-[color:var(--brand-line)] px-6 py-4 font-bold text-[var(--brand-ink)] transition-all hover:border-[var(--brand-gold)] hover:text-[var(--brand-teal)]"
                 >
                   <span>Text me directly</span>
-                  <span className="text-sm font-normal text-gray-400">(432) 279-0502</span>
+                  <span className="text-sm font-normal text-[color:var(--brand-muted)]">(432) 279-0502</span>
                 </a>
-                <p className="text-center text-xs text-gray-400 mt-5">
+                <p className="mt-5 text-center text-xs text-[color:var(--brand-muted)]">
                   Not ready to commit?{" "}
-                  <a href="#meetup" className="text-[#c4622d] hover:underline font-medium">
+                  <a href="#meetup" className="font-medium text-[var(--brand-coral)] hover:underline">
                     Join the newsletter instead →
                   </a>
                 </p>
@@ -232,25 +240,25 @@ export function Quiz() {
                 key="explore"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative bg-[#EAE9E0] rounded-3xl p-8 border border-gray-100"
+                className="relative rounded-[2rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-8 shadow-[0_18px_42px_-28px_rgba(24,56,57,0.45)]"
               >
                 <button
                   onClick={() => { setDone(false); setStep(0); setAnswers({}); }}
-                  className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-200 transition-all text-lg"
+                  className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-lg text-[color:var(--brand-muted)] transition-all hover:bg-[color:rgb(36_82_83_/_0.08)] hover:text-[var(--brand-teal)]"
                   aria-label="Start over"
                 >
                   ✕
                 </button>
                 <div className="text-4xl mb-4">🦥</div>
-                <h3 className="text-2xl font-black text-[#1a3738] mb-3">You&apos;re in the right place.</h3>
-                <p className="text-gray-600 mb-8">
+                <h3 className="mb-3 text-2xl font-black text-[var(--brand-teal)]">You&apos;re in the right place.</h3>
+                <p className="mb-8 text-[color:var(--brand-muted)]">
                   No pressure to jump into anything. Stay in the loop — I send out a weekly AI digest with the tools worth knowing about, and I host meetups in Vancouver WA for people just like you.
                 </p>
 
                 {/* Newsletter CTA */}
                 <a
                   href="#meetup"
-                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold transition-colors mb-3"
+                  className="mb-3 flex w-full items-center justify-between rounded-2xl bg-[var(--brand-gold)] px-6 py-4 font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
                 >
                   <span>Join the weekly newsletter</span>
                   <span>→</span>
@@ -259,10 +267,10 @@ export function Quiz() {
                 {/* Text option */}
                 <a
                   href="https://calendly.com/1stbaseai/30min"
-                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-[#c4622d] font-bold text-gray-700 transition-all mb-3"
+                  className="mb-3 flex w-full items-center justify-between rounded-2xl border-2 border-[color:var(--brand-line)] px-6 py-4 font-bold text-[var(--brand-ink)] transition-all hover:border-[var(--brand-gold)] hover:text-[var(--brand-teal)]"
                 >
                   <span>Or just text me</span>
-                  <span className="text-sm font-normal text-gray-400">(432) 279-0502</span>
+                  <span className="text-sm font-normal text-[color:var(--brand-muted)]">(432) 279-0502</span>
                 </a>
 
                 {/* Socials */}
@@ -273,7 +281,7 @@ export function Quiz() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-center py-3 rounded-xl border-2 border-gray-200 hover:border-orange-400 hover:text-[#c4622d] text-sm font-semibold text-gray-600 transition-all"
+                      className="flex-1 rounded-xl border-2 border-[color:var(--brand-line)] py-3 text-center text-sm font-semibold text-[color:var(--brand-muted)] transition-all hover:border-[var(--brand-gold)] hover:text-[var(--brand-teal)]"
                     >
                       {s.label}
                     </a>

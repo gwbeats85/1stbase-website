@@ -78,7 +78,7 @@ export function AboutModal({ isOpen, onClose }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-[#0e2829]/80 backdrop-blur-sm z-50"
+            className="fixed inset-0 z-50 bg-[color:rgb(24_56_57_/_0.8)] backdrop-blur-sm"
             onClick={onClose}
           />
 
@@ -91,7 +91,7 @@ export function AboutModal({ isOpen, onClose }: Props) {
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg px-4"
           >
-            <div className="relative bg-[#255253] rounded-3xl overflow-hidden shadow-2xl border border-[#2e6364]">
+            <div className="relative overflow-hidden rounded-3xl border border-[color:rgb(255_253_247_/_0.16)] bg-[linear-gradient(180deg,_rgb(37_82_83)_0%,_rgb(24_56_57)_100%)] shadow-2xl">
 
               {/* Watermark */}
               <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
@@ -99,28 +99,29 @@ export function AboutModal({ isOpen, onClose }: Props) {
               </div>
 
               {/* Terracotta accent bar */}
-              <div className="h-1 w-full bg-[#c4622d]" />
+              <div className="h-1 w-full bg-[linear-gradient(90deg,_var(--brand-coral)_0%,_var(--brand-gold)_52%,_var(--brand-amber)_100%)]" />
 
               {/* Close button */}
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 text-[#EAE9E0]/40 hover:text-[#EAE9E0] transition-colors p-1.5 rounded-full hover:bg-[#EAE9E0]/10"
-              >
-                <X size={18} />
-              </button>
+                <button
+                  onClick={onClose}
+                  aria-label="Close about modal"
+                  className="absolute top-4 right-4 rounded-full p-1.5 text-[color:rgb(255_253_247_/_0.4)] transition-colors hover:bg-[color:rgb(255_253_247_/_0.1)] hover:text-[var(--brand-surface)]"
+                >
+                  <X size={18} />
+                </button>
 
               <div className="relative px-8 pt-8 pb-10">
                 {/* Label */}
-                <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Your guide</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-[var(--brand-gold)]">Your guide</span>
 
                 {/* Name */}
-                <h2 className="text-5xl font-black text-[#EAE9E0] mt-3 mb-1 leading-none">
+                <h2 className="mt-3 mb-1 text-5xl font-black leading-none text-[var(--brand-surface)]">
                   Hey, I&apos;m Will.
                 </h2>
-                <p className="text-[#c4622d] text-sm font-semibold mb-6">Vancouver, WA · @1stbaseai</p>
+                <p className="mb-6 text-sm font-semibold text-[color:rgb(255_198_82)]">Vancouver, WA · @1stbaseai</p>
 
                 {/* Bio */}
-                <p className="text-[#EAE9E0]/70 text-base leading-relaxed mb-8">
+                <p className="mb-8 text-base leading-relaxed text-[color:rgb(255_253_247_/_0.72)]">
                   I&apos;m deep into AI and I love showing people how to actually use it. You already know what you want to do — I just teach you the tools to go build it yourself. No tech background needed. Just curiosity.
                 </p>
 
@@ -131,9 +132,9 @@ export function AboutModal({ isOpen, onClose }: Props) {
                     { value: "Weekly", label: "Newsletter" },
                     { value: "Free", label: "Community" },
                   ].map((stat) => (
-                    <div key={stat.label} className="bg-[#1a3738] rounded-2xl px-4 py-4 text-center border border-[#2e6364]">
-                      <div className="text-[#EAE9E0] font-black text-lg">{stat.value}</div>
-                      <div className="text-[#EAE9E0]/40 text-xs mt-0.5">{stat.label}</div>
+                    <div key={stat.label} className="rounded-2xl border border-[color:rgb(255_253_247_/_0.14)] bg-[color:rgb(255_253_247_/_0.08)] px-4 py-4 text-center">
+                      <div className="text-lg font-black text-[var(--brand-surface)]">{stat.value}</div>
+                      <div className="mt-0.5 text-xs text-[color:rgb(255_253_247_/_0.44)]">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -147,7 +148,7 @@ export function AboutModal({ isOpen, onClose }: Props) {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={link.label}
-                      className="w-9 h-9 rounded-xl bg-[#1a3738] border border-[#2e6364] flex items-center justify-center text-[#EAE9E0]/50 hover:text-[#c4622d] hover:border-[#c4622d]/50 transition-all"
+                      className="flex h-9 w-9 items-center justify-center rounded-xl border border-[color:rgb(255_253_247_/_0.14)] bg-[color:rgb(255_253_247_/_0.08)] text-[color:rgb(255_253_247_/_0.6)] transition-all hover:border-[color:rgb(243_193_16_/_0.5)] hover:text-[var(--brand-gold)]"
                     >
                       {link.icon}
                     </a>
@@ -160,13 +161,13 @@ export function AboutModal({ isOpen, onClose }: Props) {
                     href="https://calendly.com/1stbaseai/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-6 py-3 rounded-full text-sm transition-colors"
+                    className="flex-1 rounded-full bg-[var(--brand-gold)] px-6 py-3 text-center text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
                   >
                     Book a free intro call →
                   </a>
                   <a
                     href="mailto:juantacosancho@gmail.com"
-                    className="flex-1 text-center border border-[#2e6364] hover:border-[#c4622d]/60 text-[#EAE9E0]/60 hover:text-[#EAE9E0] font-semibold px-6 py-3 rounded-full text-sm transition-all"
+                    className="flex-1 rounded-full border border-[color:rgb(255_253_247_/_0.16)] px-6 py-3 text-center text-sm font-semibold text-[color:rgb(255_253_247_/_0.65)] transition-all hover:border-[color:rgb(243_193_16_/_0.5)] hover:text-[var(--brand-surface)]"
                   >
                     Send me a message
                   </a>

@@ -27,12 +27,12 @@ export function LearningCenterNav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-[#EAE9E0]/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 border-b border-[color:var(--brand-line)] bg-[color:rgb(245_241_231_/_0.95)] backdrop-blur-sm">
       {/* Top bar — matches landing page nav */}
       <SiteNav activePage="resources" />
 
       {/* Sub-nav tabs */}
-      <div className="border-t border-gray-100 overflow-x-auto scrollbar-hide">
+      <div className="overflow-x-auto border-t border-[color:var(--brand-line)] scrollbar-hide">
         <div className="flex items-center gap-1 px-8 md:px-10 min-w-max">
           {navLinks.map((link) => (
             <Link
@@ -40,8 +40,8 @@ export function LearningCenterNav() {
               href={link.href}
               className={`text-xs font-semibold px-3.5 py-2.5 transition-all whitespace-nowrap ${
                 isActive(link)
-                  ? "text-[#c4622d] border-b-2 border-[#c4622d]"
-                  : "text-gray-500 hover:text-gray-800"
+                  ? "border-b-2 border-[var(--brand-gold)] text-[var(--brand-teal)]"
+                  : "text-[color:var(--brand-muted)] hover:text-[var(--brand-teal)]"
               }`}
             >
               {link.label}
@@ -52,23 +52,23 @@ export function LearningCenterNav() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-1">
+        <div className="space-y-1 border-t border-[color:var(--brand-line)] bg-[var(--brand-surface)] px-6 py-4 md:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={`block py-2 text-sm font-medium transition-colors ${
-                isActive(link) ? "text-[#c4622d]" : "text-gray-600 hover:text-[#1a3738]"
+                isActive(link) ? "text-[var(--brand-teal)]" : "text-[color:var(--brand-muted)] hover:text-[var(--brand-teal)]"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <div className="pt-4 border-t border-gray-100">
+          <div className="border-t border-[color:var(--brand-line)] pt-4">
             <a
               href="https://calendly.com/1stbaseai/30min"
-              className="block text-center bg-[#255253] text-white text-sm font-bold px-5 py-3 rounded-full"
+              className="block rounded-full bg-[var(--brand-gold)] px-5 py-3 text-center text-sm font-bold text-[var(--brand-teal-deep)]"
             >
               Book a session
             </a>

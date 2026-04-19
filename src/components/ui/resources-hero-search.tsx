@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 const suggestions = [
@@ -45,8 +45,8 @@ export function ResourcesHeroSearch() {
   return (
     <div className="relative max-w-2xl mx-auto">
       <div
-        className={`flex items-center bg-white rounded-2xl border-2 transition-all ${
-          focused ? "border-orange-400 shadow-lg shadow-orange-500/10" : "border-white/20 shadow-xl"
+        className={`flex items-center rounded-[1.6rem] border-2 bg-[var(--brand-surface)] transition-all ${
+          focused ? "border-[var(--brand-gold)] shadow-lg shadow-[rgba(24,56,57,0.12)]" : "border-[color:rgb(255_253_247_/_0.24)] shadow-xl"
         }`}
       >
         <svg
@@ -60,6 +60,7 @@ export function ResourcesHeroSearch() {
         </svg>
         <input
           ref={inputRef}
+          aria-label="Search learning center content"
           type="text"
           value={query}
           onChange={(e) => {
@@ -78,11 +79,11 @@ export function ResourcesHeroSearch() {
             if (e.key === "Enter") handleSearch(query);
           }}
           placeholder="Search tools, terms, comparisons..."
-          className="flex-1 px-4 py-4 text-[#1a3738] placeholder-gray-400 bg-transparent outline-none text-base"
+          className="flex-1 bg-transparent px-4 py-4 text-base text-[var(--brand-ink)] outline-none placeholder:text-[color:var(--brand-muted)]"
         />
         <button
           onClick={() => handleSearch(query)}
-          className="mr-2 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0"
+          className="mr-2 shrink-0 rounded-xl bg-[var(--brand-gold)] px-5 py-2.5 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
         >
           Search
         </button>
@@ -90,14 +91,14 @@ export function ResourcesHeroSearch() {
 
       {/* Suggestions */}
       {showSuggestions && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden z-10">
+        <div className="absolute left-0 right-0 top-full z-10 mt-2 overflow-hidden rounded-[1.6rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] shadow-xl">
           {query.length === 0 ? (
             <div className="p-3">
-              <p className="text-xs text-gray-400 font-medium px-2 mb-2">Popular searches</p>
+              <p className="mb-2 px-2 text-xs font-medium text-[color:var(--brand-muted)]">Popular searches</p>
               {suggestions.slice(0, 6).map((s) => (
                 <button
                   key={s}
-                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#a8521f] rounded-lg transition-colors"
+                  className="w-full rounded-lg px-3 py-2 text-left text-sm text-[var(--brand-ink)] transition-colors hover:bg-[color:rgb(243_193_16_/_0.08)] hover:text-[var(--brand-teal)]"
                   onMouseDown={() => handleSearch(s)}
                 >
                   {s}
@@ -109,7 +110,7 @@ export function ResourcesHeroSearch() {
               {filtered.map((s) => (
                 <button
                   key={s}
-                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#a8521f] rounded-lg transition-colors"
+                  className="w-full rounded-lg px-3 py-2 text-left text-sm text-[var(--brand-ink)] transition-colors hover:bg-[color:rgb(243_193_16_/_0.08)] hover:text-[var(--brand-teal)]"
                   onMouseDown={() => handleSearch(s)}
                 >
                   {s}
@@ -117,7 +118,7 @@ export function ResourcesHeroSearch() {
               ))}
             </div>
           ) : (
-            <div className="p-4 text-sm text-gray-400 text-center">
+            <div className="p-4 text-center text-sm text-[color:var(--brand-muted)]">
               Press Enter to search for &ldquo;{query}&rdquo;
             </div>
           )}

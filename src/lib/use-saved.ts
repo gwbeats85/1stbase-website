@@ -9,11 +9,13 @@ export function useSaved() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) setSaved(new Set(JSON.parse(raw)));
-    } catch {}
+    queueMicrotask(() => {
+      setMounted(true);
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw) setSaved(new Set(JSON.parse(raw)));
+      } catch {}
+    });
   }, []);
 
   const toggle = useCallback((id: string) => {

@@ -1,6 +1,5 @@
 import { ShuffleHero as Hero } from "@/components/ui/shuffle-hero";
 import { TypewriterBanner } from "@/components/ui/typewriter-banner";
-import { Fundamentals } from "@/components/ui/fundamentals";
 import { UseCases } from "@/components/ui/use-cases";
 import { Quiz } from "@/components/ui/quiz";
 import { AiNews } from "@/components/ui/ai-news";
@@ -56,20 +55,19 @@ export default function Home() {
     <main>
       <Hero />
       <TypewriterBanner />
-      <Fundamentals />
       <UseCases />
       <Quiz />
       <AiNews />
 
       {/* Learning Center Preview */}
-      <section id="learn" className="py-24 bg-[#EAE9E0] px-6">
+      <section id="learn" className="px-6 py-24">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Free to use</span>
-            <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3 mb-4 tracking-tight">
+            <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">Free to use</span>
+            <h2 className="mb-4 mt-3 text-4xl font-black tracking-tight text-[var(--brand-teal)] md:text-5xl">
               Your AI Learning Center
             </h2>
-            <p className="text-gray-500 text-lg max-w-xl mx-auto">
+            <p className="mx-auto max-w-xl text-lg text-[color:var(--brand-muted)]">
               Lessons, resources, downloads, and prompts — everything in one place, no account needed.
             </p>
           </div>
@@ -79,14 +77,14 @@ export default function Home() {
               <a
                 key={bucket.label}
                 href={bucket.href}
-                className="group flex items-start gap-5 p-6 bg-white border border-gray-100 rounded-2xl hover:border-[#e8b99a] hover:shadow-sm transition-all"
+                className="group flex items-start gap-5 rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 transition-all hover:-translate-y-0.5 hover:border-[color:rgb(243_193_16_/_0.35)] hover:shadow-[0_20px_44px_-30px_rgba(24,56,57,0.55)]"
               >
-                <span className="text-[#c4622d] shrink-0 mt-0.5">{bucket.icon}</span>
+                <span className="mt-0.5 shrink-0 text-[var(--brand-gold)]">{bucket.icon}</span>
                 <div>
-                  <p className="font-bold text-[#1a3738] group-hover:text-[#c4622d] transition-colors mb-1">{bucket.label}</p>
-                  <p className="text-gray-500 text-sm leading-relaxed">{bucket.description}</p>
+                  <p className="mb-1 font-bold text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-coral)]">{bucket.label}</p>
+                  <p className="text-sm leading-relaxed text-[color:var(--brand-muted)]">{bucket.description}</p>
                 </div>
-                <span className="text-[#c4622d] ml-auto shrink-0 mt-0.5">→</span>
+                <span className="ml-auto mt-0.5 shrink-0 text-[var(--brand-coral)]">→</span>
               </a>
             ))}
           </div>
@@ -94,7 +92,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/learn"
-              className="inline-flex items-center gap-2 bg-[#255253] hover:bg-[#183839] text-white font-bold px-8 py-4 rounded-full text-sm transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-teal)] px-8 py-4 text-sm font-bold text-[var(--brand-surface)] transition-colors hover:bg-[var(--brand-teal-deep)]"
             >
               Open the Learning Center →
             </a>
@@ -103,28 +101,33 @@ export default function Home() {
       </section>
 
       {/* Newsletter */}
-      <section id="newsletter" className="relative py-24 bg-[#255253] px-6 overflow-hidden">
+      <section id="newsletter" className="relative overflow-hidden bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] px-6 py-24">
         <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
           <LogoMark color="#EAE9E0" size={600} className="absolute -left-24 -bottom-24 opacity-[0.06]" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Stay in the loop</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-4">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-gold)]">Stay in the loop</span>
+          <h2 className="mt-3 mb-4 text-4xl font-black text-[var(--brand-surface)] md:text-5xl">
             The AI newsletter that doesn&apos;t waste your time.
           </h2>
-          <p className="text-gray-400 text-lg max-w-xl mx-auto mb-10">
+          <p className="mx-auto mb-10 max-w-xl text-lg text-[color:rgb(255_253_247_/_0.66)]">
             Real tools. Real workflows. Practical breakdowns every week — no hype, no filler. Free forever.
           </p>
           <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <label htmlFor="newsletter-email" className="sr-only">Email address</label>
             <input
+              id="newsletter-email"
+              name="email"
               type="email"
-              placeholder="your@email.com"
-              className="flex-1 bg-[#1e4546] border border-gray-700 rounded-full px-5 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#c4622d] transition-colors text-sm"
+              autoComplete="email"
+              aria-label="Email address"
+              placeholder="you@email.com"
+              className="flex-1 rounded-full border border-[color:rgb(255_253_247_/_0.16)] bg-[color:rgb(255_253_247_/_0.08)] px-5 py-3 text-sm text-[var(--brand-surface)] placeholder:text-[color:rgb(255_253_247_/_0.42)] focus:border-[var(--brand-gold)] focus:outline-none"
               required
             />
             <button
               type="submit"
-              className="bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors whitespace-nowrap"
+              className="whitespace-nowrap rounded-full bg-[var(--brand-gold)] px-7 py-3 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
             >
               Subscribe Free
             </button>

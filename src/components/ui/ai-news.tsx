@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import newsData from "@/data/news.json";
 
@@ -9,27 +8,17 @@ import newsData from "@/data/news.json";
 const news = newsData;
 
 export function AiNews() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email.trim()) return;
-    window.open(`https://1stbase.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`, "_blank");
-    setSubmitted(true);
-  }
-
   return (
-    <section id="news" className="py-24 px-6 bg-[#EAE9E0]">
+    <section id="news" className="bg-[color:rgb(255_253_247_/_0.45)] px-6 py-24">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">What&apos;s happening</span>
-          <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">What&apos;s happening</span>
+          <h2 className="mt-3 text-4xl font-black text-[var(--brand-teal)] md:text-5xl">
             AI is moving fast.<br className="hidden md:block" /> Here&apos;s what matters.
           </h2>
-          <p className="text-gray-500 mt-3 text-lg max-w-xl mx-auto">
+          <p className="mx-auto mt-3 max-w-xl text-lg text-[color:var(--brand-muted)]">
             I cut through the hype every week so you don&apos;t have to. Get the tools and news worth knowing about, in plain English.
           </p>
         </div>
@@ -46,17 +35,17 @@ export function AiNews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:border-orange-300 hover:shadow-md transition-all"
+              className="group rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 shadow-[0_18px_42px_-28px_rgba(24,56,57,0.45)] transition-all hover:-translate-y-0.5 hover:border-[color:rgb(243_193_16_/_0.4)] hover:shadow-[0_22px_52px_-28px_rgba(24,56,57,0.6)]"
             >
               <div className="flex items-start justify-between gap-3 mb-3">
-                <span className="text-xs font-bold uppercase tracking-widest text-[#c4622d] bg-orange-50 px-3 py-1 rounded-full">
+                <span className="rounded-full bg-[color:rgb(242_84_76_/_0.1)] px-3 py-1 text-xs font-bold uppercase tracking-[0.2em] text-[var(--brand-coral)]">
                   {item.tag}
                 </span>
-                <ExternalLink size={14} className="text-gray-300 group-hover:text-[#c4622d] transition-colors shrink-0 mt-1" />
+                <ExternalLink size={14} className="mt-1 shrink-0 text-[color:rgb(33_71_72_/_0.24)] transition-colors group-hover:text-[var(--brand-teal)]" />
               </div>
-              <h3 className="font-black text-[#1a3738] text-lg leading-snug mb-2">{item.headline}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed mb-4">{item.summary}</p>
-              <p className="text-xs text-gray-300">{item.source} · {item.date}</p>
+              <h3 className="mb-2 text-lg font-black leading-snug text-[var(--brand-teal)]">{item.headline}</h3>
+              <p className="mb-4 text-sm leading-relaxed text-[color:var(--brand-muted)]">{item.summary}</p>
+              <p className="text-xs text-[color:rgb(33_71_72_/_0.44)]">{item.source} · {item.date}</p>
             </motion.a>
           ))}
         </div>

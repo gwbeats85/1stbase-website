@@ -36,34 +36,34 @@ export function FloatingChat() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 16 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="w-80 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white"
+            className="w-80 overflow-hidden rounded-3xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] shadow-2xl"
           >
             {/* Header */}
-            <div className="bg-[#255253] px-5 py-4 flex items-center justify-between">
+            <div className="flex items-center justify-between bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] px-5 py-4">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[#c4622d] flex items-center justify-center text-white font-black text-sm">W</div>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--brand-gold)] text-sm font-black text-[var(--brand-teal-deep)]">W</div>
                 <div>
-                  <p className="text-white font-bold text-sm leading-none">Will</p>
-                  <p className="text-gray-400 text-xs mt-0.5">1st Base AI · usually replies fast</p>
+                  <p className="text-sm font-bold leading-none text-[var(--brand-surface)]">Will</p>
+                  <p className="mt-0.5 text-xs text-[color:rgb(255_253_247_/_0.54)]">1st Base AI · usually replies fast</p>
                 </div>
               </div>
-              <button onClick={() => setOpen(false)} className="text-gray-500 hover:text-white transition-colors">
+              <button onClick={() => setOpen(false)} aria-label="Close chat" className="text-[color:rgb(255_253_247_/_0.42)] transition-colors hover:text-[var(--brand-surface)]">
                 <X size={18} />
               </button>
             </div>
 
             {/* Messages */}
-            <div className="px-4 py-4 flex flex-col gap-3 max-h-64 overflow-y-auto bg-white">
+            <div className="flex max-h-64 flex-col gap-3 overflow-y-auto bg-[var(--brand-surface)] px-4 py-4">
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.from === "user" ? "justify-end" : "items-end gap-2"}`}>
                   {msg.from === "will" && (
-                    <div className="w-6 h-6 rounded-full bg-[#c4622d] flex items-center justify-center text-white font-black text-xs shrink-0">W</div>
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold)] text-xs font-black text-[var(--brand-teal-deep)]">W</div>
                   )}
                   <div
                     className={`text-sm rounded-2xl px-4 py-2.5 max-w-[80%] ${
                       msg.from === "user"
-                        ? "bg-blue-500 text-white rounded-br-sm"
-                        : "bg-gray-100 text-[#1a3738] rounded-bl-sm"
+                        ? "rounded-br-sm bg-[var(--brand-teal)] text-[var(--brand-surface)]"
+                        : "rounded-bl-sm bg-[color:rgb(36_82_83_/_0.08)] text-[var(--brand-ink)]"
                     }`}
                   >
                     {msg.text}
@@ -73,21 +73,27 @@ export function FloatingChat() {
             </div>
 
             {/* Input */}
-            <form onSubmit={handleSend} className="px-3 py-3 border-t border-gray-100 flex items-center gap-2 bg-white">
+            <form onSubmit={handleSend} className="flex items-center gap-2 border-t border-[color:var(--brand-line)] bg-[var(--brand-surface)] px-3 py-3">
+              <label htmlFor="floating-chat-input" className="sr-only">Ask Will about AI</label>
               <input
+                id="floating-chat-input"
+                name="message"
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder={replied ? "Check your texts soon!" : "Ask anything..."}
+                aria-label="Ask Will about AI"
+                autoComplete="off"
                 disabled={replied}
-                className="flex-1 bg-gray-100 rounded-full px-4 py-2 text-sm outline-none placeholder:text-gray-400 disabled:opacity-50"
+                className="flex-1 rounded-full bg-[color:rgb(36_82_83_/_0.08)] px-4 py-2 text-sm text-[var(--brand-ink)] outline-none ring-0 placeholder:text-[color:var(--brand-muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-gold)] disabled:opacity-50"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || replied}
-                className="w-8 h-8 rounded-full bg-blue-500 hover:bg-blue-600 disabled:opacity-30 flex items-center justify-center shrink-0 transition-colors"
+                aria-label="Send message"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold)] transition-colors hover:bg-[var(--brand-amber)] disabled:opacity-30"
               >
-                <Send size={14} className="text-white ml-0.5" />
+                <Send size={14} className="ml-0.5 text-[var(--brand-teal-deep)]" />
               </button>
             </form>
           </motion.div>
@@ -97,9 +103,10 @@ export function FloatingChat() {
       {/* Toggle button */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
+        aria-label={open ? "Close chat" : "Open chat"}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-[#c4622d] hover:bg-[#a8521f] shadow-lg flex items-center justify-center text-white transition-colors"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-gold)] text-[var(--brand-teal-deep)] shadow-lg transition-colors hover:bg-[var(--brand-amber)]"
       >
         <AnimatePresence mode="wait">
           {open ? (

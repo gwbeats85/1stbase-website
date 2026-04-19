@@ -24,7 +24,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <SiteNav sticky activePage="blog" />
 
       {/* Article */}
@@ -32,20 +32,20 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* Back */}
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-700 transition-colors mb-10"
+          className="mb-10 inline-flex items-center gap-1.5 text-sm text-[color:var(--brand-muted)] transition-colors hover:text-[var(--brand-teal)]"
         >
           ← All posts
         </Link>
 
         {/* Meta */}
         <div className="mb-8">
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#c4622d] bg-orange-50 px-2.5 py-1 rounded-full mb-4">
+          <span className="mb-4 inline-block rounded-full bg-[color:rgb(242_84_76_/_0.1)] px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-coral)]">
             {post.tag}
           </span>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-[#1a3738] leading-[0.95] mb-4">
+          <h1 className="mb-4 text-4xl font-black leading-[0.95] tracking-tight text-[var(--brand-teal)] md:text-5xl">
             {post.title}
           </h1>
-          <div className="flex items-center gap-3 text-sm text-gray-400">
+          <div className="flex items-center gap-3 text-sm text-[color:var(--brand-muted)]">
             <span>{post.date}</span>
             <span>·</span>
             <span>{post.readTime}</span>
@@ -53,28 +53,28 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-100 mb-10" />
+        <div className="mb-10 border-t border-[color:var(--brand-line)]" />
 
         {/* Content */}
         <div className="space-y-6">
           {post.content.map((block, i) => (
             <div key={i}>
               {block.heading && (
-                <h2 className="text-xl font-bold text-[#1a3738] mb-2">{block.heading}</h2>
+                <h2 className="mb-2 text-xl font-bold text-[var(--brand-teal)]">{block.heading}</h2>
               )}
               {block.quote && (
-                <blockquote className="border-l-4 border-[#c4622d] pl-5 my-2 text-gray-500 italic text-lg">
+                <blockquote className="my-2 border-l-4 border-[var(--brand-gold)] pl-5 text-lg italic text-[color:var(--brand-muted)]">
                   {block.quote}
                 </blockquote>
               )}
               {block.body && (
-                <p className="text-gray-600 leading-relaxed text-lg">{block.body}</p>
+                <p className="text-lg leading-relaxed text-[color:var(--brand-muted)]">{block.body}</p>
               )}
               {block.list && (
                 <ul className="mt-2 space-y-2">
                   {block.list.map((item, j) => (
-                    <li key={j} className="flex gap-3 text-gray-600 text-lg leading-relaxed">
-                      <span className="text-[#c4622d] font-bold mt-0.5 shrink-0">·</span>
+                    <li key={j} className="flex gap-3 text-lg leading-relaxed text-[color:var(--brand-muted)]">
+                      <span className="mt-0.5 shrink-0 font-bold text-[var(--brand-coral)]">·</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -85,12 +85,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
 
         {/* CTA */}
-        <div className="mt-16 p-8 bg-[#255253] rounded-3xl text-center">
-          <p className="text-white font-bold text-xl mb-2">Want help putting this into practice?</p>
-          <p className="text-gray-400 mb-6 text-sm">Book a free intro call — I&apos;ll show you exactly how to apply this to your situation.</p>
+        <div className="mt-16 rounded-[2rem] bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] p-8 text-center">
+          <p className="mb-2 text-xl font-bold text-[var(--brand-surface)]">Want help putting this into practice?</p>
+          <p className="mb-6 text-sm text-[color:rgb(255_253_247_/_0.66)]">Book a free intro call — I&apos;ll show you exactly how to apply this to your situation.</p>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="inline-block bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-3.5 rounded-full transition-colors"
+            className="inline-block rounded-full bg-[var(--brand-gold)] px-8 py-3.5 font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
           >
             Book a free call →
           </a>

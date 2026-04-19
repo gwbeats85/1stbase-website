@@ -18,54 +18,54 @@ const quickActions = [
     title: "I just want to use AI",
     desc: "Start here — best free tools, no jargon",
     href: "/resources/tools?filter=beginner",
-    color: "bg-orange-50 hover:bg-orange-100 border-orange-100",
-    accent: "text-[#c4622d]",
-    iconColor: "text-[#c4622d]",
+    color: "bg-[color:rgb(242_84_76_/_0.08)] hover:bg-[color:rgb(242_84_76_/_0.14)] border-[color:rgb(242_84_76_/_0.12)]",
+    accent: "text-[var(--brand-coral)]",
+    iconColor: "text-[var(--brand-coral)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" /><path strokeLinecap="round" strokeLinejoin="round" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /></svg>,
     title: "I want AI for work",
     desc: "Email, meetings, docs, and productivity",
     href: "/resources/workflows",
-    color: "bg-blue-50 hover:bg-blue-100 border-blue-100",
-    accent: "text-blue-600",
-    iconColor: "text-blue-500",
+    color: "bg-[color:rgb(243_193_16_/_0.1)] hover:bg-[color:rgb(243_193_16_/_0.16)] border-[color:rgb(243_193_16_/_0.16)]",
+    accent: "text-[var(--brand-teal-deep)]",
+    iconColor: "text-[var(--brand-gold)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>,
     title: "I want to build with APIs",
     desc: "Developer stack, API docs, code tools",
     href: "/resources/official-docs",
-    color: "bg-purple-50 hover:bg-purple-100 border-purple-100",
-    accent: "text-purple-600",
-    iconColor: "text-purple-500",
+    color: "bg-[color:rgb(37_82_83_/_0.08)] hover:bg-[color:rgb(37_82_83_/_0.12)] border-[color:rgb(37_82_83_/_0.12)]",
+    accent: "text-[var(--brand-teal)]",
+    iconColor: "text-[var(--brand-teal)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>,
     title: "I want to compare tools",
     desc: "Side-by-side model comparisons",
     href: "/resources/compare",
-    color: "bg-green-50 hover:bg-green-100 border-green-100",
-    accent: "text-green-600",
-    iconColor: "text-green-500",
+    color: "bg-[color:rgb(244_163_12_/_0.1)] hover:bg-[color:rgb(244_163_12_/_0.16)] border-[color:rgb(244_163_12_/_0.16)]",
+    accent: "text-[var(--brand-teal-deep)]",
+    iconColor: "text-[var(--brand-amber)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
     title: "I want official docs only",
     desc: "Straight from OpenAI, Anthropic, Google",
     href: "/resources/official-docs",
-    color: "bg-gray-50 hover:bg-gray-100 border-gray-100",
-    accent: "text-gray-700",
-    iconColor: "text-gray-500",
+    color: "bg-[color:rgb(47_48_49_/_0.06)] hover:bg-[color:rgb(47_48_49_/_0.1)] border-[color:rgb(47_48_49_/_0.08)]",
+    accent: "text-[var(--brand-charcoal)]",
+    iconColor: "text-[var(--brand-charcoal)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>,
     title: "I want current AI news",
     desc: "Curated updates from official sources",
     href: "/resources/news",
-    color: "bg-amber-50 hover:bg-amber-100 border-amber-100",
-    accent: "text-amber-600",
-    iconColor: "text-amber-500",
+    color: "bg-[color:rgb(243_193_16_/_0.1)] hover:bg-[color:rgb(243_193_16_/_0.16)] border-[color:rgb(243_193_16_/_0.16)]",
+    accent: "text-[var(--brand-teal-deep)]",
+    iconColor: "text-[var(--brand-gold)]",
   },
 ];
 
@@ -133,21 +133,21 @@ const recentNews = newsItems.slice(0, 3);
 
 export default function ResourcesHubPage() {
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <LearningCenterNav />
 
       <main className="flex-1">
         {/* Hero with Search */}
-        <div className="bg-[#255253] text-white px-6 md:px-10 py-20">
+        <div className="bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] px-6 py-20 text-[var(--brand-surface)] md:px-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block mb-4 text-xs uppercase tracking-widest text-[#c4622d] font-semibold">
+            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-gold)]">
               AI Learning Center
             </span>
             <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-[0.95] mb-5">
               Everything AI,<br className="hidden md:block" />
-              <span className="text-[#c4622d]"> organized for you.</span>
+              <span className="text-[color:rgb(255_198_82)]"> organized for you.</span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+            <p className="mx-auto mb-10 max-w-2xl text-lg text-[color:rgb(255_253_247_/_0.66)]">
               Tools, docs, comparisons, prompts, glossary, and news — all in one place.
               Beginner-friendly. Bookmark what you need.
             </p>
@@ -181,12 +181,12 @@ export default function ResourcesHubPage() {
           <section className="pb-14">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-[#1a3738]">Featured Tools</h2>
-                <p className="text-gray-500 text-sm mt-1">The ones most people should start with</p>
+                <h2 className="text-2xl font-black text-[var(--brand-teal)]">Featured Tools</h2>
+                <p className="mt-1 text-sm text-[color:var(--brand-muted)]">The ones most people should start with</p>
               </div>
               <Link
                 href="/resources/tools"
-                className="text-sm font-semibold text-[#c4622d] hover:text-[#a8521f] transition-colors"
+                className="text-sm font-semibold text-[var(--brand-teal)] transition-colors hover:text-[var(--brand-coral)]"
               >
                 View all {aiTools.length} →
               </Link>
@@ -200,24 +200,24 @@ export default function ResourcesHubPage() {
 
           {/* Section Grid */}
           <section className="pb-14">
-            <h2 className="text-2xl font-black text-[#1a3738] mb-2">Browse by Category</h2>
-            <p className="text-gray-500 text-sm mb-8">Every section of the Learning Center</p>
+            <h2 className="mb-2 text-2xl font-black text-[var(--brand-teal)]">Browse by Category</h2>
+            <p className="mb-8 text-sm text-[color:var(--brand-muted)]">Every section of the Learning Center</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {navigationSections.map((section) => (
                 <Link
                   key={section.href}
                   href={section.href}
-                  className="group flex flex-col p-6 bg-white border border-gray-100 rounded-2xl hover:border-[#e8b99a] hover:shadow-md transition-all"
+                  className="group flex flex-col rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 transition-all hover:-translate-y-0.5 hover:border-[color:rgb(243_193_16_/_0.35)] hover:shadow-[0_20px_44px_-30px_rgba(24,56,57,0.5)]"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[#c4622d]">{section.icon}</span>
-                    <span className="text-xs text-gray-400 font-medium">{section.count}</span>
+                    <span className="text-[var(--brand-gold)]">{section.icon}</span>
+                    <span className="text-xs font-medium text-[color:var(--brand-muted)]">{section.count}</span>
                   </div>
-                  <h3 className="font-bold text-[#1a3738] mb-2 group-hover:text-[#c4622d] transition-colors">
+                  <h3 className="mb-2 font-bold text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-coral)]">
                     {section.title}
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{section.desc}</p>
-                  <span className="text-sm font-semibold text-[#c4622d] mt-4">Explore →</span>
+                  <p className="flex-1 text-sm leading-relaxed text-[color:var(--brand-muted)]">{section.desc}</p>
+                  <span className="mt-4 text-sm font-semibold text-[var(--brand-coral)]">Explore →</span>
                 </Link>
               ))}
             </div>
@@ -227,12 +227,12 @@ export default function ResourcesHubPage() {
           <section className="pb-14">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-[#1a3738]">Recent AI Updates</h2>
-                <p className="text-gray-500 text-sm mt-1">What just changed — from official sources</p>
+                <h2 className="text-2xl font-black text-[var(--brand-teal)]">Recent AI Updates</h2>
+                <p className="mt-1 text-sm text-[color:var(--brand-muted)]">What just changed — from official sources</p>
               </div>
               <Link
                 href="/resources/news"
-                className="text-sm font-semibold text-[#c4622d] hover:text-[#a8521f] transition-colors"
+                className="text-sm font-semibold text-[var(--brand-teal)] transition-colors hover:text-[var(--brand-coral)]"
               >
                 All news →
               </Link>
@@ -246,16 +246,16 @@ export default function ResourcesHubPage() {
 
           {/* CTA */}
           <section className="pb-16">
-            <div className="bg-[#255253] rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex flex-col items-center justify-between gap-8 rounded-[2rem] bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] p-10 md:flex-row">
               <div>
-                <p className="text-white font-black text-2xl mb-2">Not sure where to start?</p>
-                <p className="text-gray-400 max-w-md">
+                <p className="mb-2 text-2xl font-black text-[var(--brand-surface)]">Not sure where to start?</p>
+                <p className="max-w-md text-[color:rgb(255_253_247_/_0.66)]">
                   Book a free 30-minute intro call and I&apos;ll build you a personal AI toolkit — free, based on your exact goals.
                 </p>
               </div>
               <a
                 href="https://calendly.com/1stbaseai/30min"
-                className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-4 rounded-full text-sm transition-colors"
+                className="shrink-0 rounded-full bg-[var(--brand-gold)] px-8 py-4 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
               >
                 Book a free call →
               </a>

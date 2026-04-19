@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
@@ -35,13 +36,13 @@ function shuffle<T>(array: T[]): T[] {
   return arr;
 }
 
-function generateSquares() {
-  return shuffle(logos).map((logo) => (
+function createSquares(source = logos) {
+  return source.map((logo) => (
     <motion.div
       key={logo.id}
       layout
       transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full rounded-2xl bg-white border border-gray-100 shadow-sm flex items-center justify-center p-3"
+      className="flex h-full w-full items-center justify-center rounded-[1.6rem] border border-[color:var(--brand-line)] bg-[linear-gradient(180deg,_rgb(255_253_247)_0%,_rgb(245_241_231)_100%)] p-3 shadow-[0_18px_42px_-28px_rgba(24,56,57,0.55)]"
     >
       <img
         src={logo.src}
@@ -55,13 +56,11 @@ function generateSquares() {
 
 function ShuffleGrid() {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [squares, setSquares] = useState<React.ReactNode[]>([]);
+  const [squares, setSquares] = useState<React.ReactNode[]>(() => createSquares());
 
   useEffect(() => {
-    // Only run shuffle on the client to avoid hydration mismatch
-    setSquares(generateSquares());
     function go() {
-      setSquares(generateSquares());
+      setSquares(createSquares(shuffle(logos)));
       timeoutRef.current = setTimeout(go, 3000);
     }
     timeoutRef.current = setTimeout(go, 3000);
@@ -79,7 +78,8 @@ export function ShuffleHero() {
   const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen bg-[#EAE9E0] flex flex-col overflow-hidden">
+    <section className="relative flex min-h-screen flex-col overflow-hidden bg-[var(--brand-canvas)]">
+      <div className="absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(circle_at_top_right,_rgb(243_193_16_/_0.2),_transparent_35%),radial-gradient(circle_at_left_center,_rgb(242_84_76_/_0.08),_transparent_26%)]" aria-hidden="true" />
       {/* Background watermark */}
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
         <LogoMark color="#255253" size={700} className="absolute -right-32 -top-24 opacity-[0.045]" />
@@ -87,21 +87,21 @@ export function ShuffleHero() {
       <AboutModal isOpen={aboutOpen} onClose={() => setAboutOpen(false)} />
       {/* Nav */}
       <div className="relative flex items-center justify-between px-8 md:px-10 py-7">
-        <a href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex items-center gap-2.5">
           <LogoMark color="#255253" size={32} />
-          <span className="font-bold text-xl tracking-tight text-[#1a3738]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-            1st Base <span className="text-[#c4622d]">AI</span>
+          <span className="font-bold text-xl tracking-tight text-[var(--brand-teal)]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+            1st Base <span className="text-[var(--brand-amber)]">AI</span>
           </span>
-        </a>
+        </Link>
         <nav className="relative hidden md:flex items-center gap-7">
-          <a href="/learn" className="text-sm font-medium text-gray-500 hover:text-[#1a3738] transition-colors">Learning Center</a>
-          <a href="#newsletter" className="text-sm font-medium text-gray-500 hover:text-[#1a3738] transition-colors">Newsletter</a>
-          <a href="/blog" className="text-sm font-medium text-gray-500 hover:text-[#1a3738] transition-colors">Blog</a>
-          <button onClick={() => setAboutOpen(true)} className="text-sm font-medium text-gray-500 hover:text-[#1a3738] transition-colors">About</button>
+          <Link href="/learn" className="text-sm font-medium text-[color:var(--brand-muted)] transition-colors hover:text-[var(--brand-teal)]">Learning Center</Link>
+          <a href="#newsletter" className="text-sm font-medium text-[color:var(--brand-muted)] transition-colors hover:text-[var(--brand-teal)]">Newsletter</a>
+          <Link href="/blog" className="text-sm font-medium text-[color:var(--brand-muted)] transition-colors hover:text-[var(--brand-teal)]">Blog</Link>
+          <button onClick={() => setAboutOpen(true)} className="text-sm font-medium text-[color:var(--brand-muted)] transition-colors hover:text-[var(--brand-teal)]">About</button>
         </nav>
         <a
           href="https://calendly.com/1stbaseai/30min"
-          className="bg-[#255253] hover:bg-[#183839] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
+          className="rounded-full bg-[var(--brand-gold)] px-5 py-2.5 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
         >
           Book a session
         </a>
@@ -109,7 +109,7 @@ export function ShuffleHero() {
 
       {/* Hero content */}
       <div className="flex-1 flex items-center">
-        <div className="w-full px-8 md:px-10 py-8 md:py-0 grid grid-cols-1 md:grid-cols-2 items-center gap-12 max-w-7xl mx-auto">
+        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-8 py-8 md:grid-cols-2 md:px-10 md:py-0">
 
           {/* Left — text */}
           <motion.div
@@ -117,28 +117,28 @@ export function ShuffleHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="block mb-4 text-xs uppercase tracking-widest text-[#c4622d] font-semibold">
+            <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">
               Vancouver, WA · AI Education & Coaching
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-[#1a3738] leading-[0.92] mb-6">
+            <h1 className="mb-6 text-5xl font-black leading-[0.92] tracking-tight text-[var(--brand-teal)] md:text-6xl lg:text-7xl">
               I Teach People How To Use AI
             </h1>
-            <p className="text-lg text-gray-500 leading-relaxed mb-10 max-w-md">
-              You already know what you want to do. I teach you the tools to go build it — at your own pace, no tech background needed.
+            <p className="mb-10 max-w-lg text-lg leading-relaxed text-[color:var(--brand-muted)]">
+              You already know what you want to do. I help you pick the right tools, learn the fundamentals, and actually use AI without getting lost in the hype.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <a
                 href="https://calendly.com/1stbaseai/30min"
-                className="bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-4 rounded-full text-base transition-colors"
+                className="rounded-full bg-[var(--brand-gold)] px-8 py-4 text-base font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
               >
                 Book a free intro call →
               </a>
-              <a
+              <Link
                 href="/learn"
-                className="text-gray-400 hover:text-gray-700 font-medium text-sm transition-colors"
+                className="text-sm font-medium text-[var(--brand-teal)] transition-colors hover:text-[var(--brand-teal-deep)]"
               >
                 or start learning free →
-              </a>
+              </Link>
             </div>
           </motion.div>
 
@@ -148,7 +148,13 @@ export function ShuffleHero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15 }}
           >
-            <ShuffleGrid />
+            <div className="rounded-[2rem] border border-[color:var(--brand-line)] bg-[color:rgb(255_253_247_/_0.7)] p-4 shadow-[0_28px_80px_-46px_rgba(24,56,57,0.8)] backdrop-blur-sm">
+              <div className="mb-4 flex items-center justify-between rounded-[1.4rem] border border-[color:var(--brand-line)] bg-[color:rgb(255_253_247_/_0.72)] px-4 py-3 text-sm">
+                <span className="font-semibold text-[var(--brand-teal)]">Tools I teach with</span>
+                <span className="text-[color:var(--brand-muted)]">The tools change. The fundamentals don&apos;t.</span>
+              </div>
+              <ShuffleGrid />
+            </div>
           </motion.div>
         </div>
       </div>
