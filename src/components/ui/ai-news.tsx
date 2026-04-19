@@ -20,13 +20,13 @@ export function AiNews() {
   }
 
   return (
-    <section id="news" className="py-24 px-6 bg-[#fafaf8]">
+    <section id="news" className="py-24 px-6 bg-[#EAE9E0]">
       <div className="max-w-5xl mx-auto">
 
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">What&apos;s happening</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-3">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">What&apos;s happening</span>
+          <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3">
             AI is moving fast.<br className="hidden md:block" /> Here&apos;s what matters.
           </h2>
           <p className="text-gray-500 mt-3 text-lg max-w-xl mx-auto">
@@ -49,12 +49,12 @@ export function AiNews() {
               className="group bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:border-orange-300 hover:shadow-md transition-all"
             >
               <div className="flex items-start justify-between gap-3 mb-3">
-                <span className="text-xs font-bold uppercase tracking-widest text-orange-500 bg-orange-50 px-3 py-1 rounded-full">
+                <span className="text-xs font-bold uppercase tracking-widest text-[#c4622d] bg-orange-50 px-3 py-1 rounded-full">
                   {item.tag}
                 </span>
-                <ExternalLink size={14} className="text-gray-300 group-hover:text-orange-400 transition-colors shrink-0 mt-1" />
+                <ExternalLink size={14} className="text-gray-300 group-hover:text-[#c4622d] transition-colors shrink-0 mt-1" />
               </div>
-              <h3 className="font-black text-gray-900 text-lg leading-snug mb-2">{item.headline}</h3>
+              <h3 className="font-black text-[#1a3738] text-lg leading-snug mb-2">{item.headline}</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4">{item.summary}</p>
               <p className="text-xs text-gray-300">{item.source} · {item.date}</p>
             </motion.a>

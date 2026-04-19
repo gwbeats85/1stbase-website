@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import { LogoMark } from "@/components/ui/logo-mark";
 
 const socialLinks = [
   {
@@ -52,7 +53,6 @@ interface Props {
 }
 
 export function AboutModal({ isOpen, onClose }: Props) {
-  // Close on Escape
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") onClose();
@@ -61,7 +61,6 @@ export function AboutModal({ isOpen, onClose }: Props) {
     return () => window.removeEventListener("keydown", onKey);
   }, [isOpen, onClose]);
 
-  // Lock scroll
   useEffect(() => {
     if (isOpen) document.body.style.overflow = "hidden";
     else document.body.style.overflow = "";
@@ -79,7 +78,7 @@ export function AboutModal({ isOpen, onClose }: Props) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-[#0e2829]/80 backdrop-blur-sm z-50"
             onClick={onClose}
           />
 
@@ -90,46 +89,51 @@ export function AboutModal({ isOpen, onClose }: Props) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.97 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg mx-4"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-lg px-4"
           >
-            <div className="relative bg-gray-950 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="relative bg-[#255253] rounded-3xl overflow-hidden shadow-2xl border border-[#2e6364]">
 
-              {/* Orange accent bar */}
-              <div className="h-1.5 w-full bg-gradient-to-r from-orange-500 via-orange-400 to-orange-600" />
+              {/* Watermark */}
+              <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden="true">
+                <LogoMark color="#EAE9E0" size={340} className="absolute -right-16 -bottom-16 opacity-[0.06]" />
+              </div>
+
+              {/* Terracotta accent bar */}
+              <div className="h-1 w-full bg-[#c4622d]" />
 
               {/* Close button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 text-gray-500 hover:text-white transition-colors p-1.5 rounded-full hover:bg-white/10"
+                className="absolute top-4 right-4 text-[#EAE9E0]/40 hover:text-[#EAE9E0] transition-colors p-1.5 rounded-full hover:bg-[#EAE9E0]/10"
               >
                 <X size={18} />
               </button>
 
-              <div className="px-8 pt-8 pb-10">
+              <div className="relative px-8 pt-8 pb-10">
                 {/* Label */}
-                <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Your guide</span>
+                <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Your guide</span>
 
                 {/* Name */}
-                <h2 className="text-5xl font-black text-white mt-3 mb-1 leading-none">
+                <h2 className="text-5xl font-black text-[#EAE9E0] mt-3 mb-1 leading-none">
                   Hey, I&apos;m Will.
                 </h2>
-                <p className="text-orange-400 text-sm font-semibold mb-6">Vancouver, WA · @1stbaseai</p>
+                <p className="text-[#c4622d] text-sm font-semibold mb-6">Vancouver, WA · @1stbaseai</p>
 
                 {/* Bio */}
-                <p className="text-gray-400 text-base leading-relaxed mb-8">
+                <p className="text-[#EAE9E0]/70 text-base leading-relaxed mb-8">
                   I&apos;m deep into AI and I love showing people how to actually use it. You already know what you want to do — I just teach you the tools to go build it yourself. No tech background needed. Just curiosity.
                 </p>
 
                 {/* Stats row */}
-                <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="grid grid-cols-3 gap-3 mb-8">
                   {[
                     { value: "1-on-1", label: "Coaching" },
                     { value: "Weekly", label: "Newsletter" },
                     { value: "Free", label: "Community" },
                   ].map((stat) => (
-                    <div key={stat.label} className="bg-white/5 rounded-2xl px-4 py-4 text-center border border-white/5">
-                      <div className="text-white font-black text-lg">{stat.value}</div>
-                      <div className="text-gray-500 text-xs mt-0.5">{stat.label}</div>
+                    <div key={stat.label} className="bg-[#1a3738] rounded-2xl px-4 py-4 text-center border border-[#2e6364]">
+                      <div className="text-[#EAE9E0] font-black text-lg">{stat.value}</div>
+                      <div className="text-[#EAE9E0]/40 text-xs mt-0.5">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -143,7 +147,7 @@ export function AboutModal({ isOpen, onClose }: Props) {
                       target="_blank"
                       rel="noopener noreferrer"
                       title={link.label}
-                      className="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-orange-400 hover:border-orange-400/50 transition-all"
+                      className="w-9 h-9 rounded-xl bg-[#1a3738] border border-[#2e6364] flex items-center justify-center text-[#EAE9E0]/50 hover:text-[#c4622d] hover:border-[#c4622d]/50 transition-all"
                     >
                       {link.icon}
                     </a>
@@ -156,13 +160,13 @@ export function AboutModal({ isOpen, onClose }: Props) {
                     href="https://calendly.com/1stbaseai/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 text-center bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-full text-sm transition-colors"
+                    className="flex-1 text-center bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-6 py-3 rounded-full text-sm transition-colors"
                   >
                     Book a free intro call →
                   </a>
                   <a
                     href="mailto:juantacosancho@gmail.com"
-                    className="flex-1 text-center border border-white/10 hover:border-orange-400/50 hover:text-orange-400 text-gray-400 font-semibold px-6 py-3 rounded-full text-sm transition-all"
+                    className="flex-1 text-center border border-[#2e6364] hover:border-[#c4622d]/60 text-[#EAE9E0]/60 hover:text-[#EAE9E0] font-semibold px-6 py-3 rounded-full text-sm transition-all"
                   >
                     Send me a message
                   </a>

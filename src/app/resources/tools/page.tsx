@@ -71,14 +71,14 @@ export default function ToolsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Tools Directory</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Tools Directory</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             AI Tools Guide
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -103,7 +103,7 @@ export default function ToolsPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search tools, providers, use cases..."
-              className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+              className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[#1a3738] placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
             />
             {query && (
               <button
@@ -123,7 +123,7 @@ export default function ToolsPage() {
                 onClick={() => setActiveFilter(f.key)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeFilter === f.key
-                    ? "bg-gray-900 text-white"
+                    ? "bg-[#255253] text-white"
                     : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
                 }`}
               >
@@ -137,7 +137,7 @@ export default function ToolsPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === cat
-                    ? "bg-orange-500 text-white"
+                    ? "bg-[#c4622d] text-white"
                     : "bg-white border border-gray-200 text-gray-600 hover:border-orange-300"
                 }`}
               >
@@ -163,7 +163,7 @@ export default function ToolsPage() {
             <p className="text-sm">Try a different search or clear your filters</p>
             <button
               onClick={() => { setQuery(""); setActiveFilter("all"); setActiveCategory("All"); }}
-              className="mt-4 text-sm font-semibold text-orange-500 hover:text-orange-600"
+              className="mt-4 text-sm font-semibold text-[#c4622d] hover:text-[#a8521f]"
             >
               Clear all filters
             </button>
@@ -175,7 +175,7 @@ export default function ToolsPage() {
               return (
                 <div
                   key={tool.id}
-                  className="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:border-orange-200 hover:shadow-md transition-all"
+                  className="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#e8b99a] hover:shadow-md transition-all"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
@@ -193,12 +193,12 @@ export default function ToolsPage() {
                           {audienceLabel[tool.audience]}
                         </span>
                         {tool.featured && (
-                          <span className="text-xs font-semibold text-orange-500 bg-orange-50 px-2 py-0.5 rounded-full">
+                          <span className="text-xs font-semibold text-[#c4622d] bg-orange-50 px-2 py-0.5 rounded-full">
                             Featured
                           </span>
                         )}
                       </div>
-                      <h2 className="font-bold text-gray-900 group-hover:text-orange-500 transition-colors">
+                      <h2 className="font-bold text-[#1a3738] group-hover:text-[#c4622d] transition-colors">
                         {tool.title}
                       </h2>
                       {tool.provider && (
@@ -209,7 +209,7 @@ export default function ToolsPage() {
                       <button
                         onClick={() => toggle(tool.id)}
                         className={`ml-2 p-1.5 rounded-lg transition-colors shrink-0 ${
-                          saved ? "text-orange-500 bg-orange-50" : "text-gray-300 hover:text-gray-500"
+                          saved ? "text-[#c4622d] bg-orange-50" : "text-gray-300 hover:text-gray-500"
                         }`}
                         title={saved ? "Saved" : "Save this tool"}
                       >
@@ -227,7 +227,7 @@ export default function ToolsPage() {
                       <button
                         key={tag}
                         onClick={() => setActiveCategory(tag)}
-                        className="text-xs text-gray-400 bg-gray-50 hover:bg-orange-50 hover:text-orange-500 px-2 py-0.5 rounded-full transition-colors"
+                        className="text-xs text-gray-400 bg-gray-50 hover:bg-orange-50 hover:text-[#c4622d] px-2 py-0.5 rounded-full transition-colors"
                       >
                         {tag}
                       </button>
@@ -242,7 +242,7 @@ export default function ToolsPage() {
                           href={tool.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs font-semibold text-orange-500 hover:text-orange-600 transition-colors"
+                          className="text-xs font-semibold text-[#c4622d] hover:text-[#a8521f] transition-colors"
                         >
                           Open ↗
                         </a>
@@ -256,14 +256,14 @@ export default function ToolsPage() {
         )}
 
         {/* Bottom CTA */}
-        <div className="mt-16 p-8 bg-gray-900 rounded-3xl text-center">
+        <div className="mt-16 p-8 bg-[#255253] rounded-3xl text-center">
           <p className="text-white font-bold text-xl mb-2">Can&apos;t decide which tool to start with?</p>
           <p className="text-gray-400 mb-6 text-sm max-w-md mx-auto">
             Book a free 30-min call — I&apos;ll build your personal AI toolkit based on your exact situation.
           </p>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="inline-block bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
           >
             Book a free call →
           </a>

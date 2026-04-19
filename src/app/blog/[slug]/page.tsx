@@ -24,7 +24,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <SiteNav sticky activePage="blog" />
 
       {/* Article */}
@@ -39,10 +39,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
         {/* Meta */}
         <div className="mb-8">
-          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-orange-500 bg-orange-50 px-2.5 py-1 rounded-full mb-4">
+          <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#c4622d] bg-orange-50 px-2.5 py-1 rounded-full mb-4">
             {post.tag}
           </span>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 leading-[0.95] mb-4">
+          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-[#1a3738] leading-[0.95] mb-4">
             {post.title}
           </h1>
           <div className="flex items-center gap-3 text-sm text-gray-400">
@@ -60,10 +60,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           {post.content.map((block, i) => (
             <div key={i}>
               {block.heading && (
-                <h2 className="text-xl font-bold text-gray-900 mb-2">{block.heading}</h2>
+                <h2 className="text-xl font-bold text-[#1a3738] mb-2">{block.heading}</h2>
               )}
               {block.quote && (
-                <blockquote className="border-l-4 border-orange-500 pl-5 my-2 text-gray-500 italic text-lg">
+                <blockquote className="border-l-4 border-[#c4622d] pl-5 my-2 text-gray-500 italic text-lg">
                   {block.quote}
                 </blockquote>
               )}
@@ -74,7 +74,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
                 <ul className="mt-2 space-y-2">
                   {block.list.map((item, j) => (
                     <li key={j} className="flex gap-3 text-gray-600 text-lg leading-relaxed">
-                      <span className="text-orange-500 font-bold mt-0.5 shrink-0">·</span>
+                      <span className="text-[#c4622d] font-bold mt-0.5 shrink-0">·</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -85,12 +85,12 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         </div>
 
         {/* CTA */}
-        <div className="mt-16 p-8 bg-gray-900 rounded-3xl text-center">
+        <div className="mt-16 p-8 bg-[#255253] rounded-3xl text-center">
           <p className="text-white font-bold text-xl mb-2">Want help putting this into practice?</p>
           <p className="text-gray-400 mb-6 text-sm">Book a free intro call — I&apos;ll show you exactly how to apply this to your situation.</p>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-3.5 rounded-full transition-colors"
+            className="inline-block bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-3.5 rounded-full transition-colors"
           >
             Book a free call →
           </a>

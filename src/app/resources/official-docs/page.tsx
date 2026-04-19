@@ -9,14 +9,14 @@ export const metadata = {
 
 export default function OfficialDocsPage() {
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Official Docs</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Official Docs</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             Official Docs Hub
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -33,12 +33,12 @@ export default function OfficialDocsPage() {
                 {doc.logo ? (
                   <img src={doc.logo} alt={doc.provider} className="w-9 h-9 object-contain" />
                 ) : (
-                  <div className="w-9 h-9 rounded-xl bg-gray-900 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-xl bg-[#255253] flex items-center justify-center">
                     <span className="text-white font-black text-sm">{doc.provider[0]}</span>
                   </div>
                 )}
                 <div>
-                  <h2 className="font-black text-gray-900 text-lg">{doc.provider}</h2>
+                  <h2 className="font-black text-[#1a3738] text-lg">{doc.provider}</h2>
                   <p className="text-gray-400 text-sm">{doc.description}</p>
                 </div>
               </div>
@@ -59,12 +59,12 @@ export default function OfficialDocsPage() {
                       } ${isOdd && !isLast ? "border-l border-gray-50" : ""}`}
                     >
                       <div className="flex-1">
-                        <p className="font-semibold text-gray-900 text-sm group-hover:text-orange-500 transition-colors">
+                        <p className="font-semibold text-[#1a3738] text-sm group-hover:text-[#c4622d] transition-colors">
                           {section.label}
                         </p>
                         <p className="text-gray-400 text-xs mt-0.5">{section.description}</p>
                       </div>
-                      <span className="text-gray-300 group-hover:text-orange-400 text-sm mt-0.5 transition-colors shrink-0">
+                      <span className="text-gray-300 group-hover:text-[#c4622d] text-sm mt-0.5 transition-colors shrink-0">
                         ↗
                       </span>
                     </a>
@@ -82,14 +82,14 @@ export default function OfficialDocsPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-10 p-8 bg-gray-900 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-10 p-8 bg-[#255253] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white font-black text-xl mb-1">Overwhelmed by docs?</p>
             <p className="text-gray-400 text-sm">Book a free call — I&apos;ll point you to exactly what you need to read.</p>
           </div>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
           >
             Book a call →
           </a>

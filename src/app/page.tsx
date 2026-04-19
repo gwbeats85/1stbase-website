@@ -6,6 +6,7 @@ import { Quiz } from "@/components/ui/quiz";
 import { AiNews } from "@/components/ui/ai-news";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { FloatingChat } from "@/components/ui/floating-chat";
+import { LogoMark } from "@/components/ui/logo-mark";
 
 const learnBuckets = [
   {
@@ -61,11 +62,11 @@ export default function Home() {
       <AiNews />
 
       {/* Learning Center Preview */}
-      <section id="learn" className="py-24 bg-[#fdfcfb] px-6">
+      <section id="learn" className="py-24 bg-[#EAE9E0] px-6">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Free to use</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4 tracking-tight">
+            <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Free to use</span>
+            <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3 mb-4 tracking-tight">
               Your AI Learning Center
             </h2>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
@@ -78,14 +79,14 @@ export default function Home() {
               <a
                 key={bucket.label}
                 href={bucket.href}
-                className="group flex items-start gap-5 p-6 bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-sm transition-all"
+                className="group flex items-start gap-5 p-6 bg-white border border-gray-100 rounded-2xl hover:border-[#e8b99a] hover:shadow-sm transition-all"
               >
-                <span className="text-orange-500 shrink-0 mt-0.5">{bucket.icon}</span>
+                <span className="text-[#c4622d] shrink-0 mt-0.5">{bucket.icon}</span>
                 <div>
-                  <p className="font-bold text-gray-900 group-hover:text-orange-500 transition-colors mb-1">{bucket.label}</p>
+                  <p className="font-bold text-[#1a3738] group-hover:text-[#c4622d] transition-colors mb-1">{bucket.label}</p>
                   <p className="text-gray-500 text-sm leading-relaxed">{bucket.description}</p>
                 </div>
-                <span className="text-orange-400 ml-auto shrink-0 mt-0.5">→</span>
+                <span className="text-[#c4622d] ml-auto shrink-0 mt-0.5">→</span>
               </a>
             ))}
           </div>
@@ -93,7 +94,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/learn"
-              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-700 text-white font-bold px-8 py-4 rounded-full text-sm transition-colors"
+              className="inline-flex items-center gap-2 bg-[#255253] hover:bg-[#183839] text-white font-bold px-8 py-4 rounded-full text-sm transition-colors"
             >
               Open the Learning Center →
             </a>
@@ -102,9 +103,12 @@ export default function Home() {
       </section>
 
       {/* Newsletter */}
-      <section id="newsletter" className="py-24 bg-gray-900 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Stay in the loop</span>
+      <section id="newsletter" className="relative py-24 bg-[#255253] px-6 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
+          <LogoMark color="#EAE9E0" size={600} className="absolute -left-24 -bottom-24 opacity-[0.06]" />
+        </div>
+        <div className="relative max-w-4xl mx-auto text-center">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Stay in the loop</span>
           <h2 className="text-4xl md:text-5xl font-black text-white mt-3 mb-4">
             The AI newsletter that doesn&apos;t waste your time.
           </h2>
@@ -115,12 +119,12 @@ export default function Home() {
             <input
               type="email"
               placeholder="your@email.com"
-              className="flex-1 bg-gray-800 border border-gray-700 rounded-full px-5 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors text-sm"
+              className="flex-1 bg-[#1e4546] border border-gray-700 rounded-full px-5 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-[#c4622d] transition-colors text-sm"
               required
             />
             <button
               type="submit"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full text-sm transition-colors whitespace-nowrap"
+              className="bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors whitespace-nowrap"
             >
               Subscribe Free
             </button>

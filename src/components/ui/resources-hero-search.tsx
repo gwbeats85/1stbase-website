@@ -78,11 +78,11 @@ export function ResourcesHeroSearch() {
             if (e.key === "Enter") handleSearch(query);
           }}
           placeholder="Search tools, terms, comparisons..."
-          className="flex-1 px-4 py-4 text-gray-900 placeholder-gray-400 bg-transparent outline-none text-base"
+          className="flex-1 px-4 py-4 text-[#1a3738] placeholder-gray-400 bg-transparent outline-none text-base"
         />
         <button
           onClick={() => handleSearch(query)}
-          className="mr-2 bg-orange-500 hover:bg-orange-600 text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0"
+          className="mr-2 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-5 py-2.5 rounded-xl text-sm transition-colors shrink-0"
         >
           Search
         </button>
@@ -97,7 +97,7 @@ export function ResourcesHeroSearch() {
               {suggestions.slice(0, 6).map((s) => (
                 <button
                   key={s}
-                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-lg transition-colors"
+                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#a8521f] rounded-lg transition-colors"
                   onMouseDown={() => handleSearch(s)}
                 >
                   {s}
@@ -109,7 +109,7 @@ export function ResourcesHeroSearch() {
               {filtered.map((s) => (
                 <button
                   key={s}
-                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-orange-600 rounded-lg transition-colors"
+                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-orange-50 hover:text-[#a8521f] rounded-lg transition-colors"
                   onMouseDown={() => handleSearch(s)}
                 >
                   {s}

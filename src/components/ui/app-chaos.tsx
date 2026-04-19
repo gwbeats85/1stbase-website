@@ -31,10 +31,10 @@ const rows = [
 
 export function AppChaos() {
   return (
-    <section className="py-24 px-6 bg-[#fafaf8] overflow-hidden">
+    <section className="py-24 px-6 bg-[#EAE9E0] overflow-hidden">
       <div className="text-center mb-16 max-w-2xl mx-auto">
-        <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">The Reality</span>
-        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-4">
+        <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">The Reality</span>
+        <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3 mb-4">
           This is what AI looks like right now
         </h2>
         <p className="text-gray-500 text-lg">
@@ -75,7 +75,7 @@ export function AppChaos() {
       <div className="text-center mt-12">
         <a
           href="#quiz"
-          className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide"
+          className="inline-block bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide"
         >
           Let&apos;s figure out where to start →
         </a>

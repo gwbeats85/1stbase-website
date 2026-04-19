@@ -10,15 +10,15 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <SiteNav sticky activePage="blog" />
 
       {/* Header */}
       <div className="px-8 md:px-10 pt-16 pb-12 max-w-4xl mx-auto w-full">
-        <span className="block mb-4 text-xs uppercase tracking-widest text-orange-500 font-semibold">
+        <span className="block mb-4 text-xs uppercase tracking-widest text-[#c4622d] font-semibold">
           The Blog
         </span>
-        <h1 className="text-5xl md:text-6xl font-black tracking-tight text-gray-900 leading-[0.95] mb-4">
+        <h1 className="text-5xl md:text-6xl font-black tracking-tight text-[#1a3738] leading-[0.95] mb-4">
           AI tips for real people
         </h1>
         <p className="text-lg text-gray-500 max-w-lg">
@@ -37,7 +37,7 @@ export default function BlogPage() {
             >
               {/* Tag + date */}
               <div className="md:w-48 shrink-0">
-                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-orange-500 bg-orange-50 px-2.5 py-1 rounded-full mb-2">
+                <span className="inline-block text-xs font-semibold uppercase tracking-wider text-[#c4622d] bg-orange-50 px-2.5 py-1 rounded-full mb-2">
                   {post.tag}
                 </span>
                 <p className="text-sm text-gray-400">{post.date}</p>
@@ -46,11 +46,11 @@ export default function BlogPage() {
 
               {/* Content */}
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors leading-snug">
+                <h2 className="text-2xl font-bold text-[#1a3738] mb-2 group-hover:text-[#c4622d] transition-colors leading-snug">
                   {post.title}
                 </h2>
                 <p className="text-gray-500 leading-relaxed">{post.excerpt}</p>
-                <span className="inline-block mt-4 text-sm font-semibold text-orange-500">
+                <span className="inline-block mt-4 text-sm font-semibold text-[#c4622d]">
                   Read →
                 </span>
               </div>

@@ -16,7 +16,7 @@ export function FeaturedResourceCard({ resource }: { resource: Resource }) {
   };
 
   return (
-    <div className="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:border-orange-200 hover:shadow-md transition-all">
+    <div className="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#e8b99a] hover:shadow-md transition-all">
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <div className="flex items-center gap-2 mb-1.5">
@@ -32,7 +32,7 @@ export function FeaturedResourceCard({ resource }: { resource: Resource }) {
               {audienceLabel[resource.audience]}
             </span>
           </div>
-          <h3 className="font-bold text-gray-900 group-hover:text-orange-500 transition-colors">
+          <h3 className="font-bold text-[#1a3738] group-hover:text-[#c4622d] transition-colors">
             {resource.title}
           </h3>
         </div>
@@ -40,7 +40,7 @@ export function FeaturedResourceCard({ resource }: { resource: Resource }) {
           <button
             onClick={() => toggle(resource.id)}
             className={`ml-3 p-1.5 rounded-lg transition-colors shrink-0 ${
-              saved ? "text-orange-500 bg-orange-50" : "text-gray-300 hover:text-gray-500"
+              saved ? "text-[#c4622d] bg-orange-50" : "text-gray-300 hover:text-gray-500"
             }`}
             title={saved ? "Saved" : "Save"}
           >
@@ -66,7 +66,7 @@ export function FeaturedResourceCard({ resource }: { resource: Resource }) {
             href={resource.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-semibold text-orange-500 hover:text-orange-600 transition-colors shrink-0 ml-3"
+            className="text-xs font-semibold text-[#c4622d] hover:text-[#a8521f] transition-colors shrink-0 ml-3"
           >
             Open ↗
           </a>

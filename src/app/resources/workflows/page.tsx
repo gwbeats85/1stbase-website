@@ -21,13 +21,13 @@ const difficultyLabels = {
 
 export default function WorkflowsPage() {
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Workflows</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Workflows</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             AI Workflows
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -50,8 +50,8 @@ export default function WorkflowsPage() {
                   </span>
                   <span className="text-xs text-gray-400">{workflow.monthly_cost_estimate}</span>
                 </div>
-                <h2 className="text-2xl font-black text-gray-900 mb-2">{workflow.title}</h2>
-                <p className="text-sm text-orange-500 font-medium mb-3">For: {workflow.persona}</p>
+                <h2 className="text-2xl font-black text-[#1a3738] mb-2">{workflow.title}</h2>
+                <p className="text-sm text-[#c4622d] font-medium mb-3">For: {workflow.persona}</p>
                 <p className="text-gray-500 text-sm leading-relaxed">{workflow.summary}</p>
               </div>
 
@@ -62,11 +62,11 @@ export default function WorkflowsPage() {
                   <div className="space-y-3">
                     {workflow.tools.map((tool, i) => (
                       <div key={tool.name} className="flex gap-3">
-                        <span className="w-6 h-6 rounded-full bg-orange-50 text-orange-500 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                        <span className="w-6 h-6 rounded-full bg-orange-50 text-[#c4622d] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
                           {i + 1}
                         </span>
                         <div>
-                          <p className="font-bold text-gray-900 text-sm">{tool.name}</p>
+                          <p className="font-bold text-[#1a3738] text-sm">{tool.name}</p>
                           <p className="text-gray-500 text-xs mt-0.5">{tool.role}</p>
                           <p className="text-xs text-gray-300 mt-0.5">{tool.cost}</p>
                         </div>
@@ -81,7 +81,7 @@ export default function WorkflowsPage() {
                   <div className="space-y-3">
                     {workflow.setup_order.map((step, i) => (
                       <div key={i} className="flex gap-3 text-sm text-gray-600">
-                        <span className="text-orange-400 font-bold shrink-0">→</span>
+                        <span className="text-[#c4622d] font-bold shrink-0">→</span>
                         {step}
                       </div>
                     ))}
@@ -112,14 +112,14 @@ export default function WorkflowsPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-10 p-8 bg-gray-900 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-10 p-8 bg-[#255253] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white font-black text-xl mb-1">Want a custom stack for your situation?</p>
             <p className="text-gray-400 text-sm">30-minute call — I&apos;ll build your personalized AI toolkit.</p>
           </div>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
           >
             Book a call →
           </a>

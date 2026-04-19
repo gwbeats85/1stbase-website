@@ -116,19 +116,19 @@ const FloatingIconsHero = React.forwardRef<
       ref={ref}
       onMouseMove={handleMouseMove}
       className={cn(
-        'relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#fdfcfb]',
+        'relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#EAE9E0]',
         className
       )}
       {...props}
     >
       {/* Nav */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-10 py-7 z-20">
-        <div className="font-black text-xl tracking-tight text-gray-900">
-          1stbaseai<span className="text-orange-500">.com</span>
+        <div className="font-black text-xl tracking-tight text-[#1a3738]">
+          1stbaseai<span className="text-[#c4622d]">.com</span>
         </div>
         <a
           href="#quiz"
-          className="bg-gray-900 hover:bg-gray-700 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
+          className="bg-[#255253] hover:bg-[#183839] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
         >
           Book a session
         </a>
@@ -148,17 +148,17 @@ const FloatingIconsHero = React.forwardRef<
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-xs uppercase tracking-widest text-orange-500 font-semibold mb-6">
+          <span className="inline-block text-xs uppercase tracking-widest text-[#c4622d] font-semibold mb-6">
             Vancouver, WA · AI Education & Coaching
           </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-[0.9] mb-6">
+          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-[#1a3738] leading-[0.9] mb-6">
             {title}
           </h1>
           <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
             {subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="px-8 py-6 text-base font-bold rounded-full bg-orange-500 hover:bg-orange-600 text-white border-0">
+            <Button asChild size="lg" className="px-8 py-6 text-base font-bold rounded-full bg-[#c4622d] hover:bg-[#a8521f] text-white border-0">
               <a href={ctaHref}>{ctaText}</a>
             </Button>
             {secondaryText && secondaryHref && (

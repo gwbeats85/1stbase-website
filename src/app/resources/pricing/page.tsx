@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-12 w-full">
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Pricing</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Pricing</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             AI Pricing Guide
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -41,12 +41,12 @@ export default function PricingPage() {
                 {row.logo ? (
                   <img src={row.logo} alt={row.tool} className="w-9 h-9 object-contain" />
                 ) : (
-                  <div className="w-9 h-9 rounded-xl bg-gray-900 flex items-center justify-center">
+                  <div className="w-9 h-9 rounded-xl bg-[#255253] flex items-center justify-center">
                     <span className="text-white font-black text-sm">{row.tool[0]}</span>
                   </div>
                 )}
                 <div>
-                  <h2 className="font-black text-gray-900">{row.tool}</h2>
+                  <h2 className="font-black text-[#1a3738]">{row.tool}</h2>
                   <p className="text-xs text-gray-400">{row.provider}</p>
                 </div>
                 {row.free_tier && (
@@ -61,18 +61,18 @@ export default function PricingPage() {
                 {/* Free */}
                 <div className="p-5">
                   <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Free</p>
-                  <p className="text-2xl font-black text-gray-900 mb-3">$0</p>
+                  <p className="text-2xl font-black text-[#1a3738] mb-3">$0</p>
                   <p className="text-xs text-gray-500 leading-relaxed">{row.free_tier_limits}</p>
                 </div>
 
                 {/* Pro */}
                 <div className="p-5">
-                  <p className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-3">Pro</p>
-                  <p className="text-2xl font-black text-gray-900 mb-3">{row.pro_price}</p>
+                  <p className="text-xs font-bold text-[#c4622d] uppercase tracking-widest mb-3">Pro</p>
+                  <p className="text-2xl font-black text-[#1a3738] mb-3">{row.pro_price}</p>
                   <ul className="space-y-1.5">
                     {row.pro_features.map((feature) => (
                       <li key={feature} className="flex gap-2 text-xs text-gray-600">
-                        <span className="text-orange-400 font-bold shrink-0">✓</span>
+                        <span className="text-[#c4622d] font-bold shrink-0">✓</span>
                         {feature}
                       </li>
                     ))}
@@ -104,16 +104,16 @@ export default function PricingPage() {
 
         {/* Full comparison table - desktop */}
         <div className="mb-12">
-          <h2 className="text-xl font-black text-gray-900 mb-4">Quick comparison</h2>
+          <h2 className="text-xl font-black text-[#1a3738] mb-4">Quick comparison</h2>
           <div className="overflow-x-auto rounded-2xl border border-gray-100">
             <table className="w-full text-sm bg-white">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="text-left px-6 py-4 font-bold text-gray-900">Tool</th>
-                  <th className="text-center px-6 py-4 font-bold text-gray-900">Free Tier</th>
-                  <th className="text-center px-6 py-4 font-bold text-gray-900">Pro Price</th>
-                  <th className="text-center px-6 py-4 font-bold text-gray-900">API</th>
-                  <th className="text-left px-6 py-4 font-bold text-gray-900">Best for</th>
+                  <th className="text-left px-6 py-4 font-bold text-[#1a3738]">Tool</th>
+                  <th className="text-center px-6 py-4 font-bold text-[#1a3738]">Free Tier</th>
+                  <th className="text-center px-6 py-4 font-bold text-[#1a3738]">Pro Price</th>
+                  <th className="text-center px-6 py-4 font-bold text-[#1a3738]">API</th>
+                  <th className="text-left px-6 py-4 font-bold text-[#1a3738]">Best for</th>
                 </tr>
               </thead>
               <tbody>
@@ -124,11 +124,11 @@ export default function PricingPage() {
                         {row.logo ? (
                           <img src={row.logo} alt={row.tool} className="w-6 h-6 object-contain" />
                         ) : (
-                          <div className="w-6 h-6 rounded bg-gray-900 flex items-center justify-center">
+                          <div className="w-6 h-6 rounded bg-[#255253] flex items-center justify-center">
                             <span className="text-white text-xs font-black">{row.tool[0]}</span>
                           </div>
                         )}
-                        <span className="font-semibold text-gray-900">{row.tool}</span>
+                        <span className="font-semibold text-[#1a3738]">{row.tool}</span>
                       </div>
                     </td>
                     <td className="px-6 py-4 text-center">
@@ -138,7 +138,7 @@ export default function PricingPage() {
                         <span className="text-gray-300">—</span>
                       )}
                     </td>
-                    <td className="px-6 py-4 text-center font-semibold text-gray-900">{row.pro_price}</td>
+                    <td className="px-6 py-4 text-center font-semibold text-[#1a3738]">{row.pro_price}</td>
                     <td className="px-6 py-4 text-center">
                       {row.api_available ? (
                         <span className="text-green-500 font-bold">✓</span>
@@ -155,14 +155,14 @@ export default function PricingPage() {
         </div>
 
         {/* CTA */}
-        <div className="p-8 bg-gray-900 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-8 bg-[#255253] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white font-black text-xl mb-1">Not sure which plan to get?</p>
             <p className="text-gray-400 text-sm">Most people don&apos;t need to pay anything at first. Let me help you figure out what makes sense for your budget.</p>
           </div>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
           >
             Book a free call →
           </a>

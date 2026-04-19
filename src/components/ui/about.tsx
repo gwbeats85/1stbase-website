@@ -50,7 +50,7 @@ const socialLinks = [
 
 export function About() {
   return (
-    <section id="about" className="bg-gray-900 py-28 px-6">
+    <section id="about" className="bg-[#255253] py-28 px-6">
       <div className="max-w-3xl mx-auto flex flex-col gap-8">
 
         <motion.div
@@ -58,7 +58,7 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-xs uppercase tracking-widest text-orange-400 font-semibold">Your guide</span>
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Your guide</span>
           <h2 className="text-5xl md:text-7xl font-black text-white mt-4 mb-6 leading-tight">
             Hey, I&apos;m Will.
           </h2>
@@ -100,13 +100,13 @@ export function About() {
         >
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide"
+            className="inline-flex items-center justify-center bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide"
           >
             Book a free intro call
           </a>
           <a
             href="mailto:juantacosancho@gmail.com"
-            className="inline-flex items-center justify-center border border-gray-700 hover:border-orange-400 hover:text-orange-400 text-gray-400 font-semibold px-8 py-4 rounded-full transition-all text-sm"
+            className="inline-flex items-center justify-center border border-gray-700 hover:border-orange-400 hover:text-[#c4622d] text-gray-400 font-semibold px-8 py-4 rounded-full transition-all text-sm"
           >
             Send me a message
           </a>

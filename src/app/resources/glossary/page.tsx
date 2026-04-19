@@ -46,14 +46,14 @@ export default function GlossaryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Glossary</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Glossary</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             AI Glossary
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -71,7 +71,7 @@ export default function GlossaryPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search terms..."
-            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[#1a3738] placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
           />
         </div>
 
@@ -83,7 +83,7 @@ export default function GlossaryPage() {
               onClick={() => setActiveTag(tag)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                 activeTag === tag
-                  ? "bg-gray-900 text-white"
+                  ? "bg-[#255253] text-white"
                   : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
               }`}
             >
@@ -97,7 +97,7 @@ export default function GlossaryPage() {
           <button
             onClick={() => setActiveLetter("All")}
             className={`w-7 h-7 rounded-lg text-xs font-bold transition-all ${
-              activeLetter === "All" ? "bg-orange-500 text-white" : "text-gray-400 hover:text-gray-700"
+              activeLetter === "All" ? "bg-[#c4622d] text-white" : "text-gray-400 hover:text-gray-700"
             }`}
           >
             All
@@ -111,7 +111,7 @@ export default function GlossaryPage() {
                 disabled={!available}
                 className={`w-7 h-7 rounded-lg text-xs font-bold transition-all ${
                   activeLetter === letter
-                    ? "bg-orange-500 text-white"
+                    ? "bg-[#c4622d] text-white"
                     : available
                     ? "text-gray-600 hover:bg-gray-100"
                     : "text-gray-200 cursor-not-allowed"
@@ -135,7 +135,7 @@ export default function GlossaryPage() {
             <p className="font-medium text-gray-600">No terms found</p>
             <button
               onClick={() => { setQuery(""); setActiveTag("all"); setActiveLetter("All"); }}
-              className="mt-3 text-sm text-orange-500 font-semibold"
+              className="mt-3 text-sm text-[#c4622d] font-semibold"
             >
               Clear filters
             </button>
@@ -154,7 +154,7 @@ export default function GlossaryPage() {
                     onClick={() => toggleExpand(term.id)}
                   >
                     <div className="flex items-center gap-4 flex-1 min-w-0">
-                      <span className="font-black text-gray-900 text-base shrink-0 group-hover:text-orange-500 transition-colors">
+                      <span className="font-black text-[#1a3738] text-base shrink-0 group-hover:text-[#c4622d] transition-colors">
                         {term.term}
                       </span>
                       <span className="text-gray-400 text-sm leading-snug truncate hidden md:block">
@@ -185,7 +185,7 @@ export default function GlossaryPage() {
                       <p className="text-gray-700 text-sm leading-relaxed mb-4">{term.explanation}</p>
                       {term.example && (
                         <div className="bg-white rounded-xl p-4 border border-gray-100 mb-4">
-                          <p className="text-xs font-bold text-orange-500 uppercase tracking-widest mb-2">Example</p>
+                          <p className="text-xs font-bold text-[#c4622d] uppercase tracking-widest mb-2">Example</p>
                           <p className="text-sm text-gray-600 whitespace-pre-wrap">{term.example}</p>
                         </div>
                       )}
@@ -204,7 +204,7 @@ export default function GlossaryPage() {
                                       setExpanded(new Set([found.id]));
                                     }
                                   }}
-                                  className="text-xs text-orange-500 bg-orange-50 hover:bg-orange-100 px-3 py-1 rounded-full font-medium transition-colors"
+                                  className="text-xs text-[#c4622d] bg-orange-50 hover:bg-orange-100 px-3 py-1 rounded-full font-medium transition-colors"
                                 >
                                   {found ? found.term : rel}
                                 </button>

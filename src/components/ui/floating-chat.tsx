@@ -39,9 +39,9 @@ export function FloatingChat() {
             className="w-80 rounded-3xl overflow-hidden shadow-2xl border border-gray-100 bg-white"
           >
             {/* Header */}
-            <div className="bg-gray-900 px-5 py-4 flex items-center justify-between">
+            <div className="bg-[#255253] px-5 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-orange-500 flex items-center justify-center text-white font-black text-sm">W</div>
+                <div className="w-9 h-9 rounded-full bg-[#c4622d] flex items-center justify-center text-white font-black text-sm">W</div>
                 <div>
                   <p className="text-white font-bold text-sm leading-none">Will</p>
                   <p className="text-gray-400 text-xs mt-0.5">1st Base AI · usually replies fast</p>
@@ -57,13 +57,13 @@ export function FloatingChat() {
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.from === "user" ? "justify-end" : "items-end gap-2"}`}>
                   {msg.from === "will" && (
-                    <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center text-white font-black text-xs shrink-0">W</div>
+                    <div className="w-6 h-6 rounded-full bg-[#c4622d] flex items-center justify-center text-white font-black text-xs shrink-0">W</div>
                   )}
                   <div
                     className={`text-sm rounded-2xl px-4 py-2.5 max-w-[80%] ${
                       msg.from === "user"
                         ? "bg-blue-500 text-white rounded-br-sm"
-                        : "bg-gray-100 text-gray-900 rounded-bl-sm"
+                        : "bg-gray-100 text-[#1a3738] rounded-bl-sm"
                     }`}
                   >
                     {msg.text}
@@ -99,7 +99,7 @@ export function FloatingChat() {
         onClick={() => setOpen((v) => !v)}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-orange-500 hover:bg-orange-600 shadow-lg flex items-center justify-center text-white transition-colors"
+        className="w-14 h-14 rounded-full bg-[#c4622d] hover:bg-[#a8521f] shadow-lg flex items-center justify-center text-white transition-colors"
       >
         <AnimatePresence mode="wait">
           {open ? (

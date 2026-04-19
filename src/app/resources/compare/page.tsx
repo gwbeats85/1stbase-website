@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function ComparePage() {
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Compare</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Compare</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             Tool Comparisons
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -35,7 +35,7 @@ export default function ComparePage() {
                     </span>
                   ))}
                 </div>
-                <h2 className="text-2xl font-black text-gray-900 mb-2">{comp.title}</h2>
+                <h2 className="text-2xl font-black text-[#1a3738] mb-2">{comp.title}</h2>
                 <p className="text-gray-500 text-sm">{comp.summary}</p>
                 <div className="mt-2 text-xs text-gray-300">Updated {comp.updated_at}</div>
               </div>
@@ -50,10 +50,10 @@ export default function ComparePage() {
                       className="flex items-start gap-4 p-4 rounded-xl bg-gray-50 hover:bg-orange-50 transition-colors"
                     >
                       <div className="flex-1">
-                        <p className="font-semibold text-gray-900 text-sm">{item.use_case}</p>
+                        <p className="font-semibold text-[#1a3738] text-sm">{item.use_case}</p>
                         <p className="text-gray-400 text-xs mt-0.5">{item.reason}</p>
                       </div>
-                      <span className="shrink-0 text-sm font-bold text-orange-500 bg-orange-50 px-3 py-1 rounded-full whitespace-nowrap">
+                      <span className="shrink-0 text-sm font-bold text-[#c4622d] bg-orange-50 px-3 py-1 rounded-full whitespace-nowrap">
                         {item.winner}
                       </span>
                     </div>
@@ -93,14 +93,14 @@ export default function ComparePage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-10 p-8 bg-gray-900 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-10 p-8 bg-[#255253] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white font-black text-xl mb-1">Still not sure which to pick?</p>
             <p className="text-gray-400 text-sm">Tell me your situation in 30 minutes and I&apos;ll give you a clear answer.</p>
           </div>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
           >
             Book a call →
           </a>

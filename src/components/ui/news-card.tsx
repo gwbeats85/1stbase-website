@@ -5,7 +5,7 @@ const categoryColors: Record<string, string> = {
   research: "bg-purple-50 text-purple-600",
   policy: "bg-amber-50 text-amber-600",
   industry: "bg-green-50 text-green-600",
-  tutorial: "bg-orange-50 text-orange-600",
+  tutorial: "bg-orange-50 text-[#a8521f]",
 };
 
 const categoryLabels: Record<string, string> = {
@@ -22,7 +22,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col bg-white border border-gray-100 rounded-2xl p-5 hover:border-orange-200 hover:shadow-md transition-all"
+      className="group flex flex-col bg-white border border-gray-100 rounded-2xl p-5 hover:border-[#e8b99a] hover:shadow-md transition-all"
     >
       <div className="flex items-center gap-2 mb-3">
         <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${categoryColors[item.category] ?? "bg-gray-100 text-gray-500"}`}>
@@ -32,7 +32,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
           <span className="text-xs font-medium text-gray-400">Official</span>
         )}
       </div>
-      <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2 group-hover:text-orange-500 transition-colors">
+      <h3 className="font-bold text-[#1a3738] text-sm leading-snug mb-2 group-hover:text-[#c4622d] transition-colors">
         {item.title}
       </h3>
       <p className="text-gray-500 text-xs leading-relaxed flex-1">{item.summary}</p>

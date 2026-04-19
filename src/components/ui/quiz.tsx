@@ -102,8 +102,8 @@ export function Quiz() {
     <section id="quiz" className="py-24 px-6 bg-white">
       <div className="max-w-xl mx-auto">
         <div className="text-center mb-12">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Quick Questionnaire</span>
-          <h2 className="text-4xl font-black text-gray-900 mt-3">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Quick Questionnaire</span>
+          <h2 className="text-4xl font-black text-[#1a3738] mt-3">
             Let&apos;s find your starting point
           </h2>
           <p className="text-gray-500 mt-2">4 questions. No signup. Just vibes.</p>
@@ -117,7 +117,7 @@ export function Quiz() {
                 <div
                   key={i}
                   className={`h-1 flex-1 rounded-full transition-colors duration-300 ${
-                    i <= step ? "bg-orange-500" : "bg-gray-200"
+                    i <= step ? "bg-[#c4622d]" : "bg-gray-200"
                   }`}
                 />
               ))}
@@ -131,13 +131,13 @@ export function Quiz() {
                 exit={{ opacity: 0, x: -30 }}
                 transition={{ duration: 0.25 }}
               >
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{current.question}</h3>
+                <h3 className="text-2xl font-bold text-[#1a3738] mb-6">{current.question}</h3>
                 <div className="space-y-3">
                   {current.options.map((option) => (
                     <button
                       key={option}
                       onClick={() => handleAnswer(option)}
-                      className="w-full text-left px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:bg-orange-50 transition-all duration-200 font-medium text-gray-700 hover:text-gray-900"
+                      className="w-full text-left px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:bg-orange-50 transition-all duration-200 font-medium text-gray-700 hover:text-[#1a3738]"
                     >
                       {option}
                     </button>
@@ -156,7 +156,7 @@ export function Quiz() {
                 className="text-center py-12"
               >
                 <div className="text-6xl mb-4">🦥✌️</div>
-                <h3 className="text-3xl font-black text-gray-900 mb-3">You&apos;re in.</h3>
+                <h3 className="text-3xl font-black text-[#1a3738] mb-3">You&apos;re in.</h3>
                 <p className="text-gray-500">
                   {resultType === "book"
                     ? `I'll hit you back soon. Talk soon, ${name}.`
@@ -169,7 +169,7 @@ export function Quiz() {
                 key="book"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative bg-[#fafaf8] rounded-3xl p-8 border border-gray-100"
+                className="relative bg-[#EAE9E0] rounded-3xl p-8 border border-gray-100"
               >
                 <button
                   onClick={() => { setDone(false); setStep(0); setAnswers({}); }}
@@ -179,7 +179,7 @@ export function Quiz() {
                   ✕
                 </button>
                 <div className="text-4xl mb-4">🦥</div>
-                <h3 className="text-2xl font-black text-gray-900 mb-3">Let&apos;s make it happen.</h3>
+                <h3 className="text-2xl font-black text-[#1a3738] mb-3">Let&apos;s make it happen.</h3>
                 <p className="text-gray-600 mb-8">
                   Drop your info and I&apos;ll reach out to set something up — a quick call, a session, whatever makes sense for where you&apos;re at.
                 </p>
@@ -202,7 +202,7 @@ export function Quiz() {
                   />
                   <button
                     type="submit"
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide"
+                    className="w-full bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold py-4 rounded-xl transition-colors text-sm uppercase tracking-wide"
                   >
                     Hit me up →
                   </button>
@@ -214,14 +214,14 @@ export function Quiz() {
                 </div>
                 <a
                   href="https://calendly.com/1stbaseai/30min"
-                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-orange-500 font-bold text-gray-700 transition-all"
+                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-[#c4622d] font-bold text-gray-700 transition-all"
                 >
                   <span>Text me directly</span>
                   <span className="text-sm font-normal text-gray-400">(432) 279-0502</span>
                 </a>
                 <p className="text-center text-xs text-gray-400 mt-5">
                   Not ready to commit?{" "}
-                  <a href="#meetup" className="text-orange-500 hover:underline font-medium">
+                  <a href="#meetup" className="text-[#c4622d] hover:underline font-medium">
                     Join the newsletter instead →
                   </a>
                 </p>
@@ -232,7 +232,7 @@ export function Quiz() {
                 key="explore"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="relative bg-[#fafaf8] rounded-3xl p-8 border border-gray-100"
+                className="relative bg-[#EAE9E0] rounded-3xl p-8 border border-gray-100"
               >
                 <button
                   onClick={() => { setDone(false); setStep(0); setAnswers({}); }}
@@ -242,7 +242,7 @@ export function Quiz() {
                   ✕
                 </button>
                 <div className="text-4xl mb-4">🦥</div>
-                <h3 className="text-2xl font-black text-gray-900 mb-3">You&apos;re in the right place.</h3>
+                <h3 className="text-2xl font-black text-[#1a3738] mb-3">You&apos;re in the right place.</h3>
                 <p className="text-gray-600 mb-8">
                   No pressure to jump into anything. Stay in the loop — I send out a weekly AI digest with the tools worth knowing about, and I host meetups in Vancouver WA for people just like you.
                 </p>
@@ -250,7 +250,7 @@ export function Quiz() {
                 {/* Newsletter CTA */}
                 <a
                   href="#meetup"
-                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold transition-colors mb-3"
+                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold transition-colors mb-3"
                 >
                   <span>Join the weekly newsletter</span>
                   <span>→</span>
@@ -259,7 +259,7 @@ export function Quiz() {
                 {/* Text option */}
                 <a
                   href="https://calendly.com/1stbaseai/30min"
-                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-orange-500 font-bold text-gray-700 transition-all mb-3"
+                  className="flex items-center justify-between w-full px-6 py-4 rounded-2xl border-2 border-gray-200 hover:border-orange-400 hover:text-[#c4622d] font-bold text-gray-700 transition-all mb-3"
                 >
                   <span>Or just text me</span>
                   <span className="text-sm font-normal text-gray-400">(432) 279-0502</span>
@@ -273,7 +273,7 @@ export function Quiz() {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 text-center py-3 rounded-xl border-2 border-gray-200 hover:border-orange-400 hover:text-orange-500 text-sm font-semibold text-gray-600 transition-all"
+                      className="flex-1 text-center py-3 rounded-xl border-2 border-gray-200 hover:border-orange-400 hover:text-[#c4622d] text-sm font-semibold text-gray-600 transition-all"
                     >
                       {s.label}
                     </a>

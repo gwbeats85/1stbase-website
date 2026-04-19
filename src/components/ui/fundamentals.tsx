@@ -23,7 +23,7 @@ const points = [
 
 export function Fundamentals() {
   return (
-    <section className="bg-gray-900 pb-16 px-6">
+    <section className="bg-[#255253] pb-16 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {points.map((p, i) => (
           <motion.div
@@ -34,7 +34,7 @@ export function Fundamentals() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="flex flex-col gap-3"
           >
-            <p.icon className="w-6 h-6 text-orange-500" strokeWidth={1.75} />
+            <p.icon className="w-6 h-6 text-[#c4622d]" strokeWidth={1.75} />
             <h3 className="text-white font-bold text-lg leading-snug">{p.title}</h3>
             <p className="text-gray-400 text-sm leading-relaxed">{p.body}</p>
           </motion.div>

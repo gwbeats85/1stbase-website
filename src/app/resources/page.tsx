@@ -19,8 +19,8 @@ const quickActions = [
     desc: "Start here — best free tools, no jargon",
     href: "/resources/tools?filter=beginner",
     color: "bg-orange-50 hover:bg-orange-100 border-orange-100",
-    accent: "text-orange-500",
-    iconColor: "text-orange-500",
+    accent: "text-[#c4622d]",
+    iconColor: "text-[#c4622d]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" /><path strokeLinecap="round" strokeLinejoin="round" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /></svg>,
@@ -133,19 +133,19 @@ const recentNews = newsItems.slice(0, 3);
 
 export default function ResourcesHubPage() {
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1">
         {/* Hero with Search */}
-        <div className="bg-gray-900 text-white px-6 md:px-10 py-20">
+        <div className="bg-[#255253] text-white px-6 md:px-10 py-20">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-block mb-4 text-xs uppercase tracking-widest text-orange-400 font-semibold">
+            <span className="inline-block mb-4 text-xs uppercase tracking-widest text-[#c4622d] font-semibold">
               AI Learning Center
             </span>
             <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-[0.95] mb-5">
               Everything AI,<br className="hidden md:block" />
-              <span className="text-orange-500"> organized for you.</span>
+              <span className="text-[#c4622d]"> organized for you.</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
               Tools, docs, comparisons, prompts, glossary, and news — all in one place.
@@ -181,12 +181,12 @@ export default function ResourcesHubPage() {
           <section className="pb-14">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-gray-900">Featured Tools</h2>
+                <h2 className="text-2xl font-black text-[#1a3738]">Featured Tools</h2>
                 <p className="text-gray-500 text-sm mt-1">The ones most people should start with</p>
               </div>
               <Link
                 href="/resources/tools"
-                className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
+                className="text-sm font-semibold text-[#c4622d] hover:text-[#a8521f] transition-colors"
               >
                 View all {aiTools.length} →
               </Link>
@@ -200,24 +200,24 @@ export default function ResourcesHubPage() {
 
           {/* Section Grid */}
           <section className="pb-14">
-            <h2 className="text-2xl font-black text-gray-900 mb-2">Browse by Category</h2>
+            <h2 className="text-2xl font-black text-[#1a3738] mb-2">Browse by Category</h2>
             <p className="text-gray-500 text-sm mb-8">Every section of the Learning Center</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {navigationSections.map((section) => (
                 <Link
                   key={section.href}
                   href={section.href}
-                  className="group flex flex-col p-6 bg-white border border-gray-100 rounded-2xl hover:border-orange-200 hover:shadow-md transition-all"
+                  className="group flex flex-col p-6 bg-white border border-gray-100 rounded-2xl hover:border-[#e8b99a] hover:shadow-md transition-all"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-orange-500">{section.icon}</span>
+                    <span className="text-[#c4622d]">{section.icon}</span>
                     <span className="text-xs text-gray-400 font-medium">{section.count}</span>
                   </div>
-                  <h3 className="font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">
+                  <h3 className="font-bold text-[#1a3738] mb-2 group-hover:text-[#c4622d] transition-colors">
                     {section.title}
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{section.desc}</p>
-                  <span className="text-sm font-semibold text-orange-500 mt-4">Explore →</span>
+                  <span className="text-sm font-semibold text-[#c4622d] mt-4">Explore →</span>
                 </Link>
               ))}
             </div>
@@ -227,12 +227,12 @@ export default function ResourcesHubPage() {
           <section className="pb-14">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-gray-900">Recent AI Updates</h2>
+                <h2 className="text-2xl font-black text-[#1a3738]">Recent AI Updates</h2>
                 <p className="text-gray-500 text-sm mt-1">What just changed — from official sources</p>
               </div>
               <Link
                 href="/resources/news"
-                className="text-sm font-semibold text-orange-500 hover:text-orange-600 transition-colors"
+                className="text-sm font-semibold text-[#c4622d] hover:text-[#a8521f] transition-colors"
               >
                 All news →
               </Link>
@@ -246,7 +246,7 @@ export default function ResourcesHubPage() {
 
           {/* CTA */}
           <section className="pb-16">
-            <div className="bg-gray-900 rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="bg-[#255253] rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div>
                 <p className="text-white font-black text-2xl mb-2">Not sure where to start?</p>
                 <p className="text-gray-400 max-w-md">
@@ -255,7 +255,7 @@ export default function ResourcesHubPage() {
               </div>
               <a
                 href="https://calendly.com/1stbaseai/30min"
-                className="shrink-0 bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full text-sm transition-colors"
+                className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-4 rounded-full text-sm transition-colors"
               >
                 Book a free call →
               </a>

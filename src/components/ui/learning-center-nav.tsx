@@ -27,7 +27,7 @@ export function LearningCenterNav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-[#fdfcfb]/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-[#EAE9E0]/95 backdrop-blur-sm border-b border-gray-100">
       {/* Top bar — matches landing page nav */}
       <SiteNav activePage="resources" />
 
@@ -40,7 +40,7 @@ export function LearningCenterNav() {
               href={link.href}
               className={`text-xs font-semibold px-3.5 py-2.5 transition-all whitespace-nowrap ${
                 isActive(link)
-                  ? "text-orange-500 border-b-2 border-orange-500"
+                  ? "text-[#c4622d] border-b-2 border-[#c4622d]"
                   : "text-gray-500 hover:text-gray-800"
               }`}
             >
@@ -59,7 +59,7 @@ export function LearningCenterNav() {
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={`block py-2 text-sm font-medium transition-colors ${
-                isActive(link) ? "text-orange-500" : "text-gray-600 hover:text-gray-900"
+                isActive(link) ? "text-[#c4622d]" : "text-gray-600 hover:text-[#1a3738]"
               }`}
             >
               {link.label}
@@ -68,7 +68,7 @@ export function LearningCenterNav() {
           <div className="pt-4 border-t border-gray-100">
             <a
               href="https://calendly.com/1stbaseai/30min"
-              className="block text-center bg-gray-900 text-white text-sm font-bold px-5 py-3 rounded-full"
+              className="block text-center bg-[#255253] text-white text-sm font-bold px-5 py-3 rounded-full"
             >
               Book a session
             </a>

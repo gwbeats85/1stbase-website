@@ -14,7 +14,7 @@ export function Meetup() {
   }
 
   return (
-    <section id="meetup" className="py-24 px-6 bg-[#fafaf8]">
+    <section id="meetup" className="py-24 px-6 bg-[#EAE9E0]">
       <div className="max-w-3xl mx-auto text-center">
 
         <motion.div
@@ -24,8 +24,8 @@ export function Meetup() {
           transition={{ duration: 0.5 }}
         >
           <div className="text-5xl mb-6">🦥</div>
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Community</span>
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-3 mb-5">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Community</span>
+          <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3 mb-5">
             Vancouver AI Meetup — you in?
           </h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto mb-4">
@@ -62,7 +62,7 @@ export function Meetup() {
                 />
                 <button
                   type="submit"
-                  className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide shrink-0"
+                  className="bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide shrink-0"
                 >
                   I&apos;m in →
                 </button>
@@ -74,7 +74,7 @@ export function Meetup() {
                 animate={{ opacity: 1, scale: 1 }}
                 className="text-center"
               >
-                <p className="text-2xl font-black text-gray-900 mb-2">You&apos;re on the list. 🤙</p>
+                <p className="text-2xl font-black text-[#1a3738] mb-2">You&apos;re on the list. 🤙</p>
                 <p className="text-gray-400">I&apos;ll hit you when we&apos;re ready to roll.</p>
               </motion.div>
             )}
@@ -90,7 +90,7 @@ export function Meetup() {
         >
           {["Free. Always.", "No spam ever.", "Vancouver, WA · 360", "Monthly + weekly newsletter"].map((item) => (
             <span key={item} className="flex items-center gap-2">
-              <span className="text-orange-400">✓</span> {item}
+              <span className="text-[#c4622d]">✓</span> {item}
             </span>
           ))}
         </motion.div>

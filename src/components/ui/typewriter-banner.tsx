@@ -13,7 +13,7 @@ const tools = [
 
 export function TypewriterBanner() {
   return (
-    <div className="relative w-full bg-gray-900 pt-10 pb-4 px-6 flex items-center justify-center overflow-visible">
+    <div className="relative w-full bg-[#255253] pt-10 pb-4 px-6 flex items-center justify-center overflow-visible">
       {/* Sloth peeking over the top edge */}
       <div className="absolute -top-[69px] right-16 w-32 pointer-events-none select-none">
         <Image
@@ -35,7 +35,7 @@ export function TypewriterBanner() {
           waitTime={1800}
           cursorChar="_"
           cursorClassName=""
-          className="text-orange-400 font-bold"
+          className="text-[#c4622d] font-bold"
         />
       </div>
     </div>

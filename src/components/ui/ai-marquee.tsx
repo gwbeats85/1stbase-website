@@ -31,7 +31,7 @@ function ToolCard({ tool }: { tool: typeof aiTools[0] }) {
         {tool.short}
       </div>
       <div className="flex flex-col">
-        <span className="font-bold text-gray-900 text-sm">{tool.name}</span>
+        <span className="font-bold text-[#1a3738] text-sm">{tool.name}</span>
         <span className="text-gray-400 text-xs">{tool.tag}</span>
       </div>
     </div>
@@ -44,10 +44,10 @@ export function AiMarquee() {
   const row2 = aiTools.slice(half);
 
   return (
-    <section className="py-16 bg-[#fdfcfb] overflow-hidden">
+    <section className="py-16 bg-[#EAE9E0] overflow-hidden">
       <div className="text-center mb-10">
-        <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">The Landscape</span>
-        <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2">
+        <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">The Landscape</span>
+        <h2 className="text-3xl md:text-4xl font-black text-[#1a3738] mt-2">
           I keep up so you don&apos;t have to
         </h2>
       </div>

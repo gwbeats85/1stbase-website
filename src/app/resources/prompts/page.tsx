@@ -42,14 +42,14 @@ export default function PromptsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">Prompts</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Prompts</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             Prompt Library
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -68,7 +68,7 @@ export default function PromptsPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search prompts..."
-              className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+              className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[#1a3738] placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
             />
           </div>
 
@@ -79,7 +79,7 @@ export default function PromptsPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === cat
-                    ? "bg-orange-500 text-white"
+                    ? "bg-[#c4622d] text-white"
                     : "bg-white border border-gray-200 text-gray-600 hover:border-orange-300"
                 }`}
               >
@@ -95,7 +95,7 @@ export default function PromptsPage() {
                 onClick={() => setActiveAudience(a.key)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeAudience === a.key
-                    ? "bg-gray-900 text-white"
+                    ? "bg-[#255253] text-white"
                     : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
                 }`}
               >
@@ -115,7 +115,7 @@ export default function PromptsPage() {
               {/* Card header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-gray-50">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <span className="text-xs font-semibold text-orange-500 bg-orange-50 px-2.5 py-1 rounded-full">
+                  <span className="text-xs font-semibold text-[#c4622d] bg-orange-50 px-2.5 py-1 rounded-full">
                     {prompt.category}
                   </span>
                   <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${
@@ -126,14 +126,14 @@ export default function PromptsPage() {
                   }`}>
                     {prompt.audience}
                   </span>
-                  <h2 className="font-bold text-gray-900 text-sm">{prompt.title}</h2>
+                  <h2 className="font-bold text-[#1a3738] text-sm">{prompt.title}</h2>
                 </div>
                 <button
                   onClick={() => copyPrompt(prompt.id, prompt.prompt)}
                   className={`shrink-0 flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-full transition-all ${
                     copied === prompt.id
                       ? "bg-green-500 text-white"
-                      : "bg-gray-900 hover:bg-gray-700 text-white"
+                      : "bg-[#255253] hover:bg-[#183839] text-white"
                   }`}
                 >
                   {copied === prompt.id ? (
@@ -156,7 +156,7 @@ export default function PromptsPage() {
                 </pre>
                 {prompt.tip && (
                   <p className="text-xs text-gray-400 mt-3 flex gap-1.5 items-start">
-                    <svg className="w-3.5 h-3.5 text-orange-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <svg className="w-3.5 h-3.5 text-[#c4622d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {prompt.tip}
@@ -185,7 +185,7 @@ export default function PromptsPage() {
             <p className="font-medium text-gray-600 mb-1">No prompts found</p>
             <button
               onClick={() => { setQuery(""); setActiveCategory("All"); setActiveAudience("all"); }}
-              className="text-sm text-orange-500 font-semibold"
+              className="text-sm text-[#c4622d] font-semibold"
             >
               Clear filters
             </button>

@@ -113,10 +113,10 @@ export function UseCases() {
   }, [active]);
 
   return (
-    <section id="learn" ref={sectionRef} className="py-24 bg-[#fdfcfb] overflow-hidden">
+    <section id="learn" ref={sectionRef} className="py-24 bg-[#EAE9E0] overflow-hidden">
       <div className="text-center mb-14 px-6">
-        <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">What You&apos;ll Learn</span>
-        <h2 className="text-4xl md:text-5xl font-black text-gray-900 mt-3">
+        <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">What You&apos;ll Learn</span>
+        <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3">
           AI fits into your life — not the other way around
         </h2>
         <p className="text-gray-500 mt-3 text-lg max-w-xl mx-auto">
@@ -157,8 +157,8 @@ export function UseCases() {
                   />
                 </div>
                 <div className="p-6">
-                  <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">{card.tag}</span>
-                  <h3 className="text-lg font-black text-gray-900 mt-2 mb-2">{card.title}</h3>
+                  <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">{card.tag}</span>
+                  <h3 className="text-lg font-black text-[#1a3738] mt-2 mb-2">{card.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{card.description}</p>
                 </div>
               </motion.div>
@@ -178,7 +178,7 @@ export function UseCases() {
             key={i}
             onClick={() => handleUserInteract(i)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              active === i ? "bg-orange-500 w-6" : "bg-gray-300 w-2"
+              active === i ? "bg-[#c4622d] w-6" : "bg-gray-300 w-2"
             }`}
           />
         ))}
@@ -189,13 +189,13 @@ export function UseCases() {
         <button
           onClick={() => handleUserInteract(Math.max(0, active - 1))}
           disabled={active === 0}
-          className="w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-gray-400 hover:border-orange-400 hover:text-orange-500 disabled:opacity-30 transition-all"
+          className="w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-gray-400 hover:border-orange-400 hover:text-[#c4622d] disabled:opacity-30 transition-all"
         >
           ←
         </button>
         <button
           onClick={() => handleUserInteract((active + 1) % cards.length)}
-          className="w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-gray-400 hover:border-orange-400 hover:text-orange-500 transition-all"
+          className="w-10 h-10 rounded-full border-2 border-gray-200 flex items-center justify-center text-gray-400 hover:border-orange-400 hover:text-[#c4622d] transition-all"
         >
           →
         </button>

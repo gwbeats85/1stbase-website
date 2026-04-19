@@ -26,13 +26,13 @@ export default function NewsPage() {
   }, [activeCategory, officialOnly]);
 
   return (
-    <div className="min-h-screen bg-[#fdfcfb] flex flex-col">
+    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-orange-500 font-semibold">News</span>
-          <h1 className="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">News</span>
+          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
             AI News & Updates
           </h1>
           <p className="text-gray-500 max-w-xl">
@@ -48,7 +48,7 @@ export default function NewsPage() {
               onClick={() => setActiveCategory(cat.key)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === cat.key
-                  ? "bg-gray-900 text-white"
+                  ? "bg-[#255253] text-white"
                   : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
               }`}
             >
@@ -78,7 +78,7 @@ export default function NewsPage() {
             <p className="font-bold text-gray-600 mb-1">No news found</p>
             <button
               onClick={() => { setActiveCategory("all"); setOfficialOnly(false); }}
-              className="mt-3 text-sm text-orange-500 font-semibold"
+              className="mt-3 text-sm text-[#c4622d] font-semibold"
             >
               Clear filters
             </button>
