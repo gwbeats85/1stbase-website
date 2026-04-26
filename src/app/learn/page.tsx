@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { lessons, onlineResources, downloads, prompts } from "@/data/learn";
 import { SiteNav } from "@/components/ui/site-nav";
@@ -143,7 +144,13 @@ export default function LearnPage() {
                 className="group flex items-start gap-4 rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-5 transition-all hover:border-[color:var(--brand-line-strong)] hover:shadow-[0_18px_42px_-30px_rgba(21,21,21,0.12)]"
               >
                 {r.logo ? (
-                  <img src={r.logo} alt={r.company} className="w-9 h-9 object-contain shrink-0 mt-0.5" />
+                  <Image
+                    src={r.logo}
+                    alt={r.company}
+                    width={36}
+                    height={36}
+                    className="mt-0.5 h-9 w-9 shrink-0 object-contain"
+                  />
                 ) : (
                   <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--brand-graphite)]">
                     <span className="text-xs font-black text-[var(--brand-cream)]">{r.company[0]}</span>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LearningCenterNav } from "@/components/ui/learning-center-nav";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { pricingData } from "@/data/resources";
@@ -43,7 +44,13 @@ export default function PricingPage() {
               {/* Header */}
               <div className="flex items-center gap-4 border-b border-[color:var(--brand-line)] px-7 py-6">
                 {row.logo ? (
-                  <img src={row.logo} alt={row.tool} className="w-9 h-9 object-contain" />
+                  <Image
+                    src={row.logo}
+                    alt={row.tool}
+                    width={36}
+                    height={36}
+                    className="h-9 w-9 object-contain"
+                  />
                 ) : (
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--brand-graphite)]">
                     <span className="text-sm font-black text-[var(--brand-cream)]">{row.tool[0]}</span>
@@ -126,7 +133,13 @@ export default function PricingPage() {
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         {row.logo ? (
-                          <img src={row.logo} alt={row.tool} className="w-6 h-6 object-contain" />
+                          <Image
+                            src={row.logo}
+                            alt={row.tool}
+                            width={24}
+                            height={24}
+                            className="h-6 w-6 object-contain"
+                          />
                         ) : (
                           <div className="flex h-6 w-6 items-center justify-center rounded bg-[var(--brand-graphite)]">
                             <span className="text-xs font-black text-[var(--brand-cream)]">{row.tool[0]}</span>

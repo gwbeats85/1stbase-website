@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import * as React from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -90,7 +91,14 @@ const Icon = ({
         }}
       >
         {iconData.img ? (
-          <img src={iconData.img} alt={iconData.label || ''} className="w-8 h-8 md:w-10 md:h-10 object-contain" draggable={false} />
+          <Image
+            src={iconData.img}
+            alt={iconData.label || ""}
+            width={40}
+            height={40}
+            className="h-8 w-8 object-contain md:h-10 md:w-10"
+            draggable={false}
+          />
         ) : (
           <iconData.icon className="w-8 h-8 md:w-10 md:h-10" />
         )}

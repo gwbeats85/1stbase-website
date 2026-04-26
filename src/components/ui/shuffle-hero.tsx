@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -44,10 +45,12 @@ function createSquares(source = logos) {
       transition={{ duration: 1.5, type: "spring" }}
       className="flex h-full w-full items-center justify-center rounded-[1.6rem] border border-[color:var(--brand-line)] bg-[linear-gradient(180deg,_rgb(255_248_238)_0%,_rgb(237_224_206)_100%)] p-3 shadow-[0_18px_42px_-28px_rgba(21,21,21,0.18)]"
     >
-      <img
+      <Image
         src={logo.src}
         alt={logo.label}
-        className="w-10 h-10 object-contain"
+        width={40}
+        height={40}
+        className="h-10 w-10 object-contain"
         draggable={false}
       />
     </motion.div>

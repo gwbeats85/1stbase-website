@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LearningCenterNav } from "@/components/ui/learning-center-nav";
 import { SiteFooter } from "@/components/ui/site-footer";
 import { officialDocs } from "@/data/resources";
@@ -31,7 +32,13 @@ export default function OfficialDocsPage() {
               {/* Provider Header */}
               <div className="flex items-center gap-4 border-b border-[color:var(--brand-line)] px-7 py-5">
                 {doc.logo ? (
-                  <img src={doc.logo} alt={doc.provider} className="w-9 h-9 object-contain" />
+                  <Image
+                    src={doc.logo}
+                    alt={doc.provider}
+                    width={36}
+                    height={36}
+                    className="h-9 w-9 object-contain"
+                  />
                 ) : (
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--brand-graphite)]">
                     <span className="text-sm font-black text-[var(--brand-cream)]">{doc.provider[0]}</span>
