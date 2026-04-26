@@ -1,15 +1,23 @@
 # 1st Base — Business Plan
 
-Last updated: 2026-04-07
-Status: Draft — filling in
+Last updated: 2026-04-26
+Status: Draft - core positioning and brand system are active, business model details still being filled in
 
 ---
 
 ## Executive Summary
 
-**1st Base** is an AI education brand built by Will Sanchez (Vancouver, WA). Will teaches regular people how to use AI through short-form video, tutorials, and a community on Skool. The business has two sides: a creator/education brand (this plan) and an AI product (the 1st Base app + Home Plate overlay, tracked separately).
+**1st Base** is an AI education brand built by Will Sanchez (Vancouver, WA). Will teaches regular people how to use AI through practical lessons, short-form content, curated resources, and direct help when they need it. The business has two sides: a creator/education brand (this plan) and a product/software side that supports the brand over time.
 
 **One-liner:** I teach people how to use AI.
+
+Current brand system in use:
+
+- graphite `#151515`
+- cream `#F5EBDD`
+- marker blue `#3B82F6`
+- highlight yellow `#FFE45E`
+- `Space Grotesk`, `Inter`, `JetBrains Mono`
 
 ---
 
@@ -65,7 +73,7 @@ Most AI content is made for developers or hype-chasers. Regular people — who a
 ## Go-To-Market
 
 ### Phase 1 — Build the Foundation (Now)
-- [ ] Finalize brand identity (logo, colors done — see brand-system.md)
+- [x] Lock the current brand identity and package source of truth
 - [ ] Launch website with email capture
 - [ ] Set up Skool community (even if small)
 - [ ] Start posting consistently (3-5x/week TikTok/Reels, 1-2x/week YouTube)
@@ -106,12 +114,14 @@ Most AI content is made for developers or hype-chasers. Regular people — who a
 | Date | Decision | Reason |
 |------|----------|--------|
 | 2026-04-07 | Skool for community platform | Built-in payments, course + community in one, growing fast |
+| 2026-04-25 | Brand package became the source of truth for visual identity | Keeps the website, docs, and asset exports aligned in one practical package |
+| 2026-04-26 | Website repo docs were synced to the current graphite/cream/blue/yellow system | The old orange/Geist docs were stale and no longer matched the actual site |
 | | Newsletter platform TBD | Beehiiv vs ConvertKit vs Substack — decide before first issue |
 
 ---
 
 ## Notes
 
-- The product (app) and creator business are separate but feed each other — the content builds the audience, the audience becomes app users
+- The product side and creator business can support each other, but the public-facing brand has to stay understandable on its own
 - Don't try to be everywhere at once — pick 2 platforms and go deep first
 - The newsletter is the owned audience — everything else is rented

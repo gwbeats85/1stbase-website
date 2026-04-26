@@ -1,169 +1,134 @@
-# 1st Base AI — Brand Identity System
+# 1st Base AI Brand System
 
-> Last updated: 2026-04-05
-> Site: 1stbaseai.com | Socials: @1stbaseai
+Last updated: 2026-04-26
+Primary source: `~/1st-base-brand-package`
 
----
+## Source Files
 
-## Logo Mark
+- `~/1st-base-brand-package/README.md`
+- `~/1st-base-brand-package/docs/asset-notes.md`
+- `~/1st-base-brand-package/tokens/design-tokens.json`
+- `~/1st-base-brand-package/claude-design-brand-asset/brand.manifest.json`
 
-Shape: Upward-pointing triangle (like a home plate / pennant)
-Already in the nav as an SVG — this is the mark. Keep it.
+## Core Identity
 
-Wordmark: `1st Base AI` (display) or `1stbaseai` (URL/username style)
-Weight: Black / 900 — heavy, no frills
+- Brand: `1st Base AI`
+- One-liner: `I Teach People How To Use AI`
+- Supporting line: `The tools change. The fundamentals don't.`
+- Tagline on current brand board: `LEARN BOLDER • BUILD SMARTER • GO FURTHER`
+- Audience: regular people, beginners, small business owners, and curious non-developers who want practical AI help
 
----
+## Logo
 
-## Color Palette
+Primary mark:
 
-### Primary — Orange
-> Used for: CTAs, tags, accent text, icon color, hover states
+- source file: `~/1st-base-brand-package/1b-logo-main.svg`
+- layered paths: `bottom-b-swoosh`, `top-b`, `left-number-1`
+- source SVG fill: `#1C1C1C`
 
-| Swatch | Name | Hex |
-|--------|------|-----|
-| 🟠 | Orange (Primary) | `#f97316` |
-| 🔶 | Orange Dark (Hover) | `#ea6c0a` |
-| 🔸 | Orange Light (Tint BG) | `#fff7ed` |
+Usage rules:
 
-```
-████████████  #f97316  ← Primary CTA, icons, accents
-████████████  #ea6c0a  ← Hover state
-████████████  #fff7ed  ← Tag backgrounds, subtle fills
-```
+- Use the raw mark by default.
+- Do not place the mark inside a rounded square unless the context is explicitly an app icon or favicon.
+- Keep the mark mostly one-color.
+- Use graphite or cream variants depending on background.
+- Build lockups and wordmarks in editable code/SVG, not baked images.
 
----
+## Palette
 
-### Neutrals — Light Mode
-> Used for: page backgrounds, cards, text
+### Core Colors
 
-| Swatch | Name | Hex |
-|--------|------|-----|
-| 🤍 | Hero BG (Warm White) | `#fdfcfb` |
-| 🤍 | Section BG (Cream) | `#fafaf8` |
-| ⬜ | Card BG | `#ffffff` |
-| 🔲 | Border / Divider | `#f3f4f6` |
-| 🩶 | Body Text | `#6b7280` |
-| ⬛ | Heading Text | `#111827` |
+| Token | Hex | Use |
+|---|---|---|
+| Graphite | `#151515` | primary text, dark surfaces, strong CTAs |
+| Cream | `#F5EBDD` | page canvas, light surfaces, reverse text target |
+| Marker Blue | `#3B82F6` | primary action, labels, active accents |
+| Highlight Yellow | `#FFE45E` | small wins, emphasis, supportive highlights |
 
-```
-████████████  #fdfcfb  ← Hero background
-████████████  #fafaf8  ← News/section background
-████████████  #ffffff  ← Cards
-████████████  #f3f4f6  ← Borders
-████████████  #6b7280  ← Body copy
-████████████  #111827  ← Headlines, nav text
-```
+### Supporting Colors
 
----
-
-### Dark Mode / Dark Sections
-> Used for: newsletter section, about modal, dark cards
-
-| Swatch | Name | Hex |
-|--------|------|-----|
-| ⬛ | Dark BG | `#111827` |
-| ⬛ | Darker BG | `#030712` |
-| 🩶 | Muted Text (dark) | `#9ca3af` |
-| 🩶 | Subtle Text (dark) | `#4b5563` |
-
-```
-████████████  #111827  ← Newsletter section, dark panels
-████████████  #030712  ← About modal, deepest dark
-████████████  #9ca3af  ← Body text on dark
-████████████  #4b5563  ← Muted/secondary text on dark
-```
-
----
+| Token | Hex |
+|---|---|
+| Black Mark | `#1C1C1C` |
+| Cream Soft | `#FBF4E8` |
+| Cream Deep | `#E8DDCB` |
+| Blue Deep | `#1E5ED8` |
+| Yellow Deep | `#D8B900` |
+| Muted Graphite | `#5F5B54` |
+| Line Soft | `#D6CAB8` |
 
 ## Typography
 
-### Font Family: Geist Sans
-- Google Fonts: https://fonts.google.com/specimen/Geist
-- Figma Plugin: search "Geist" — Vercel's free font
-- Same family for all text — weight does the heavy lifting
+### Font Roles
 
-### Weight Scale
+| Role | Font | Typical Use |
+|---|---|---|
+| Display | `Space Grotesk` | hero lines, section titles, major callouts |
+| Body | `Inter` | paragraphs, UI copy, supporting text |
+| Mono | `JetBrains Mono` | labels, tags, code, utility UI |
 
-| Weight | Use | Class |
-|--------|-----|-------|
-| **900 (Black)** | Hero headlines, section titles | `font-black` |
-| **700 (Bold)** | Buttons, CTAs | `font-bold` |
-| **600 (Semibold)** | Tags, labels, nav | `font-semibold` |
-| **500 (Medium)** | Nav links, secondary | `font-medium` |
-| **400 (Regular)** | Body copy | default |
+### Size Guidance
 
-### Heading Style
-- Weight: 900 always
-- Letter spacing: tight (`tracking-tight`)
-- Line height: compressed — ~0.92 for big display text
-- Size range: 4xl → 7xl depending on breakpoint
+- hero and display: `48px-64px`, weight `700`
+- headlines: `32px-40px`, weight `700`
+- subheading: `24px`, weight `600`
+- body: `16px`, weight `400`
+- small text: `14px`, weight `400`
+- labels and tags: `12px`, weight `400`
+- code/system text: `13px-14px`, weight `400`
 
-### Label / Tag Style
-- ALL CAPS
-- Extra wide tracking (`tracking-widest`)
-- Orange color (`#f97316`)
-- Font size: xs (12px)
+## Component Rules
 
----
+From the current package boards:
 
-## Border Radius
+- primary button: marker blue background, graphite text, `44px` height, `20px` horizontal padding, `8px` radius
+- secondary button: blue border, cream surface, deeper blue text, `44px` height, `20px` horizontal padding, `8px` radius
+- success badge: yellow background, graphite text/icon, `28px` height, pill radius
+- code block: graphite background, cream text, blue label, `16px` padding, `8px` radius
+- build card: cream background, graphite text, blue accent bar, `20px` padding, `12px` radius
+- challenge tag: graphite surface with blue border/text, `24px` height, pill radius
 
-| Type | Radius | Used On |
-|------|--------|---------|
-| Full pill | `9999px` | Buttons, CTAs, input fields |
-| Large card | `16px` | News cards, modal, feature boxes |
-| Small tag | `9999px` | Category tags |
+Base system:
 
----
+- spacing rhythm: `8px`
+- card gap: `20px`
+- container width: `1200px`
+- radius scale: `4px`, `6px`, `8px`, `12px`, `16px`, `24px`, `999px`
 
-## Spacing Rhythm
-- Section padding: `py-24` (96px top/bottom)
-- Container max-width: `max-w-5xl` (1024px) or `max-w-7xl` for full-width hero
-- Card gap: `gap-5` (20px)
+## Voice
 
----
+Do:
 
-## Voice & Tone
+- speak plainly
+- keep it practical
+- focus on outcomes, fundamentals, and real use
+- sound like a real person helping another real person
 
-**One-liner:** "I teach people how to use AI."
+Do not:
 
-**Do:**
-- Direct, first person, plain English
-- Specific over vague ("Vancouver, WA" not "Pacific Northwest")
-- Confident without being loud about it
+- write corporate AI copy
+- lean on empty future-speak
+- overuse hype or "revolutionary" language
+- make the brand feel like a generic SaaS startup
 
-**Don't:**
-- "Empower your AI journey"
-- "10x your productivity"
-- Corporate-speak or bro-marketing
+## Visual Rules
 
----
+- Final website text, buttons, nav, and cards stay editable in code.
+- Use generated images only for textless plates, scenes, textures, or mood support.
+- Marker blue is the primary action color.
+- Highlight yellow is for supportive emphasis, not full-page overload.
+- Default surfaces should feel cream and graphite first; blue and yellow should read as signals, not wallpaper.
 
-## Logo Do's & Don'ts
+## Quick Reference
 
-✅ Triangle mark in orange on white background  
-✅ Triangle mark in white on dark background  
-✅ Heavy black wordmark, no effects  
-✅ Works as single color (all orange or all black)
-
-❌ Script or decorative fonts  
-❌ Gradients on the wordmark  
-❌ Drop shadows or glows  
-❌ More than 2 colors in the logo  
-❌ Tagline locked inside the logo mark  
-
----
-
-## Quick Copy-Paste for Figma / Canva
-
-```
-Brand:      1st Base AI
-Primary:    #f97316
-Dark BG:    #111827
-Light BG:   #fdfcfb
-Body text:  #6b7280
-Font:       Geist Sans
-Weights:    900 headlines / 700 buttons / 400 body
-Corners:    999px buttons, 16px cards
+```text
+Brand: 1st Base AI
+Headline font: Space Grotesk
+Body font: Inter
+Mono font: JetBrains Mono
+Primary dark: #151515
+Primary light: #F5EBDD
+Action color: #3B82F6
+Highlight: #FFE45E
+Rule: editable code/SVG for all final UI and copy
 ```
