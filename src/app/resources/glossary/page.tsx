@@ -46,24 +46,24 @@ export default function GlossaryPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Glossary</span>
-          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">Glossary</span>
+          <h1 className="mt-2 mb-3 text-4xl font-black leading-[0.95] tracking-tight text-[var(--brand-graphite)] md:text-5xl">
             AI Glossary
           </h1>
-          <p className="text-gray-500 max-w-xl">
+          <p className="max-w-xl text-[color:var(--brand-muted)]">
             Plain-English definitions for every AI term you&apos;ll actually encounter. Tap any term for a full explanation with examples.
           </p>
         </div>
 
         {/* Search */}
         <div className="relative mb-6">
-          <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[color:var(--brand-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input
@@ -71,7 +71,7 @@ export default function GlossaryPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search terms..."
-            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[#1a3738] placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+            className="w-full rounded-xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] py-3 pl-11 pr-4 text-sm text-[var(--brand-graphite)] placeholder:text-[color:var(--brand-muted)] transition-colors focus:border-[var(--brand-blue)] focus:outline-none"
           />
         </div>
 
@@ -83,8 +83,8 @@ export default function GlossaryPage() {
               onClick={() => setActiveTag(tag)}
               className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
                 activeTag === tag
-                  ? "bg-[#255253] text-white"
-                  : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
+                  ? "border border-[var(--brand-graphite)] bg-[var(--brand-graphite)] text-[var(--brand-cream)]"
+                  : "border border-[color:var(--brand-line)] bg-[var(--brand-surface)] text-[var(--brand-graphite)] hover:border-[color:var(--brand-line-strong)]"
               }`}
             >
               {tag === "all" ? "All terms" : tag}
@@ -97,7 +97,7 @@ export default function GlossaryPage() {
           <button
             onClick={() => setActiveLetter("All")}
             className={`w-7 h-7 rounded-lg text-xs font-bold transition-all ${
-              activeLetter === "All" ? "bg-[#c4622d] text-white" : "text-gray-400 hover:text-gray-700"
+              activeLetter === "All" ? "bg-[var(--brand-blue)] text-[var(--brand-cream)]" : "text-[color:var(--brand-muted)] hover:text-[var(--brand-graphite)]"
             }`}
           >
             All
@@ -111,10 +111,10 @@ export default function GlossaryPage() {
                 disabled={!available}
                 className={`w-7 h-7 rounded-lg text-xs font-bold transition-all ${
                   activeLetter === letter
-                    ? "bg-[#c4622d] text-white"
+                    ? "bg-[var(--brand-blue)] text-[var(--brand-cream)]"
                     : available
-                    ? "text-gray-600 hover:bg-gray-100"
-                    : "text-gray-200 cursor-not-allowed"
+                    ? "text-[var(--brand-graphite)] hover:bg-[color:rgba(21,21,21,0.05)]"
+                    : "cursor-not-allowed text-[color:rgba(21,21,21,0.18)]"
                 }`}
               >
                 {letter}
@@ -124,18 +124,18 @@ export default function GlossaryPage() {
         </div>
 
         {/* Count */}
-        <div className="mb-4 text-sm text-gray-400">{filtered.length} term{filtered.length !== 1 ? "s" : ""}</div>
+        <div className="mb-4 text-sm text-[color:var(--brand-muted)]">{filtered.length} term{filtered.length !== 1 ? "s" : ""}</div>
 
         {/* Terms List */}
         {filtered.length === 0 ? (
-          <div className="text-center py-16 text-gray-400">
-            <svg className="w-8 h-8 mx-auto mb-2 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <div className="py-16 text-center text-[color:var(--brand-muted)]">
+            <svg className="mx-auto mb-2 h-8 w-8 text-[color:rgba(21,21,21,0.2)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <p className="font-medium text-gray-600">No terms found</p>
+            <p className="font-medium text-[var(--brand-graphite)]">No terms found</p>
             <button
               onClick={() => { setQuery(""); setActiveTag("all"); setActiveLetter("All"); }}
-              className="mt-3 text-sm text-[#c4622d] font-semibold"
+              className="mt-3 text-sm font-semibold text-[var(--brand-blue)]"
             >
               Clear filters
             </button>
@@ -147,51 +147,51 @@ export default function GlossaryPage() {
               return (
                 <div
                   key={term.id}
-                  className="bg-white border border-gray-100 rounded-2xl overflow-hidden transition-all"
+                  className="overflow-hidden rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] transition-all"
                 >
                   <button
-                    className="w-full flex items-center justify-between px-6 py-4 text-left hover:bg-gray-50 transition-colors group"
+                    className="group flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-[color:rgba(59,130,246,0.05)]"
                     onClick={() => toggleExpand(term.id)}
                   >
                     <div className="flex items-center gap-4 flex-1 min-w-0">
-                      <span className="font-black text-[#1a3738] text-base shrink-0 group-hover:text-[#c4622d] transition-colors">
+                      <span className="shrink-0 text-base font-black text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">
                         {term.term}
                       </span>
-                      <span className="text-gray-400 text-sm leading-snug truncate hidden md:block">
+                      <span className="hidden truncate text-sm leading-snug text-[color:var(--brand-muted)] md:block">
                         {term.one_line}
                       </span>
                     </div>
                     <div className="flex items-center gap-2 shrink-0 ml-4">
                       <div className="hidden md:flex flex-wrap gap-1">
                         {term.tags.slice(0, 2).map((tag) => (
-                          <span key={tag} className="text-xs text-gray-300 bg-gray-50 px-2 py-0.5 rounded-full">
+                          <span key={tag} className="rounded-full bg-[color:rgba(21,21,21,0.05)] px-2 py-0.5 text-xs text-[color:var(--brand-muted)]">
                             {tag}
                           </span>
                         ))}
                       </div>
-                      <span className={`text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""}`}>
+                      <span className={`text-[color:var(--brand-muted)] transition-transform ${isOpen ? "rotate-180" : ""}`}>
                         ↓
                       </span>
                     </div>
                   </button>
 
                   {/* Mobile one-liner */}
-                  <div className="md:hidden px-6 -mt-2 pb-3 text-gray-400 text-sm">
+                  <div className="px-6 -mt-2 pb-3 text-sm text-[color:var(--brand-muted)] md:hidden">
                     {term.one_line}
                   </div>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 border-t border-gray-50 pt-5 bg-gray-50/50">
-                      <p className="text-gray-700 text-sm leading-relaxed mb-4">{term.explanation}</p>
+                    <div className="border-t border-[color:var(--brand-line)] bg-[color:rgba(21,21,21,0.03)] px-6 pb-6 pt-5">
+                      <p className="mb-4 text-sm leading-relaxed text-[var(--brand-graphite)]">{term.explanation}</p>
                       {term.example && (
-                        <div className="bg-white rounded-xl p-4 border border-gray-100 mb-4">
-                          <p className="text-xs font-bold text-[#c4622d] uppercase tracking-widest mb-2">Example</p>
-                          <p className="text-sm text-gray-600 whitespace-pre-wrap">{term.example}</p>
+                        <div className="mb-4 rounded-xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-4">
+                          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[var(--brand-blue)]">Example</p>
+                          <p className="whitespace-pre-wrap text-sm text-[var(--brand-graphite)]">{term.example}</p>
                         </div>
                       )}
                       {term.related_terms && term.related_terms.length > 0 && (
                         <div>
-                          <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Related terms</p>
+                          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[color:var(--brand-muted)]">Related terms</p>
                           <div className="flex flex-wrap gap-2">
                             {term.related_terms.map((rel) => {
                               const found = glossaryTerms.find((t) => t.id === rel);
@@ -204,7 +204,7 @@ export default function GlossaryPage() {
                                       setExpanded(new Set([found.id]));
                                     }
                                   }}
-                                  className="text-xs text-[#c4622d] bg-orange-50 hover:bg-orange-100 px-3 py-1 rounded-full font-medium transition-colors"
+                                  className="rounded-full bg-[color:rgba(59,130,246,0.08)] px-3 py-1 text-xs font-medium text-[var(--brand-blue)] transition-colors hover:bg-[color:rgba(59,130,246,0.14)]"
                                 >
                                   {found ? found.term : rel}
                                 </button>

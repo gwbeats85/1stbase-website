@@ -10,15 +10,15 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-cream)]">
       <SiteNav sticky activePage="blog" />
 
       {/* Header */}
       <div className="px-8 md:px-10 pt-16 pb-12 max-w-4xl mx-auto w-full">
-        <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">
+        <span className="mb-4 block text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">
           The Blog
         </span>
-        <h1 className="mb-4 text-5xl font-black leading-[0.95] tracking-tight text-[var(--brand-teal)] md:text-6xl">
+        <h1 className="mb-4 text-5xl font-black leading-[0.95] tracking-tight text-[var(--brand-graphite)] md:text-6xl">
           AI tips for real people
         </h1>
         <p className="max-w-lg text-lg text-[color:var(--brand-muted)]">
@@ -37,7 +37,7 @@ export default function BlogPage() {
             >
               {/* Tag + date */}
               <div className="md:w-48 shrink-0">
-                <span className="mb-2 inline-block rounded-full bg-[color:rgb(242_84_76_/_0.1)] px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-coral)]">
+                <span className="mb-2 inline-block rounded-full bg-[color:rgb(59_130_246_/_0.1)] px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[var(--brand-blue)]">
                   {post.tag}
                 </span>
                 <p className="text-sm text-[color:var(--brand-muted)]">{post.date}</p>
@@ -46,11 +46,11 @@ export default function BlogPage() {
 
               {/* Content */}
               <div className="flex-1">
-                <h2 className="mb-2 text-2xl font-bold leading-snug text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-coral)]">
+                <h2 className="mb-2 text-2xl font-bold leading-snug text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">
                   {post.title}
                 </h2>
                 <p className="leading-relaxed text-[color:var(--brand-muted)]">{post.excerpt}</p>
-                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-teal)]">
+                <span className="mt-4 inline-block text-sm font-semibold text-[var(--brand-blue)] transition-colors group-hover:text-[var(--brand-blue-deep)]">
                   Read →
                 </span>
               </div>

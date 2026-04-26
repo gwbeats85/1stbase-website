@@ -42,17 +42,17 @@ export default function PromptsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Prompts</span>
-          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">Prompts</span>
+          <h1 className="mt-2 mb-3 text-4xl font-black leading-[0.95] tracking-tight text-[var(--brand-graphite)] md:text-5xl">
             Prompt Library
           </h1>
-          <p className="text-gray-500 max-w-xl">
+          <p className="max-w-xl text-[color:var(--brand-muted)]">
             Copy, fill in the brackets, paste into any AI. These work with ChatGPT, Claude, and Gemini.
           </p>
         </div>
@@ -60,7 +60,7 @@ export default function PromptsPage() {
         {/* Search + Filters */}
         <div className="space-y-4 mb-8">
           <div className="relative">
-            <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[color:var(--brand-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
             <input
@@ -68,7 +68,7 @@ export default function PromptsPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search prompts..."
-              className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[#1a3738] placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+              className="w-full rounded-xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] py-3 pl-11 pr-4 text-sm text-[var(--brand-graphite)] placeholder:text-[color:var(--brand-muted)] transition-colors focus:border-[var(--brand-blue)] focus:outline-none"
             />
           </div>
 
@@ -79,8 +79,8 @@ export default function PromptsPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === cat
-                    ? "bg-[#c4622d] text-white"
-                    : "bg-white border border-gray-200 text-gray-600 hover:border-orange-300"
+                    ? "border border-[var(--brand-blue)] bg-[var(--brand-blue)] text-[var(--brand-cream)]"
+                    : "border border-[color:var(--brand-line)] bg-[var(--brand-surface)] text-[var(--brand-graphite)] hover:border-[color:rgba(59,130,246,0.28)]"
                 }`}
               >
                 {cat}
@@ -95,8 +95,8 @@ export default function PromptsPage() {
                 onClick={() => setActiveAudience(a.key)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeAudience === a.key
-                    ? "bg-[#255253] text-white"
-                    : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
+                    ? "border border-[var(--brand-graphite)] bg-[var(--brand-graphite)] text-[var(--brand-cream)]"
+                    : "border border-[color:var(--brand-line)] bg-[var(--brand-surface)] text-[var(--brand-graphite)] hover:border-[color:var(--brand-line-strong)]"
                 }`}
               >
                 {a.label}
@@ -106,34 +106,34 @@ export default function PromptsPage() {
         </div>
 
         {/* Count */}
-        <div className="mb-4 text-sm text-gray-400">{filtered.length} prompt{filtered.length !== 1 ? "s" : ""}</div>
+        <div className="mb-4 text-sm text-[color:var(--brand-muted)]">{filtered.length} prompt{filtered.length !== 1 ? "s" : ""}</div>
 
         {/* Prompt Cards */}
         <div className="space-y-4">
           {filtered.map((prompt) => (
-            <div key={prompt.id} className="bg-white border border-gray-100 rounded-2xl overflow-hidden group">
+            <div key={prompt.id} className="group overflow-hidden rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)]">
               {/* Card header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-gray-50">
+              <div className="flex items-center justify-between border-b border-[color:var(--brand-line)] px-6 py-4">
                 <div className="flex items-center gap-3 flex-wrap">
-                  <span className="text-xs font-semibold text-[#c4622d] bg-orange-50 px-2.5 py-1 rounded-full">
+                  <span className="rounded-full bg-[color:rgba(59,130,246,0.1)] px-2.5 py-1 text-xs font-semibold text-[var(--brand-blue)]">
                     {prompt.category}
                   </span>
                   <span className={`text-xs font-medium px-2.5 py-1 rounded-full ${
-                    prompt.audience === "beginner" ? "bg-green-50 text-green-600" :
-                    prompt.audience === "intermediate" ? "bg-blue-50 text-blue-600" :
-                    prompt.audience === "advanced" ? "bg-purple-50 text-purple-600" :
-                    "bg-gray-50 text-gray-500"
+                    prompt.audience === "beginner" ? "bg-[color:rgba(255,228,94,0.22)] text-[var(--brand-graphite)]" :
+                    prompt.audience === "intermediate" ? "bg-[color:rgba(59,130,246,0.1)] text-[var(--brand-blue)]" :
+                    prompt.audience === "advanced" ? "bg-[color:rgba(21,21,21,0.08)] text-[var(--brand-graphite)]" :
+                    "bg-[color:rgba(21,21,21,0.05)] text-[color:var(--brand-muted)]"
                   }`}>
                     {prompt.audience}
                   </span>
-                  <h2 className="font-bold text-[#1a3738] text-sm">{prompt.title}</h2>
+                  <h2 className="text-sm font-bold text-[var(--brand-graphite)]">{prompt.title}</h2>
                 </div>
                 <button
                   onClick={() => copyPrompt(prompt.id, prompt.prompt)}
                   className={`shrink-0 flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-full transition-all ${
                     copied === prompt.id
-                      ? "bg-green-500 text-white"
-                      : "bg-[#255253] hover:bg-[#183839] text-white"
+                      ? "bg-[var(--brand-blue)] text-[var(--brand-cream)]"
+                      : "bg-[var(--brand-graphite)] text-[var(--brand-cream)] hover:bg-[var(--brand-graphite-2)]"
                   }`}
                 >
                   {copied === prompt.id ? (
@@ -151,12 +151,12 @@ export default function PromptsPage() {
 
               {/* Prompt text */}
               <div className="px-6 py-5">
-                <pre className="text-xs text-gray-600 font-mono leading-relaxed whitespace-pre-wrap bg-gray-50 rounded-xl p-4 border border-gray-100">
+                <pre className="font-mono text-xs leading-relaxed whitespace-pre-wrap rounded-xl border border-[color:var(--brand-line)] bg-[color:rgba(21,21,21,0.03)] p-4 text-[var(--brand-graphite)]">
                   {prompt.prompt}
                 </pre>
                 {prompt.tip && (
-                  <p className="text-xs text-gray-400 mt-3 flex gap-1.5 items-start">
-                    <svg className="w-3.5 h-3.5 text-[#c4622d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <p className="mt-3 flex items-start gap-1.5 text-xs text-[color:var(--brand-muted)]">
+                    <svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--brand-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     {prompt.tip}
@@ -164,9 +164,9 @@ export default function PromptsPage() {
                 )}
                 {prompt.use_with && prompt.use_with.length > 0 && (
                   <div className="mt-3 flex items-center gap-2">
-                    <span className="text-xs text-gray-400">Works with:</span>
+                    <span className="text-xs text-[color:var(--brand-muted)]">Works with:</span>
                     {prompt.use_with.map((tool) => (
-                      <span key={tool} className="text-xs text-gray-600 bg-gray-50 px-2 py-0.5 rounded-full font-medium">
+                      <span key={tool} className="rounded-full bg-[color:rgba(21,21,21,0.05)] px-2 py-0.5 text-xs font-medium text-[var(--brand-graphite)]">
                         {tool}
                       </span>
                     ))}
@@ -179,13 +179,13 @@ export default function PromptsPage() {
 
         {filtered.length === 0 && (
           <div className="text-center py-16">
-            <svg className="w-8 h-8 mx-auto mb-2 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <svg className="mx-auto mb-2 h-8 w-8 text-[color:rgba(21,21,21,0.2)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <p className="font-medium text-gray-600 mb-1">No prompts found</p>
+            <p className="mb-1 font-medium text-[var(--brand-graphite)]">No prompts found</p>
             <button
               onClick={() => { setQuery(""); setActiveCategory("All"); setActiveAudience("all"); }}
-              className="text-sm text-[#c4622d] font-semibold"
+              className="text-sm font-semibold text-[var(--brand-blue)]"
             >
               Clear filters
             </button>

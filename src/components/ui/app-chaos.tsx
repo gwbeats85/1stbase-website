@@ -31,13 +31,13 @@ const rows = [
 
 export function AppChaos() {
   return (
-    <section className="py-24 px-6 bg-[#EAE9E0] overflow-hidden">
+    <section className="overflow-hidden bg-[var(--brand-cream)] px-6 py-24">
       <div className="text-center mb-16 max-w-2xl mx-auto">
-        <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">The Reality</span>
-        <h2 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-3 mb-4">
+        <span className="text-xs font-semibold uppercase tracking-widest text-[var(--brand-blue)]">The Reality</span>
+        <h2 className="mb-4 mt-3 text-4xl font-black text-[var(--brand-graphite)] md:text-5xl">
           This is what AI looks like right now
         </h2>
-        <p className="text-gray-500 text-lg">
+        <p className="text-lg text-[color:var(--brand-muted)]">
           Overwhelming, right? That&apos;s exactly why people need someone to just explain what&apos;s worth learning — and actually show them how.
         </p>
       </div>
@@ -56,7 +56,7 @@ export function AppChaos() {
                   viewport={{ once: true }}
                   transition={{ delay, duration: 0.4 }}
                   whileHover={{ scale: 1.08, opacity: 1 }}
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm border border-gray-100 bg-white cursor-default"
+                  className="flex h-16 w-16 cursor-default items-center justify-center rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream)] shadow-sm"
                   title={tool.name}
                 >
                   <span
@@ -75,7 +75,7 @@ export function AppChaos() {
       <div className="text-center mt-12">
         <a
           href="#quiz"
-          className="inline-block bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wide"
+          className="inline-block rounded-full bg-[var(--brand-blue)] px-8 py-4 text-sm font-bold uppercase tracking-wide text-[var(--brand-graphite)] transition-colors hover:bg-[var(--brand-blue-deep)] hover:text-[var(--brand-cream)]"
         >
           Let&apos;s figure out where to start →
         </a>

@@ -113,10 +113,10 @@ export function UseCases() {
   }, [active]);
 
   return (
-    <section id="learn" ref={sectionRef} className="overflow-hidden py-24">
+    <section id="learn" ref={sectionRef} className="overflow-hidden py-24 bg-[var(--brand-cream-2)]">
       <div className="text-center mb-14 px-6">
-        <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">What You&apos;ll Learn</span>
-        <h2 className="mt-3 text-4xl font-black text-[var(--brand-teal)] md:text-5xl">
+        <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">What You&apos;ll Learn</span>
+        <h2 className="mt-3 text-4xl font-black text-[var(--brand-graphite)] md:text-5xl">
           AI fits into your life — not the other way around
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-lg text-[color:var(--brand-muted)]">
@@ -145,7 +145,7 @@ export function UseCases() {
                 onClick={() => handleUserInteract(i)}
                 animate={{ scale: active === i ? 1 : 0.93, opacity: active === i ? 1 : 0.55 }}
                 transition={{ duration: 0.35 }}
-                className="w-[340px] shrink-0 select-none overflow-hidden rounded-[2rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] shadow-[0_18px_42px_-28px_rgba(24,56,57,0.45)]"
+                className="w-[340px] shrink-0 select-none overflow-hidden rounded-[2rem] border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] shadow-[0_18px_42px_-28px_rgba(21,21,21,0.12)]"
               >
                 <div className="relative w-full h-52">
                   <Image
@@ -157,8 +157,8 @@ export function UseCases() {
                   />
                 </div>
                 <div className="p-6">
-                  <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand-coral)]">{card.tag}</span>
-                  <h3 className="mb-2 mt-2 text-lg font-black text-[var(--brand-teal)]">{card.title}</h3>
+                  <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--brand-blue)]">{card.tag}</span>
+                  <h3 className="mb-2 mt-2 text-lg font-black text-[var(--brand-graphite)]">{card.title}</h3>
                   <p className="text-sm leading-relaxed text-[color:var(--brand-muted)]">{card.description}</p>
                 </div>
               </motion.div>
@@ -167,8 +167,8 @@ export function UseCases() {
         </motion.div>
 
         {/* Fade edges */}
-        <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-24 bg-gradient-to-r from-[var(--brand-canvas)] to-transparent" />
-        <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-24 bg-gradient-to-l from-[var(--brand-canvas)] to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-24 bg-gradient-to-r from-[var(--brand-cream-2)] to-transparent" />
+        <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-24 bg-gradient-to-l from-[var(--brand-cream-2)] to-transparent" />
       </div>
 
       {/* Dots */}
@@ -179,7 +179,7 @@ export function UseCases() {
             onClick={() => handleUserInteract(i)}
             aria-label={`Show use case ${i + 1}`}
             className={`h-2 rounded-full transition-all duration-300 ${
-              active === i ? "w-6 bg-[var(--brand-gold)]" : "w-2 bg-[color:rgb(33_71_72_/_0.18)]"
+              active === i ? "w-6 bg-[var(--brand-yellow)]" : "w-2 bg-[color:rgba(21,21,21,0.15)]"
             }`}
           />
         ))}
@@ -191,14 +191,14 @@ export function UseCases() {
           onClick={() => handleUserInteract(Math.max(0, active - 1))}
           disabled={active === 0}
           aria-label="Previous use case"
-          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[color:var(--brand-line)] text-[color:var(--brand-muted)] transition-all hover:border-[var(--brand-gold)] hover:text-[var(--brand-teal)] disabled:opacity-30"
+          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[color:var(--brand-line)] text-[color:var(--brand-muted)] transition-all hover:border-[color:var(--brand-graphite)] hover:text-[var(--brand-graphite)] disabled:opacity-30"
         >
           ←
         </button>
         <button
           onClick={() => handleUserInteract((active + 1) % cards.length)}
           aria-label="Next use case"
-          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[color:var(--brand-line)] text-[color:var(--brand-muted)] transition-all hover:border-[var(--brand-gold)] hover:text-[var(--brand-teal)]"
+          className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[color:var(--brand-line)] text-[color:var(--brand-muted)] transition-all hover:border-[color:var(--brand-graphite)] hover:text-[var(--brand-graphite)]"
         >
           →
         </button>

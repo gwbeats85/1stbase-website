@@ -16,22 +16,22 @@ export function SiteNav({ sticky = false, activePage }: SiteNavProps) {
   const linkClass = (page?: string) =>
     `text-sm font-medium transition-colors ${
       activePage === page
-        ? "text-[var(--brand-teal)] font-semibold"
-        : "text-[color:var(--brand-muted)] hover:text-[var(--brand-teal)]"
+        ? "text-[var(--brand-graphite)] font-semibold"
+        : "text-[color:var(--brand-muted)] hover:text-[var(--brand-graphite)]"
     }`;
 
   return (
     <>
       <AboutModal isOpen={aboutOpen} onClose={() => setAboutOpen(false)} />
       <div
-        className={`flex items-center justify-between px-8 md:px-10 py-6 bg-[var(--brand-canvas)] ${
-          sticky ? "sticky top-0 z-50 border-b border-[color:var(--brand-line)] bg-[color:rgb(245_241_231_/_0.9)] backdrop-blur-sm" : ""
+        className={`flex items-center justify-between px-8 md:px-10 py-6 bg-[var(--brand-cream)] ${
+          sticky ? "sticky top-0 z-50 border-b border-[color:var(--brand-line)] bg-[color:rgb(245_235_221_/_0.9)] backdrop-blur-sm" : ""
         }`}
       >
         <Link href="/" className="flex items-center gap-2.5">
-          <LogoMark color="#255253" size={32} />
-          <span className="font-bold text-xl tracking-tight text-[var(--brand-teal)]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
-            1st Base <span className="text-[var(--brand-amber)]">AI</span>
+          <LogoMark size={32} />
+          <span className="font-bold text-xl tracking-tight text-[var(--brand-graphite)]" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+            1st Base <span className="text-[var(--brand-blue)]">AI</span>
           </span>
         </Link>
 
@@ -55,7 +55,7 @@ export function SiteNav({ sticky = false, activePage }: SiteNavProps) {
 
         <a
           href="https://calendly.com/1stbaseai/30min"
-          className="rounded-full bg-[var(--brand-gold)] px-5 py-2.5 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-teal)]"
+          className="bg-[var(--brand-graphite)] px-5 py-2.5 text-sm font-bold text-[var(--brand-cream)] transition-colors hover:bg-[var(--brand-graphite-2)]"
         >
           Book a session
         </a>

@@ -36,34 +36,32 @@ export function FloatingChat() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 16 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="w-80 overflow-hidden rounded-3xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] shadow-2xl"
+            className="w-80 overflow-hidden rounded-3xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] shadow-2xl"
           >
-            {/* Header */}
-            <div className="flex items-center justify-between bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] px-5 py-4">
+            <div className="flex items-center justify-between bg-[var(--brand-graphite)] px-5 py-4">
               <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--brand-gold)] text-sm font-black text-[var(--brand-teal-deep)]">W</div>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-sm font-black text-[var(--brand-graphite)]">W</div>
                 <div>
-                  <p className="text-sm font-bold leading-none text-[var(--brand-surface)]">Will</p>
-                  <p className="mt-0.5 text-xs text-[color:rgb(255_253_247_/_0.54)]">1st Base AI · usually replies fast</p>
+                  <p className="text-sm font-bold leading-none text-[var(--brand-cream)]">Will</p>
+                  <p className="mt-0.5 text-xs text-[color:rgba(245,235,221,0.54)]">1st Base AI · usually replies fast</p>
                 </div>
               </div>
-              <button onClick={() => setOpen(false)} aria-label="Close chat" className="text-[color:rgb(255_253_247_/_0.42)] transition-colors hover:text-[var(--brand-surface)]">
+              <button onClick={() => setOpen(false)} aria-label="Close chat" className="text-[color:rgba(245,235,221,0.42)] transition-colors hover:text-[var(--brand-cream)]">
                 <X size={18} />
               </button>
             </div>
 
-            {/* Messages */}
-            <div className="flex max-h-64 flex-col gap-3 overflow-y-auto bg-[var(--brand-surface)] px-4 py-4">
+            <div className="flex max-h-64 flex-col gap-3 overflow-y-auto bg-[var(--brand-cream-2)] px-4 py-4">
               {messages.map((msg, i) => (
                 <div key={i} className={`flex ${msg.from === "user" ? "justify-end" : "items-end gap-2"}`}>
                   {msg.from === "will" && (
-                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold)] text-xs font-black text-[var(--brand-teal-deep)]">W</div>
+                    <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--brand-yellow)] text-xs font-black text-[var(--brand-graphite)]">W</div>
                   )}
                   <div
                     className={`text-sm rounded-2xl px-4 py-2.5 max-w-[80%] ${
                       msg.from === "user"
-                        ? "rounded-br-sm bg-[var(--brand-teal)] text-[var(--brand-surface)]"
-                        : "rounded-bl-sm bg-[color:rgb(36_82_83_/_0.08)] text-[var(--brand-ink)]"
+                        ? "rounded-br-sm bg-[var(--brand-graphite)] text-[var(--brand-cream)]"
+                        : "rounded-bl-sm bg-[color:rgba(21,21,21,0.07)] text-[var(--brand-graphite)]"
                     }`}
                   >
                     {msg.text}
@@ -72,8 +70,7 @@ export function FloatingChat() {
               ))}
             </div>
 
-            {/* Input */}
-            <form onSubmit={handleSend} className="flex items-center gap-2 border-t border-[color:var(--brand-line)] bg-[var(--brand-surface)] px-3 py-3">
+            <form onSubmit={handleSend} className="flex items-center gap-2 border-t border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] px-3 py-3">
               <label htmlFor="floating-chat-input" className="sr-only">Ask Will about AI</label>
               <input
                 id="floating-chat-input"
@@ -85,28 +82,27 @@ export function FloatingChat() {
                 aria-label="Ask Will about AI"
                 autoComplete="off"
                 disabled={replied}
-                className="flex-1 rounded-full bg-[color:rgb(36_82_83_/_0.08)] px-4 py-2 text-sm text-[var(--brand-ink)] outline-none ring-0 placeholder:text-[color:var(--brand-muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-gold)] disabled:opacity-50"
+                className="flex-1 rounded-full bg-[color:rgba(21,21,21,0.07)] px-4 py-2 text-sm text-[var(--brand-graphite)] outline-none ring-0 placeholder:text-[color:var(--brand-muted)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand-graphite)] disabled:opacity-50"
               />
               <button
                 type="submit"
                 disabled={!input.trim() || replied}
                 aria-label="Send message"
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--brand-gold)] transition-colors hover:bg-[var(--brand-amber)] disabled:opacity-30"
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--brand-graphite)] transition-colors hover:bg-[var(--brand-graphite-2)] disabled:opacity-30"
               >
-                <Send size={14} className="ml-0.5 text-[var(--brand-teal-deep)]" />
+                <Send size={14} className="ml-0.5 text-[var(--brand-cream)]" />
               </button>
             </form>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Toggle button */}
       <motion.button
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? "Close chat" : "Open chat"}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-gold)] text-[var(--brand-teal-deep)] shadow-lg transition-colors hover:bg-[var(--brand-amber)]"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-graphite)] text-[var(--brand-cream)] shadow-lg transition-colors hover:bg-[var(--brand-graphite-2)]"
       >
         <AnimatePresence mode="wait">
           {open ? (

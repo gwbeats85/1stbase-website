@@ -18,54 +18,54 @@ const quickActions = [
     title: "I just want to use AI",
     desc: "Start here — best free tools, no jargon",
     href: "/resources/tools?filter=beginner",
-    color: "bg-[color:rgb(242_84_76_/_0.08)] hover:bg-[color:rgb(242_84_76_/_0.14)] border-[color:rgb(242_84_76_/_0.12)]",
-    accent: "text-[var(--brand-coral)]",
-    iconColor: "text-[var(--brand-coral)]",
+    color: "bg-[color:rgba(59,130,246,0.08)] hover:bg-[color:rgba(59,130,246,0.14)] border-[color:rgba(59,130,246,0.16)]",
+    accent: "text-[var(--brand-blue)]",
+    iconColor: "text-[var(--brand-blue)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" /><path strokeLinecap="round" strokeLinejoin="round" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" /></svg>,
     title: "I want AI for work",
     desc: "Email, meetings, docs, and productivity",
     href: "/resources/workflows",
-    color: "bg-[color:rgb(243_193_16_/_0.1)] hover:bg-[color:rgb(243_193_16_/_0.16)] border-[color:rgb(243_193_16_/_0.16)]",
-    accent: "text-[var(--brand-teal-deep)]",
-    iconColor: "text-[var(--brand-gold)]",
+    color: "bg-[color:rgba(255,228,94,0.14)] hover:bg-[color:rgba(255,228,94,0.2)] border-[color:rgba(255,228,94,0.22)]",
+    accent: "text-[var(--brand-graphite)]",
+    iconColor: "text-[var(--brand-yellow-deep)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>,
     title: "I want to build with APIs",
     desc: "Developer stack, API docs, code tools",
     href: "/resources/official-docs",
-    color: "bg-[color:rgb(37_82_83_/_0.08)] hover:bg-[color:rgb(37_82_83_/_0.12)] border-[color:rgb(37_82_83_/_0.12)]",
-    accent: "text-[var(--brand-teal)]",
-    iconColor: "text-[var(--brand-teal)]",
+    color: "bg-[color:rgba(21,21,21,0.05)] hover:bg-[color:rgba(21,21,21,0.08)] border-[color:var(--brand-line)]",
+    accent: "text-[var(--brand-graphite)]",
+    iconColor: "text-[var(--brand-blue)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>,
     title: "I want to compare tools",
     desc: "Side-by-side model comparisons",
     href: "/resources/compare",
-    color: "bg-[color:rgb(244_163_12_/_0.1)] hover:bg-[color:rgb(244_163_12_/_0.16)] border-[color:rgb(244_163_12_/_0.16)]",
-    accent: "text-[var(--brand-teal-deep)]",
-    iconColor: "text-[var(--brand-amber)]",
+    color: "bg-[color:rgba(255,228,94,0.14)] hover:bg-[color:rgba(255,228,94,0.22)] border-[color:rgba(255,228,94,0.24)]",
+    accent: "text-[var(--brand-graphite)]",
+    iconColor: "text-[var(--brand-yellow-deep)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
     title: "I want official docs only",
     desc: "Straight from OpenAI, Anthropic, Google",
     href: "/resources/official-docs",
-    color: "bg-[color:rgb(47_48_49_/_0.06)] hover:bg-[color:rgb(47_48_49_/_0.1)] border-[color:rgb(47_48_49_/_0.08)]",
-    accent: "text-[var(--brand-charcoal)]",
-    iconColor: "text-[var(--brand-charcoal)]",
+    color: "bg-[color:rgba(21,21,21,0.05)] hover:bg-[color:rgba(21,21,21,0.08)] border-[color:var(--brand-line)]",
+    accent: "text-[var(--brand-graphite)]",
+    iconColor: "text-[var(--brand-graphite)]",
   },
   {
     icon: <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>,
     title: "I want current AI news",
     desc: "Curated updates from official sources",
     href: "/resources/news",
-    color: "bg-[color:rgb(243_193_16_/_0.1)] hover:bg-[color:rgb(243_193_16_/_0.16)] border-[color:rgb(243_193_16_/_0.16)]",
-    accent: "text-[var(--brand-teal-deep)]",
-    iconColor: "text-[var(--brand-gold)]",
+    color: "bg-[color:rgba(255,228,94,0.14)] hover:bg-[color:rgba(255,228,94,0.2)] border-[color:rgba(255,228,94,0.22)]",
+    accent: "text-[var(--brand-graphite)]",
+    iconColor: "text-[var(--brand-yellow-deep)]",
   },
 ];
 
@@ -138,16 +138,16 @@ export default function ResourcesHubPage() {
 
       <main className="flex-1">
         {/* Hero with Search */}
-        <div className="bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] px-6 py-20 text-[var(--brand-surface)] md:px-10">
+        <div className="bg-[linear-gradient(135deg,_var(--brand-graphite)_0%,_var(--brand-graphite-2)_100%)] px-6 py-20 text-[var(--brand-cream)] md:px-10">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-gold)]">
+            <span className="mb-4 inline-block text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-yellow)]">
               AI Learning Center
             </span>
             <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-[0.95] mb-5">
               Everything AI,<br className="hidden md:block" />
-              <span className="text-[color:rgb(255_198_82)]"> organized for you.</span>
+              <span className="text-[var(--brand-blue)]"> organized for you.</span>
             </h1>
-            <p className="mx-auto mb-10 max-w-2xl text-lg text-[color:rgb(255_253_247_/_0.66)]">
+            <p className="mx-auto mb-10 max-w-2xl text-lg text-[color:rgba(245,235,221,0.72)]">
               Tools, docs, comparisons, prompts, glossary, and news — all in one place.
               Beginner-friendly. Bookmark what you need.
             </p>
@@ -159,7 +159,7 @@ export default function ResourcesHubPage() {
 
           {/* Quick Action Cards */}
           <section className="py-14">
-            <h2 className="text-sm uppercase tracking-widest font-bold text-gray-400 mb-6">
+            <h2 className="mb-6 text-sm font-bold uppercase tracking-widest text-[color:var(--brand-muted)]">
               What are you looking for?
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -171,7 +171,7 @@ export default function ResourcesHubPage() {
                 >
                   <span className={`mb-3 ${action.iconColor ?? action.accent}`}>{action.icon}</span>
                   <p className={`font-bold text-sm mb-1 ${action.accent}`}>{action.title}</p>
-                  <p className="text-gray-500 text-xs leading-relaxed">{action.desc}</p>
+                  <p className="text-xs leading-relaxed text-[color:var(--brand-muted)]">{action.desc}</p>
                 </Link>
               ))}
             </div>
@@ -181,12 +181,12 @@ export default function ResourcesHubPage() {
           <section className="pb-14">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-[var(--brand-teal)]">Featured Tools</h2>
+                <h2 className="text-2xl font-black text-[var(--brand-graphite)]">Featured Tools</h2>
                 <p className="mt-1 text-sm text-[color:var(--brand-muted)]">The ones most people should start with</p>
               </div>
               <Link
                 href="/resources/tools"
-                className="text-sm font-semibold text-[var(--brand-teal)] transition-colors hover:text-[var(--brand-coral)]"
+                className="text-sm font-semibold text-[var(--brand-blue)] transition-colors hover:text-[var(--brand-graphite)]"
               >
                 View all {aiTools.length} →
               </Link>
@@ -200,24 +200,24 @@ export default function ResourcesHubPage() {
 
           {/* Section Grid */}
           <section className="pb-14">
-            <h2 className="mb-2 text-2xl font-black text-[var(--brand-teal)]">Browse by Category</h2>
+            <h2 className="mb-2 text-2xl font-black text-[var(--brand-graphite)]">Browse by Category</h2>
             <p className="mb-8 text-sm text-[color:var(--brand-muted)]">Every section of the Learning Center</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {navigationSections.map((section) => (
                 <Link
                   key={section.href}
                   href={section.href}
-                  className="group flex flex-col rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 transition-all hover:-translate-y-0.5 hover:border-[color:rgb(243_193_16_/_0.35)] hover:shadow-[0_20px_44px_-30px_rgba(24,56,57,0.5)]"
+                  className="group flex flex-col rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 transition-all hover:-translate-y-0.5 hover:border-[color:rgba(59,130,246,0.35)] hover:shadow-[0_20px_44px_-30px_rgba(21,21,21,0.28)]"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[var(--brand-gold)]">{section.icon}</span>
+                    <span className="text-[var(--brand-blue)]">{section.icon}</span>
                     <span className="text-xs font-medium text-[color:var(--brand-muted)]">{section.count}</span>
                   </div>
-                  <h3 className="mb-2 font-bold text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-coral)]">
+                  <h3 className="mb-2 font-bold text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">
                     {section.title}
                   </h3>
                   <p className="flex-1 text-sm leading-relaxed text-[color:var(--brand-muted)]">{section.desc}</p>
-                  <span className="mt-4 text-sm font-semibold text-[var(--brand-coral)]">Explore →</span>
+                  <span className="mt-4 text-sm font-semibold text-[var(--brand-blue)]">Explore →</span>
                 </Link>
               ))}
             </div>
@@ -227,12 +227,12 @@ export default function ResourcesHubPage() {
           <section className="pb-14">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-[var(--brand-teal)]">Recent AI Updates</h2>
+                <h2 className="text-2xl font-black text-[var(--brand-graphite)]">Recent AI Updates</h2>
                 <p className="mt-1 text-sm text-[color:var(--brand-muted)]">What just changed — from official sources</p>
               </div>
               <Link
                 href="/resources/news"
-                className="text-sm font-semibold text-[var(--brand-teal)] transition-colors hover:text-[var(--brand-coral)]"
+                className="text-sm font-semibold text-[var(--brand-blue)] transition-colors hover:text-[var(--brand-graphite)]"
               >
                 All news →
               </Link>
@@ -246,16 +246,16 @@ export default function ResourcesHubPage() {
 
           {/* CTA */}
           <section className="pb-16">
-            <div className="flex flex-col items-center justify-between gap-8 rounded-[2rem] bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] p-10 md:flex-row">
+            <div className="flex flex-col items-center justify-between gap-8 rounded-[2rem] bg-[linear-gradient(135deg,_var(--brand-graphite)_0%,_var(--brand-graphite-2)_100%)] p-10 md:flex-row">
               <div>
-                <p className="mb-2 text-2xl font-black text-[var(--brand-surface)]">Not sure where to start?</p>
-                <p className="max-w-md text-[color:rgb(255_253_247_/_0.66)]">
+                <p className="mb-2 text-2xl font-black text-[var(--brand-cream)]">Not sure where to start?</p>
+                <p className="max-w-md text-[color:rgba(245,235,221,0.72)]">
                   Book a free 30-minute intro call and I&apos;ll build you a personal AI toolkit — free, based on your exact goals.
                 </p>
               </div>
               <a
                 href="https://calendly.com/1stbaseai/30min"
-                className="shrink-0 rounded-full bg-[var(--brand-gold)] px-8 py-4 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
+                className="shrink-0 rounded-full bg-[var(--brand-yellow)] px-8 py-4 text-sm font-bold text-[var(--brand-graphite)] transition-colors hover:bg-[color:var(--brand-yellow-deep)]"
               >
                 Book a free call →
               </a>

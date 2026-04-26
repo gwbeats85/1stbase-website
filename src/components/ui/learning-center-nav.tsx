@@ -27,7 +27,7 @@ export function LearningCenterNav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[color:var(--brand-line)] bg-[color:rgb(245_241_231_/_0.95)] backdrop-blur-sm">
+    <header className="sticky top-0 z-50 border-b border-[color:var(--brand-line)] bg-[color:rgba(245,235,221,0.95)] backdrop-blur-sm">
       {/* Top bar — matches landing page nav */}
       <SiteNav activePage="resources" />
 
@@ -40,8 +40,8 @@ export function LearningCenterNav() {
               href={link.href}
               className={`text-xs font-semibold px-3.5 py-2.5 transition-all whitespace-nowrap ${
                 isActive(link)
-                  ? "border-b-2 border-[var(--brand-gold)] text-[var(--brand-teal)]"
-                  : "text-[color:var(--brand-muted)] hover:text-[var(--brand-teal)]"
+                  ? "border-b-2 border-[var(--brand-yellow)] text-[var(--brand-graphite)]"
+                  : "text-[color:var(--brand-muted)] hover:text-[var(--brand-graphite)]"
               }`}
             >
               {link.label}
@@ -59,7 +59,7 @@ export function LearningCenterNav() {
               href={link.href}
               onClick={() => setMobileOpen(false)}
               className={`block py-2 text-sm font-medium transition-colors ${
-                isActive(link) ? "text-[var(--brand-teal)]" : "text-[color:var(--brand-muted)] hover:text-[var(--brand-teal)]"
+                isActive(link) ? "text-[var(--brand-graphite)]" : "text-[color:var(--brand-muted)] hover:text-[var(--brand-graphite)]"
               }`}
             >
               {link.label}
@@ -68,7 +68,7 @@ export function LearningCenterNav() {
           <div className="border-t border-[color:var(--brand-line)] pt-4">
             <a
               href="https://calendly.com/1stbaseai/30min"
-              className="block rounded-full bg-[var(--brand-gold)] px-5 py-3 text-center text-sm font-bold text-[var(--brand-teal-deep)]"
+              className="block rounded-full bg-[var(--brand-yellow)] px-5 py-3 text-center text-sm font-bold text-[var(--brand-graphite)] transition-colors hover:bg-[var(--brand-yellow-deep)]"
             >
               Book a session
             </a>

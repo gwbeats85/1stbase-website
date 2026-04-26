@@ -26,16 +26,16 @@ export default function NewsPage() {
   }, [activeCategory, officialOnly]);
 
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">News</span>
-          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">News</span>
+          <h1 className="mt-2 mb-3 text-4xl font-black leading-[0.95] tracking-tight text-[var(--brand-graphite)] md:text-5xl">
             AI News & Updates
           </h1>
-          <p className="text-gray-500 max-w-xl">
+          <p className="max-w-xl text-[color:var(--brand-muted)]">
             Curated updates from official sources — product releases, research, and industry changes that actually matter.
           </p>
         </div>
@@ -48,8 +48,8 @@ export default function NewsPage() {
               onClick={() => setActiveCategory(cat.key)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                 activeCategory === cat.key
-                  ? "bg-[#255253] text-white"
-                  : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
+                  ? "border border-[var(--brand-graphite)] bg-[var(--brand-graphite)] text-[var(--brand-cream)]"
+                  : "border border-[color:var(--brand-line)] bg-[var(--brand-surface)] text-[var(--brand-graphite)] hover:border-[color:var(--brand-line-strong)]"
               }`}
             >
               {cat.label}
@@ -59,13 +59,13 @@ export default function NewsPage() {
             onClick={() => setOfficialOnly(!officialOnly)}
             className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all border ${
               officialOnly
-                ? "bg-blue-50 border-blue-200 text-blue-700"
-                : "bg-white border-gray-200 text-gray-600 hover:border-gray-400"
+                ? "border-[color:rgba(59,130,246,0.24)] bg-[color:rgba(59,130,246,0.1)] text-[var(--brand-blue)]"
+                : "border-[color:var(--brand-line)] bg-[var(--brand-surface)] text-[var(--brand-graphite)] hover:border-[color:var(--brand-line-strong)]"
             }`}
           >
             <span
               className={`w-3 h-3 rounded-full border-2 flex items-center justify-center ${
-                officialOnly ? "border-blue-500 bg-blue-500" : "border-gray-300"
+                officialOnly ? "border-[var(--brand-blue)] bg-[var(--brand-blue)]" : "border-[color:var(--brand-line-strong)]"
               }`}
             />
             Official sources only
@@ -73,12 +73,11 @@ export default function NewsPage() {
         </div>
 
         {filtered.length === 0 ? (
-          <div className="text-center py-20">
-            <p className="text-4xl mb-3">📰</p>
-            <p className="font-bold text-gray-600 mb-1">No news found</p>
+          <div className="py-20 text-center">
+            <p className="mb-1 font-bold text-[var(--brand-graphite)]">No news found</p>
             <button
               onClick={() => { setActiveCategory("all"); setOfficialOnly(false); }}
-              className="mt-3 text-sm text-[#c4622d] font-semibold"
+              className="mt-3 text-sm font-semibold text-[var(--brand-blue)]"
             >
               Clear filters
             </button>
@@ -92,9 +91,9 @@ export default function NewsPage() {
         )}
 
         {/* Coming soon note */}
-        <div className="mt-12 p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200 text-center">
-          <p className="text-gray-500 text-sm font-medium">More news coming regularly</p>
-          <p className="text-gray-400 text-xs mt-1">This section pulls from official release notes, blogs, and verified sources</p>
+        <div className="mt-12 rounded-2xl border border-dashed border-[color:var(--brand-line)] bg-[color:rgba(21,21,21,0.03)] p-6 text-center">
+          <p className="text-sm font-medium text-[var(--brand-graphite)]">More news coming regularly</p>
+          <p className="mt-1 text-xs text-[color:var(--brand-muted)]">This section pulls from official release notes, blogs, and verified sources</p>
         </div>
       </main>
 

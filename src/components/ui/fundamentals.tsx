@@ -32,10 +32,10 @@ export function Fundamentals() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="flex flex-col gap-3 rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 shadow-[0_18px_42px_-30px_rgba(24,56,57,0.3)]"
+            className="flex flex-col gap-3 rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-6 shadow-[0_18px_42px_-30px_rgba(21,21,21,0.1)]"
           >
-            <p.icon className="h-6 w-6 text-[var(--brand-gold)]" strokeWidth={1.75} />
-            <h3 className="text-lg font-bold leading-snug text-[var(--brand-teal)]">{p.title}</h3>
+            <p.icon className="h-6 w-6 text-[var(--brand-yellow)]" strokeWidth={1.75} />
+            <h3 className="text-lg font-bold leading-snug text-[var(--brand-graphite)]">{p.title}</h3>
             <p className="text-sm leading-relaxed text-[color:var(--brand-muted)]">{p.body}</p>
           </motion.div>
         ))}

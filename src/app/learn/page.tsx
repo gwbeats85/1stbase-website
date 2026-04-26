@@ -7,11 +7,11 @@ export const metadata = {
 };
 
 const levelColors: Record<string, string> = {
-  "Start Here": "bg-[#c4622d] text-white",
-  "Level 1": "bg-[#255253] text-white",
-  "Level 2": "bg-blue-600 text-white",
-  "Level 3": "bg-purple-600 text-white",
-  "Level 4": "bg-green-600 text-white",
+  "Start Here": "bg-[var(--brand-yellow)] text-[var(--brand-graphite)]",
+  "Level 1": "bg-[var(--brand-graphite)] text-[var(--brand-cream)]",
+  "Level 2": "bg-[var(--brand-blue)] text-[var(--brand-cream)]",
+  "Level 3": "border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] text-[var(--brand-graphite)]",
+  "Level 4": "bg-[color:rgba(59,130,246,0.12)] text-[var(--brand-blue)]",
 };
 
 export default function LearnPage() {
@@ -23,18 +23,18 @@ export default function LearnPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#EAE9E0]">
+    <div className="min-h-screen bg-[var(--brand-cream)]">
       <SiteNav sticky activePage="learn" />
 
       <div className="max-w-5xl mx-auto px-8 md:px-10 py-14">
 
         {/* Hero */}
         <div className="mb-14">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Member Classroom</span>
-          <h1 className="text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs font-semibold uppercase tracking-widest text-[var(--brand-blue)]">Member Classroom</span>
+          <h1 className="mt-2 mb-3 text-5xl font-black leading-[0.95] tracking-tight text-[var(--brand-graphite)]">
             Your AI Learning Hub
           </h1>
-          <p className="text-gray-500 text-lg max-w-xl">
+          <p className="max-w-xl text-lg text-[color:var(--brand-muted)]">
             Lessons, resources, downloads, and prompts — everything you need to go from curious to confident.
           </p>
         </div>
@@ -66,10 +66,10 @@ export default function LearnPage() {
             <a
               key={item.label}
               href={item.href}
-              className="flex flex-col items-center gap-2 p-5 bg-white border border-gray-100 rounded-2xl hover:border-[#e8b99a] hover:shadow-sm transition-all text-center"
+              className="flex flex-col items-center gap-2 rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-5 text-center transition-all hover:border-[color:var(--brand-line-strong)] hover:shadow-[0_18px_42px_-30px_rgba(21,21,21,0.12)]"
             >
-              <span className="text-[#c4622d]">{item.icon}</span>
-              <span className="text-sm font-bold text-[#1a3738]">{item.label}</span>
+              <span className="text-[var(--brand-yellow)]">{item.icon}</span>
+              <span className="text-sm font-bold text-[var(--brand-graphite)]">{item.label}</span>
             </a>
           ))}
         </div>
@@ -77,8 +77,8 @@ export default function LearnPage() {
         {/* ── Lessons ── */}
         <section id="lessons" className="mb-16 scroll-mt-8">
           <div className="flex items-center gap-3 mb-7">
-            <h2 className="text-2xl font-black text-[#1a3738]">Lessons</h2>
-            <span className="text-xs text-gray-400 font-medium">Go in order — each builds on the last</span>
+            <h2 className="text-2xl font-black text-[var(--brand-graphite)]">Lessons</h2>
+            <span className="text-xs font-medium text-[color:var(--brand-muted)]">Go in order — each builds on the last</span>
           </div>
 
           <div className="space-y-10">
@@ -87,38 +87,38 @@ export default function LearnPage() {
               if (!group.length) return null;
               return (
                 <div key={label}>
-                  <h3 className="text-xs uppercase tracking-widest font-bold text-gray-400 mb-4">{label}</h3>
+                  <h3 className="mb-4 text-xs font-bold uppercase tracking-widest text-[color:var(--brand-muted)]">{label}</h3>
                   <div className="space-y-3">
                     {group.map((lesson) => (
                       <div key={lesson.slug} className="relative">
                         {lesson.comingSoon ? (
-                          <div className="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-2xl opacity-60">
+                          <div className="flex items-center justify-between rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-5 opacity-60">
                             <div className="flex items-center gap-4">
-                              <span className={`text-xs font-bold px-2.5 py-1 rounded-full shrink-0 ${levelColors[lesson.levelLabel] ?? "bg-gray-100 text-gray-600"}`}>
+                              <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-bold ${levelColors[lesson.levelLabel] ?? "border border-[color:var(--brand-line)] bg-[var(--brand-cream)] text-[color:var(--brand-muted)]"}`}>
                                 {lesson.levelLabel}
                               </span>
                               <div>
-                                <p className="font-bold text-[#1a3738] text-sm">{lesson.title}</p>
-                                <p className="text-gray-500 text-xs mt-0.5">{lesson.description}</p>
+                                <p className="text-sm font-bold text-[var(--brand-graphite)]">{lesson.title}</p>
+                                <p className="mt-0.5 text-xs text-[color:var(--brand-muted)]">{lesson.description}</p>
                               </div>
                             </div>
-                            <span className="text-xs text-gray-400 shrink-0 ml-4">Coming soon</span>
+                            <span className="ml-4 shrink-0 text-xs text-[color:var(--brand-muted)]">Coming soon</span>
                           </div>
                         ) : (
                           <Link
                             href={`/learn/${lesson.slug}`}
-                            className="group flex items-center justify-between p-5 bg-white border border-gray-100 rounded-2xl hover:border-[#e8b99a] hover:shadow-sm transition-all"
+                            className="group flex items-center justify-between rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-5 transition-all hover:border-[color:var(--brand-line-strong)] hover:shadow-[0_18px_42px_-30px_rgba(21,21,21,0.12)]"
                           >
                             <div className="flex items-center gap-4">
-                              <span className={`text-xs font-bold px-2.5 py-1 rounded-full shrink-0 ${levelColors[lesson.levelLabel] ?? "bg-gray-100 text-gray-600"}`}>
+                              <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-bold ${levelColors[lesson.levelLabel] ?? "border border-[color:var(--brand-line)] bg-[var(--brand-cream)] text-[color:var(--brand-muted)]"}`}>
                                 {lesson.levelLabel}
                               </span>
                               <div>
-                                <p className="font-bold text-[#1a3738] text-sm group-hover:text-[#c4622d] transition-colors">{lesson.title}</p>
-                                <p className="text-gray-500 text-xs mt-0.5">{lesson.description}</p>
+                                <p className="text-sm font-bold text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">{lesson.title}</p>
+                                <p className="mt-0.5 text-xs text-[color:var(--brand-muted)]">{lesson.description}</p>
                               </div>
                             </div>
-                            <span className="text-sm text-[#c4622d] shrink-0 ml-4">→</span>
+                            <span className="ml-4 shrink-0 text-sm text-[var(--brand-blue)]">→</span>
                           </Link>
                         )}
                       </div>
@@ -132,7 +132,7 @@ export default function LearnPage() {
 
         {/* ── Online Resources ── */}
         <section id="resources" className="mb-16 scroll-mt-8">
-          <h2 className="text-2xl font-black text-[#1a3738] mb-7">Online Resources</h2>
+          <h2 className="mb-7 text-2xl font-black text-[var(--brand-graphite)]">Online Resources</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {onlineResources.map((r) => (
               <a
@@ -140,20 +140,20 @@ export default function LearnPage() {
                 href={r.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start gap-4 p-5 bg-white border border-gray-100 rounded-2xl hover:border-[#e8b99a] hover:shadow-sm transition-all"
+                className="group flex items-start gap-4 rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-5 transition-all hover:border-[color:var(--brand-line-strong)] hover:shadow-[0_18px_42px_-30px_rgba(21,21,21,0.12)]"
               >
                 {r.logo ? (
                   <img src={r.logo} alt={r.company} className="w-9 h-9 object-contain shrink-0 mt-0.5" />
                 ) : (
-                  <div className="w-9 h-9 rounded-lg bg-[#255253] flex items-center justify-center shrink-0 mt-0.5">
-                    <span className="text-white text-xs font-black">{r.company[0]}</span>
+                  <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[var(--brand-graphite)]">
+                    <span className="text-xs font-black text-[var(--brand-cream)]">{r.company[0]}</span>
                   </div>
                 )}
                 <div>
-                  <p className="font-bold text-[#1a3738] text-sm group-hover:text-[#c4622d] transition-colors">{r.name}</p>
-                  <p className="text-gray-500 text-xs mt-1 leading-relaxed">{r.description}</p>
+                  <p className="text-sm font-bold text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">{r.name}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-[color:var(--brand-muted)]">{r.description}</p>
                 </div>
-                <span className="text-[#c4622d] text-sm ml-auto shrink-0 mt-0.5">↗</span>
+                <span className="ml-auto mt-0.5 shrink-0 text-sm text-[var(--brand-blue)]">↗</span>
               </a>
             ))}
           </div>
@@ -161,24 +161,24 @@ export default function LearnPage() {
 
         {/* ── Downloads ── */}
         <section id="downloads" className="mb-16 scroll-mt-8">
-          <h2 className="text-2xl font-black text-[#1a3738] mb-2">Downloads</h2>
-          <p className="text-gray-500 text-sm mb-7">Free for members. Save these and use them whenever.</p>
+          <h2 className="mb-2 text-2xl font-black text-[var(--brand-graphite)]">Downloads</h2>
+          <p className="mb-7 text-sm text-[color:var(--brand-muted)]">Free for members. Save these and use them whenever.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {downloads.map((d) => (
               <div
                 key={d.name}
-                className={`flex items-start gap-4 p-5 bg-white border border-gray-100 rounded-2xl ${d.comingSoon ? "opacity-60" : "hover:border-[#e8b99a] hover:shadow-sm cursor-pointer transition-all"}`}
+                className={`flex items-start gap-4 rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-5 ${d.comingSoon ? "opacity-60" : "cursor-pointer transition-all hover:border-[color:var(--brand-line-strong)] hover:shadow-[0_18px_42px_-30px_rgba(21,21,21,0.12)]"}`}
               >
-                <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center shrink-0">
-                  <svg className="w-5 h-5 text-[#c4622d]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[color:rgba(255,228,94,0.22)]">
+                  <svg className="h-5 w-5 text-[var(--brand-yellow-deep)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <p className="font-bold text-[#1a3738] text-sm">{d.name}</p>
-                  <p className="text-gray-500 text-xs mt-1 leading-relaxed">{d.description}</p>
+                  <p className="text-sm font-bold text-[var(--brand-graphite)]">{d.name}</p>
+                  <p className="mt-1 text-xs leading-relaxed text-[color:var(--brand-muted)]">{d.description}</p>
                 </div>
-                <span className="text-xs text-gray-400 shrink-0 mt-1">{d.comingSoon ? "Soon" : "PDF"}</span>
+                <span className="mt-1 shrink-0 text-xs text-[color:var(--brand-muted)]">{d.comingSoon ? "Soon" : "PDF"}</span>
               </div>
             ))}
           </div>
@@ -186,22 +186,22 @@ export default function LearnPage() {
 
         {/* ── One-Shot Prompts ── */}
         <section id="prompts" className="mb-16 scroll-mt-8">
-          <h2 className="text-2xl font-black text-[#1a3738] mb-2">One-Shot Prompts</h2>
-          <p className="text-gray-500 text-sm mb-7">Copy, fill in the brackets, paste into any AI. Done.</p>
+          <h2 className="mb-2 text-2xl font-black text-[var(--brand-graphite)]">One-Shot Prompts</h2>
+          <p className="mb-7 text-sm text-[color:var(--brand-muted)]">Copy, fill in the brackets, paste into any AI. Done.</p>
           <div className="space-y-4">
             {prompts.map((p) => (
-              <div key={p.title} className="bg-white border border-gray-100 rounded-2xl overflow-hidden">
-                <div className="flex items-center justify-between px-5 py-4 border-b border-gray-50">
+              <div key={p.title} className="overflow-hidden rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)]">
+                <div className="flex items-center justify-between border-b border-[color:var(--brand-line)] px-5 py-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-xs font-semibold text-[#c4622d] bg-orange-50 px-2.5 py-1 rounded-full">{p.category}</span>
-                    <h3 className="font-bold text-[#1a3738] text-sm">{p.title}</h3>
+                    <span className="rounded-full bg-[color:rgba(59,130,246,0.12)] px-2.5 py-1 text-xs font-semibold text-[var(--brand-blue)]">{p.category}</span>
+                    <h3 className="text-sm font-bold text-[var(--brand-graphite)]">{p.title}</h3>
                   </div>
                 </div>
                 <div className="px-5 py-4">
-                  <pre className="text-xs text-gray-600 font-mono leading-relaxed whitespace-pre-wrap bg-gray-50 rounded-xl p-4">{p.prompt}</pre>
+                  <pre className="whitespace-pre-wrap rounded-xl border border-[color:var(--brand-line)] bg-[var(--brand-cream)] p-4 font-mono text-xs leading-relaxed text-[color:var(--brand-muted)]">{p.prompt}</pre>
                   {p.tip && (
-                    <p className="text-xs text-gray-400 mt-3 flex gap-1.5 items-start">
-                      <svg className="w-3.5 h-3.5 text-[#c4622d] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <p className="mt-3 flex items-start gap-1.5 text-xs text-[color:var(--brand-muted)]">
+                      <svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[var(--brand-blue)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                       {p.tip}
@@ -214,16 +214,16 @@ export default function LearnPage() {
         </section>
 
         {/* ── Newsletter ── */}
-        <div className="p-8 bg-[#255253] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col items-center justify-between gap-6 rounded-3xl bg-[var(--brand-graphite)] p-8 md:flex-row">
           <div>
-            <p className="text-white font-black text-xl mb-1">Stay sharp. One email a week.</p>
-            <p className="text-gray-400 text-sm">The AI newsletter that doesn&apos;t waste your time. Free, always.</p>
+            <p className="mb-1 text-xl font-black text-[var(--brand-cream)]">Stay sharp. One email a week.</p>
+            <p className="text-sm text-[color:rgba(245,235,221,0.68)]">The AI newsletter that doesn&apos;t waste your time. Free, always.</p>
           </div>
           <a
             href="https://1stbase.beehiiv.com/subscribe"
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="shrink-0 rounded-full bg-[var(--brand-yellow)] px-7 py-3 text-sm font-bold text-[var(--brand-graphite)] transition-colors hover:bg-[var(--brand-yellow-deep)]"
           >
             Subscribe Free →
           </a>

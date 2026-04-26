@@ -59,12 +59,11 @@ export default function Home() {
       <Quiz />
       <AiNews />
 
-      {/* Learning Center Preview */}
-      <section id="learn" className="px-6 py-24">
+      <section id="learn" className="bg-[var(--brand-cream-2)] px-6 py-24">
         <div className="max-w-5xl mx-auto">
           <div className="mb-12 text-center">
-            <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-coral)]">Free to use</span>
-            <h2 className="mb-4 mt-3 text-4xl font-black tracking-tight text-[var(--brand-teal)] md:text-5xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">Free to use</span>
+            <h2 className="mb-4 mt-3 text-4xl font-black tracking-tight text-[var(--brand-graphite)] md:text-5xl">
               Your AI Learning Center
             </h2>
             <p className="mx-auto max-w-xl text-lg text-[color:var(--brand-muted)]">
@@ -77,14 +76,14 @@ export default function Home() {
               <a
                 key={bucket.label}
                 href={bucket.href}
-                className="group flex items-start gap-5 rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 transition-all hover:-translate-y-0.5 hover:border-[color:rgb(243_193_16_/_0.35)] hover:shadow-[0_20px_44px_-30px_rgba(24,56,57,0.55)]"
+                className="group flex items-start gap-5 rounded-[1.8rem] border border-[color:var(--brand-line)] bg-[var(--brand-cream-2)] p-6 transition-all hover:-translate-y-0.5 hover:border-[color:var(--brand-line-strong)] hover:shadow-[0_20px_44px_-30px_rgba(21,21,21,0.15)]"
               >
-                <span className="mt-0.5 shrink-0 text-[var(--brand-gold)]">{bucket.icon}</span>
+                <span className="mt-0.5 shrink-0 text-[var(--brand-yellow)]">{bucket.icon}</span>
                 <div>
-                  <p className="mb-1 font-bold text-[var(--brand-teal)] transition-colors group-hover:text-[var(--brand-coral)]">{bucket.label}</p>
+                  <p className="mb-1 font-bold text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">{bucket.label}</p>
                   <p className="text-sm leading-relaxed text-[color:var(--brand-muted)]">{bucket.description}</p>
                 </div>
-                <span className="ml-auto mt-0.5 shrink-0 text-[var(--brand-coral)]">→</span>
+                <span className="ml-auto mt-0.5 shrink-0 text-[var(--brand-blue)]">→</span>
               </a>
             ))}
           </div>
@@ -92,7 +91,7 @@ export default function Home() {
           <div className="text-center">
             <a
               href="/learn"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-teal)] px-8 py-4 text-sm font-bold text-[var(--brand-surface)] transition-colors hover:bg-[var(--brand-teal-deep)]"
+              className="inline-flex items-center gap-2 bg-[var(--brand-graphite)] px-8 py-4 text-sm font-bold text-[var(--brand-cream)] transition-colors hover:bg-[var(--brand-graphite-2)]"
             >
               Open the Learning Center →
             </a>
@@ -100,17 +99,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Newsletter */}
-      <section id="newsletter" className="relative overflow-hidden bg-[linear-gradient(135deg,_var(--brand-teal)_0%,_var(--brand-teal-deep)_100%)] px-6 py-24">
+      <section id="newsletter" className="relative overflow-hidden bg-[var(--brand-graphite)] px-6 py-24">
         <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-          <LogoMark color="#EAE9E0" size={600} className="absolute -left-24 -bottom-24 opacity-[0.06]" />
+          <LogoMark color="#f5ebdd" size={600} className="absolute -left-24 -bottom-24 opacity-[0.06]" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-gold)]">Stay in the loop</span>
-          <h2 className="mt-3 mb-4 text-4xl font-black text-[var(--brand-surface)] md:text-5xl">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-yellow)]">Stay in the loop</span>
+          <h2 className="mt-3 mb-4 text-4xl font-black text-[var(--brand-cream)] md:text-5xl">
             The AI newsletter that doesn&apos;t waste your time.
           </h2>
-          <p className="mx-auto mb-10 max-w-xl text-lg text-[color:rgb(255_253_247_/_0.66)]">
+          <p className="mx-auto mb-10 max-w-xl text-lg text-[color:rgba(245,235,221,0.66)]">
             Real tools. Real workflows. Practical breakdowns every week — no hype, no filler. Free forever.
           </p>
           <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -122,12 +120,12 @@ export default function Home() {
               autoComplete="email"
               aria-label="Email address"
               placeholder="you@email.com"
-              className="flex-1 rounded-full border border-[color:rgb(255_253_247_/_0.16)] bg-[color:rgb(255_253_247_/_0.08)] px-5 py-3 text-sm text-[var(--brand-surface)] placeholder:text-[color:rgb(255_253_247_/_0.42)] focus:border-[var(--brand-gold)] focus:outline-none"
+              className="flex-1 border border-[color:rgba(245,235,221,0.16)] bg-[color:rgba(245,235,221,0.08)] px-5 py-3 text-sm text-[var(--brand-cream)] placeholder:text-[color:rgba(245,235,221,0.42)] focus:border-[var(--brand-yellow)] focus:outline-none"
               required
             />
             <button
               type="submit"
-              className="whitespace-nowrap rounded-full bg-[var(--brand-gold)] px-7 py-3 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
+              className="whitespace-nowrap bg-[var(--brand-yellow)] px-7 py-3 text-sm font-bold text-[var(--brand-graphite)] transition-colors hover:bg-[var(--brand-yellow-deep)]"
             >
               Subscribe Free
             </button>

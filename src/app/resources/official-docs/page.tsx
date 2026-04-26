@@ -9,17 +9,17 @@ export const metadata = {
 
 export default function OfficialDocsPage() {
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-5xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-12">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Official Docs</span>
-          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">Official Docs</span>
+          <h1 className="mt-2 mb-3 text-4xl font-black leading-[0.95] tracking-tight text-[var(--brand-graphite)] md:text-5xl">
             Official Docs Hub
           </h1>
-          <p className="text-gray-500 max-w-xl">
+          <p className="max-w-xl text-[color:var(--brand-muted)]">
             Every major AI provider in one place. Getting started, API docs, pricing, status, and safety — all official sources, no guessing.
           </p>
         </div>
@@ -27,19 +27,19 @@ export default function OfficialDocsPage() {
         {/* Provider Sections */}
         <div className="space-y-10">
           {officialDocs.map((doc) => (
-            <div key={doc.provider} className="bg-white border border-gray-100 rounded-3xl overflow-hidden">
+            <div key={doc.provider} className="overflow-hidden rounded-3xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)]">
               {/* Provider Header */}
-              <div className="flex items-center gap-4 px-7 py-5 border-b border-gray-50">
+              <div className="flex items-center gap-4 border-b border-[color:var(--brand-line)] px-7 py-5">
                 {doc.logo ? (
                   <img src={doc.logo} alt={doc.provider} className="w-9 h-9 object-contain" />
                 ) : (
-                  <div className="w-9 h-9 rounded-xl bg-[#255253] flex items-center justify-center">
-                    <span className="text-white font-black text-sm">{doc.provider[0]}</span>
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[var(--brand-graphite)]">
+                    <span className="text-sm font-black text-[var(--brand-cream)]">{doc.provider[0]}</span>
                   </div>
                 )}
                 <div>
-                  <h2 className="font-black text-[#1a3738] text-lg">{doc.provider}</h2>
-                  <p className="text-gray-400 text-sm">{doc.description}</p>
+                  <h2 className="text-lg font-black text-[var(--brand-graphite)]">{doc.provider}</h2>
+                  <p className="text-sm text-[color:var(--brand-muted)]">{doc.description}</p>
                 </div>
               </div>
 
@@ -54,17 +54,17 @@ export default function OfficialDocsPage() {
                       href={section.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`group flex items-start gap-3 px-7 py-5 hover:bg-orange-50 transition-colors ${
-                        !isLast ? "border-b border-gray-50" : ""
-                      } ${isOdd && !isLast ? "border-l border-gray-50" : ""}`}
+                      className={`group flex items-start gap-3 px-7 py-5 transition-colors hover:bg-[color:rgba(59,130,246,0.06)] ${
+                        !isLast ? "border-b border-[color:var(--brand-line)]" : ""
+                      } ${isOdd && !isLast ? "border-l border-[color:var(--brand-line)]" : ""}`}
                     >
                       <div className="flex-1">
-                        <p className="font-semibold text-[#1a3738] text-sm group-hover:text-[#c4622d] transition-colors">
+                        <p className="text-sm font-semibold text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">
                           {section.label}
                         </p>
-                        <p className="text-gray-400 text-xs mt-0.5">{section.description}</p>
+                        <p className="mt-0.5 text-xs text-[color:var(--brand-muted)]">{section.description}</p>
                       </div>
-                      <span className="text-gray-300 group-hover:text-[#c4622d] text-sm mt-0.5 transition-colors shrink-0">
+                      <span className="mt-0.5 shrink-0 text-sm text-[color:rgba(21,21,21,0.32)] transition-colors group-hover:text-[var(--brand-blue)]">
                         ↗
                       </span>
                     </a>
@@ -76,20 +76,20 @@ export default function OfficialDocsPage() {
         </div>
 
         {/* Coming Soon */}
-        <div className="mt-8 p-6 bg-gray-50 rounded-2xl border border-dashed border-gray-200 text-center">
-          <p className="text-gray-500 text-sm font-medium">More providers coming soon</p>
-          <p className="text-gray-400 text-xs mt-1">xAI/Grok, Microsoft Copilot, Mistral, Meta Llama</p>
+        <div className="mt-8 rounded-2xl border border-dashed border-[color:var(--brand-line)] bg-[color:rgba(21,21,21,0.03)] p-6 text-center">
+          <p className="text-sm font-medium text-[var(--brand-graphite)]">More providers coming soon</p>
+          <p className="mt-1 text-xs text-[color:var(--brand-muted)]">xAI/Grok, Microsoft Copilot, Mistral, Meta Llama</p>
         </div>
 
         {/* CTA */}
-        <div className="mt-10 p-8 bg-[#255253] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-10 flex flex-col items-center justify-between gap-6 rounded-3xl bg-[linear-gradient(135deg,_var(--brand-graphite)_0%,_var(--brand-graphite-2)_100%)] p-8 md:flex-row">
           <div>
-            <p className="text-white font-black text-xl mb-1">Overwhelmed by docs?</p>
-            <p className="text-gray-400 text-sm">Book a free call — I&apos;ll point you to exactly what you need to read.</p>
+            <p className="mb-1 text-xl font-black text-[var(--brand-cream)]">Overwhelmed by docs?</p>
+            <p className="text-sm text-[color:rgba(245,235,221,0.72)]">Book a free call — I&apos;ll point you to exactly what you need to read.</p>
           </div>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="shrink-0 bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="shrink-0 rounded-full bg-[var(--brand-yellow)] px-7 py-3 text-sm font-bold text-[var(--brand-graphite)] transition-colors hover:bg-[color:var(--brand-yellow-deep)]"
           >
             Book a call →
           </a>

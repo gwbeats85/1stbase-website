@@ -6,7 +6,6 @@ import { useSaved } from "@/lib/use-saved";
 import { LearningCenterNav } from "@/components/ui/learning-center-nav";
 import { SiteFooter } from "@/components/ui/site-footer";
 
-const audiences = ["all", "beginner", "intermediate", "advanced"] as const;
 const filters = [
   { key: "all", label: "All Tools" },
   { key: "free", label: "Free Tier" },
@@ -64,24 +63,24 @@ export default function ToolsPage() {
   };
 
   const audienceBadge: Record<string, string> = {
-    beginner: "bg-green-50 text-green-700",
-    intermediate: "bg-blue-50 text-blue-700",
-    advanced: "bg-purple-50 text-purple-700",
-    all: "bg-gray-50 text-gray-600",
+    beginner: "bg-[color:rgba(255,228,94,0.22)] text-[var(--brand-graphite)]",
+    intermediate: "bg-[color:rgba(59,130,246,0.1)] text-[var(--brand-blue)]",
+    advanced: "bg-[color:rgba(21,21,21,0.08)] text-[var(--brand-graphite)]",
+    all: "bg-[color:rgba(21,21,21,0.05)] text-[color:var(--brand-muted)]",
   };
 
   return (
-    <div className="min-h-screen bg-[#EAE9E0] flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--brand-canvas)]">
       <LearningCenterNav />
 
       <main className="flex-1 max-w-6xl mx-auto px-6 md:px-10 py-12 w-full">
         {/* Header */}
         <div className="mb-10">
-          <span className="text-xs uppercase tracking-widest text-[#c4622d] font-semibold">Tools Directory</span>
-          <h1 className="text-4xl md:text-5xl font-black text-[#1a3738] mt-2 mb-3 tracking-tight leading-[0.95]">
+          <span className="text-xs font-semibold uppercase tracking-[0.26em] text-[var(--brand-blue)]">Tools Directory</span>
+          <h1 className="mt-2 mb-3 text-4xl font-black leading-[0.95] tracking-tight text-[var(--brand-graphite)] md:text-5xl">
             AI Tools Guide
           </h1>
-          <p className="text-gray-500 max-w-xl">
+          <p className="max-w-xl text-[color:var(--brand-muted)]">
             Every major AI tool — what it does, who it&apos;s for, and whether there&apos;s a free tier. Searchable and filterable.
           </p>
         </div>
@@ -90,7 +89,7 @@ export default function ToolsPage() {
         <div className="mb-8 space-y-4">
           <div className="relative">
             <svg
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+              className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[color:var(--brand-muted)]"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -103,12 +102,12 @@ export default function ToolsPage() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search tools, providers, use cases..."
-              className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm text-[#1a3738] placeholder-gray-400 focus:outline-none focus:border-orange-400 transition-colors"
+              className="w-full rounded-xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] py-3 pl-11 pr-4 text-sm text-[var(--brand-graphite)] placeholder:text-[color:var(--brand-muted)] transition-colors focus:border-[var(--brand-blue)] focus:outline-none"
             />
             {query && (
               <button
                 onClick={() => setQuery("")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-[color:var(--brand-muted)] hover:text-[var(--brand-graphite)]"
               >
                 ✕
               </button>
@@ -123,22 +122,22 @@ export default function ToolsPage() {
                 onClick={() => setActiveFilter(f.key)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeFilter === f.key
-                    ? "bg-[#255253] text-white"
-                    : "bg-white border border-gray-200 text-gray-600 hover:border-gray-400"
+                    ? "border border-[var(--brand-graphite)] bg-[var(--brand-graphite)] text-[var(--brand-cream)]"
+                    : "border border-[color:var(--brand-line)] bg-[var(--brand-surface)] text-[var(--brand-graphite)] hover:border-[color:var(--brand-line-strong)]"
                 }`}
               >
                 {f.label}
               </button>
             ))}
-            <div className="w-px bg-gray-200 mx-1" />
+            <div className="mx-1 w-px bg-[color:var(--brand-line)]" />
             {categoryFilters.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                   activeCategory === cat
-                    ? "bg-[#c4622d] text-white"
-                    : "bg-white border border-gray-200 text-gray-600 hover:border-orange-300"
+                    ? "border border-[var(--brand-blue)] bg-[var(--brand-blue)] text-[var(--brand-cream)]"
+                    : "border border-[color:var(--brand-line)] bg-[var(--brand-surface)] text-[var(--brand-graphite)] hover:border-[color:rgba(59,130,246,0.28)]"
                 }`}
               >
                 {cat}
@@ -148,22 +147,22 @@ export default function ToolsPage() {
         </div>
 
         {/* Results count */}
-        <div className="mb-4 text-sm text-gray-400">
+        <div className="mb-4 text-sm text-[color:var(--brand-muted)]">
           {filteredTools.length} tool{filteredTools.length !== 1 ? "s" : ""} found
           {query && <span> for &ldquo;{query}&rdquo;</span>}
         </div>
 
         {/* Tool Cards Grid */}
         {filteredTools.length === 0 ? (
-          <div className="text-center py-20 text-gray-400">
-            <svg className="w-10 h-10 mx-auto mb-3 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <div className="py-20 text-center text-[color:var(--brand-muted)]">
+            <svg className="mx-auto mb-3 h-10 w-10 text-[color:rgba(21,21,21,0.2)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <p className="font-bold text-gray-600 mb-1">No tools found</p>
+            <p className="mb-1 font-bold text-[var(--brand-graphite)]">No tools found</p>
             <p className="text-sm">Try a different search or clear your filters</p>
             <button
               onClick={() => { setQuery(""); setActiveFilter("all"); setActiveCategory("All"); }}
-              className="mt-4 text-sm font-semibold text-[#c4622d] hover:text-[#a8521f]"
+              className="mt-4 text-sm font-semibold text-[var(--brand-blue)] hover:text-[var(--brand-graphite)]"
             >
               Clear all filters
             </button>
@@ -175,41 +174,41 @@ export default function ToolsPage() {
               return (
                 <div
                   key={tool.id}
-                  className="group flex flex-col bg-white border border-gray-100 rounded-2xl p-6 hover:border-[#e8b99a] hover:shadow-md transition-all"
+                  className="group flex flex-col rounded-2xl border border-[color:var(--brand-line)] bg-[var(--brand-surface)] p-6 transition-all hover:border-[color:rgba(59,130,246,0.28)] hover:shadow-[0_20px_44px_-30px_rgba(21,21,21,0.28)]"
                 >
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-1.5 mb-2">
                         {tool.free_tier && (
-                          <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-0.5 rounded-full">
+                          <span className="rounded-full bg-[color:rgba(59,130,246,0.1)] px-2 py-0.5 text-xs font-semibold text-[var(--brand-blue)]">
                             Free
                           </span>
                         )}
                         <span
                           className={`text-xs font-medium px-2 py-0.5 rounded-full ${
-                            audienceBadge[tool.audience] ?? "bg-gray-50 text-gray-500"
+                            audienceBadge[tool.audience] ?? "bg-[color:rgba(21,21,21,0.05)] text-[color:var(--brand-muted)]"
                           }`}
                         >
                           {audienceLabel[tool.audience]}
                         </span>
                         {tool.featured && (
-                          <span className="text-xs font-semibold text-[#c4622d] bg-orange-50 px-2 py-0.5 rounded-full">
+                          <span className="rounded-full bg-[color:rgba(255,228,94,0.22)] px-2 py-0.5 text-xs font-semibold text-[var(--brand-graphite)]">
                             Featured
                           </span>
                         )}
                       </div>
-                      <h2 className="font-bold text-[#1a3738] group-hover:text-[#c4622d] transition-colors">
+                      <h2 className="font-bold text-[var(--brand-graphite)] transition-colors group-hover:text-[var(--brand-blue)]">
                         {tool.title}
                       </h2>
                       {tool.provider && (
-                        <p className="text-xs text-gray-400 mt-0.5">{tool.provider}</p>
+                        <p className="mt-0.5 text-xs text-[color:var(--brand-muted)]">{tool.provider}</p>
                       )}
                     </div>
                     {mounted && (
                       <button
                         onClick={() => toggle(tool.id)}
                         className={`ml-2 p-1.5 rounded-lg transition-colors shrink-0 ${
-                          saved ? "text-[#c4622d] bg-orange-50" : "text-gray-300 hover:text-gray-500"
+                          saved ? "bg-[color:rgba(59,130,246,0.1)] text-[var(--brand-blue)]" : "text-[color:rgba(21,21,21,0.28)] hover:text-[var(--brand-graphite)]"
                         }`}
                         title={saved ? "Saved" : "Save this tool"}
                       >
@@ -220,29 +219,29 @@ export default function ToolsPage() {
                     )}
                   </div>
 
-                  <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-4">{tool.summary}</p>
+                  <p className="mb-4 flex-1 text-sm leading-relaxed text-[color:var(--brand-muted)]">{tool.summary}</p>
 
                   <div className="flex flex-wrap gap-1.5 mb-4">
                     {tool.tags.slice(0, 4).map((tag) => (
                       <button
                         key={tag}
                         onClick={() => setActiveCategory(tag)}
-                        className="text-xs text-gray-400 bg-gray-50 hover:bg-orange-50 hover:text-[#c4622d] px-2 py-0.5 rounded-full transition-colors"
+                        className="rounded-full bg-[color:rgba(21,21,21,0.05)] px-2 py-0.5 text-xs text-[color:var(--brand-muted)] transition-colors hover:bg-[color:rgba(59,130,246,0.08)] hover:text-[var(--brand-blue)]"
                       >
                         {tag}
                       </button>
                     ))}
                   </div>
 
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-50">
-                    <span className="text-xs text-gray-300">Updated {tool.updated_at}</span>
+                  <div className="flex items-center justify-between border-t border-[color:var(--brand-line)] pt-3">
+                    <span className="text-xs text-[color:rgba(21,21,21,0.32)]">Updated {tool.updated_at}</span>
                     <div className="flex gap-2">
                       {tool.url && (
                         <a
                           href={tool.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-xs font-semibold text-[#c4622d] hover:text-[#a8521f] transition-colors"
+                          className="text-xs font-semibold text-[var(--brand-blue)] transition-colors hover:text-[var(--brand-graphite)]"
                         >
                           Open ↗
                         </a>
@@ -256,14 +255,14 @@ export default function ToolsPage() {
         )}
 
         {/* Bottom CTA */}
-        <div className="mt-16 p-8 bg-[#255253] rounded-3xl text-center">
-          <p className="text-white font-bold text-xl mb-2">Can&apos;t decide which tool to start with?</p>
-          <p className="text-gray-400 mb-6 text-sm max-w-md mx-auto">
+        <div className="mt-16 rounded-3xl bg-[linear-gradient(135deg,_var(--brand-graphite)_0%,_var(--brand-graphite-2)_100%)] p-8 text-center">
+          <p className="mb-2 text-xl font-bold text-[var(--brand-cream)]">Can&apos;t decide which tool to start with?</p>
+          <p className="mx-auto mb-6 max-w-md text-sm text-[color:rgba(245,235,221,0.72)]">
             Book a free 30-min call — I&apos;ll build your personal AI toolkit based on your exact situation.
           </p>
           <a
             href="https://calendly.com/1stbaseai/30min"
-            className="inline-block bg-[#c4622d] hover:bg-[#a8521f] text-white font-bold px-7 py-3 rounded-full text-sm transition-colors"
+            className="inline-block rounded-full bg-[var(--brand-yellow)] px-7 py-3 text-sm font-bold text-[var(--brand-graphite)] transition-colors hover:bg-[color:var(--brand-yellow-deep)]"
           >
             Book a free call →
           </a>

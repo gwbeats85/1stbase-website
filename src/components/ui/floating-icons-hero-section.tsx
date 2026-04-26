@@ -116,19 +116,19 @@ const FloatingIconsHero = React.forwardRef<
       ref={ref}
       onMouseMove={handleMouseMove}
       className={cn(
-        'relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#EAE9E0]',
+        'relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[var(--brand-cream)]',
         className
       )}
       {...props}
     >
       {/* Nav */}
       <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-10 py-7 z-20">
-        <div className="font-black text-xl tracking-tight text-[#1a3738]">
-          1stbaseai<span className="text-[#c4622d]">.com</span>
+        <div className="text-xl font-black tracking-tight text-[var(--brand-graphite)]">
+          1stbaseai<span className="text-[var(--brand-blue)]">.com</span>
         </div>
         <a
           href="#quiz"
-          className="bg-[#255253] hover:bg-[#183839] text-white text-sm font-bold px-5 py-2.5 rounded-full transition-colors"
+          className="rounded-full bg-[var(--brand-graphite)] px-5 py-2.5 text-sm font-bold text-[var(--brand-cream)] transition-colors hover:bg-[var(--brand-graphite-2)]"
         >
           Book a session
         </a>
@@ -148,21 +148,21 @@ const FloatingIconsHero = React.forwardRef<
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-xs uppercase tracking-widest text-[#c4622d] font-semibold mb-6">
+          <span className="mb-6 inline-block text-xs font-semibold uppercase tracking-widest text-[var(--brand-blue)]">
             Vancouver, WA · AI Education & Coaching
           </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tight text-[#1a3738] leading-[0.9] mb-6">
+          <h1 className="mb-6 text-5xl font-black leading-[0.9] tracking-tight text-[var(--brand-graphite)] md:text-7xl">
             {title}
           </h1>
-          <p className="text-lg text-gray-500 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="mx-auto mb-10 max-w-xl text-lg leading-relaxed text-[color:var(--brand-muted)]">
             {subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="px-8 py-6 text-base font-bold rounded-full bg-[#c4622d] hover:bg-[#a8521f] text-white border-0">
+            <Button asChild size="lg" className="rounded-full border-0 bg-[var(--brand-blue)] px-8 py-6 text-base font-bold text-[var(--brand-graphite)] hover:bg-[var(--brand-blue-deep)] hover:text-[var(--brand-cream)]">
               <a href={ctaHref}>{ctaText}</a>
             </Button>
             {secondaryText && secondaryHref && (
-              <a href={secondaryHref} className="text-gray-400 hover:text-gray-700 font-medium text-sm transition-colors">
+              <a href={secondaryHref} className="text-sm font-medium text-[color:var(--brand-muted)] transition-colors hover:text-[var(--brand-graphite)]">
                 {secondaryText}
               </a>
             )}

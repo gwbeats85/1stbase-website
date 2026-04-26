@@ -39,7 +39,7 @@ const FlipLink = ({ children, href }: FlipLinkProps) => {
           <motion.span
             variants={{ initial: { y: "100%" }, hovered: { y: 0 } }}
             transition={{ duration: DURATION, ease: "easeInOut", delay: STAGGER * i }}
-            className="inline-block text-[#f97316]"
+            className="inline-block text-[var(--brand-blue)]"
             key={i}
           >
             {l}
@@ -52,8 +52,8 @@ const FlipLink = ({ children, href }: FlipLinkProps) => {
 
 export const RevealLinks = () => {
   return (
-    <section className="bg-black text-white px-8 py-24 w-full">
-      <p className="text-white/40 uppercase tracking-widest text-sm mb-12 font-medium">Find me online</p>
+    <section className="w-full bg-[var(--brand-graphite)] px-8 py-24 text-[var(--brand-cream)]">
+      <p className="mb-12 text-sm font-medium uppercase tracking-widest text-[color:rgba(245,235,221,0.48)]">Find me online</p>
       <FlipLink href="https://x.com/1stbaseai">Twitter / X</FlipLink>
       <FlipLink href="https://instagram.com/1stbaseai">Instagram</FlipLink>
       <FlipLink href="https://github.com/1stbaseai">GitHub</FlipLink>

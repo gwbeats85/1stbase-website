@@ -46,11 +46,13 @@ export function ResourcesHeroSearch() {
     <div className="relative max-w-2xl mx-auto">
       <div
         className={`flex items-center rounded-[1.6rem] border-2 bg-[var(--brand-surface)] transition-all ${
-          focused ? "border-[var(--brand-gold)] shadow-lg shadow-[rgba(24,56,57,0.12)]" : "border-[color:rgb(255_253_247_/_0.24)] shadow-xl"
+          focused
+            ? "border-[var(--brand-blue)] shadow-[0_20px_44px_-30px_rgba(21,21,21,0.3)]"
+            : "border-[color:rgba(245,235,221,0.24)] shadow-[0_20px_44px_-30px_rgba(21,21,21,0.24)]"
         }`}
       >
         <svg
-          className="ml-4 w-5 h-5 text-gray-400 shrink-0"
+          className="ml-4 h-5 w-5 shrink-0 text-[color:var(--brand-muted)]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -83,7 +85,7 @@ export function ResourcesHeroSearch() {
         />
         <button
           onClick={() => handleSearch(query)}
-          className="mr-2 shrink-0 rounded-xl bg-[var(--brand-gold)] px-5 py-2.5 text-sm font-bold text-[var(--brand-teal-deep)] transition-colors hover:bg-[var(--brand-amber)]"
+          className="mr-2 shrink-0 rounded-xl bg-[var(--brand-yellow)] px-5 py-2.5 text-sm font-bold text-[var(--brand-graphite)] transition-colors hover:bg-[color:var(--brand-yellow-deep)]"
         >
           Search
         </button>
@@ -98,7 +100,7 @@ export function ResourcesHeroSearch() {
               {suggestions.slice(0, 6).map((s) => (
                 <button
                   key={s}
-                  className="w-full rounded-lg px-3 py-2 text-left text-sm text-[var(--brand-ink)] transition-colors hover:bg-[color:rgb(243_193_16_/_0.08)] hover:text-[var(--brand-teal)]"
+                  className="w-full rounded-lg px-3 py-2 text-left text-sm text-[var(--brand-ink)] transition-colors hover:bg-[color:rgba(59,130,246,0.08)] hover:text-[var(--brand-blue)]"
                   onMouseDown={() => handleSearch(s)}
                 >
                   {s}
@@ -110,7 +112,7 @@ export function ResourcesHeroSearch() {
               {filtered.map((s) => (
                 <button
                   key={s}
-                  className="w-full rounded-lg px-3 py-2 text-left text-sm text-[var(--brand-ink)] transition-colors hover:bg-[color:rgb(243_193_16_/_0.08)] hover:text-[var(--brand-teal)]"
+                  className="w-full rounded-lg px-3 py-2 text-left text-sm text-[var(--brand-ink)] transition-colors hover:bg-[color:rgba(59,130,246,0.08)] hover:text-[var(--brand-blue)]"
                   onMouseDown={() => handleSearch(s)}
                 >
                   {s}
