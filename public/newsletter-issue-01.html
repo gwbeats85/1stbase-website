@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>1st Base Brief 01 - What should I even use this for?</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800;12..96,900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --purple: #23153f;
+    --tomato: #ff5a3d;
+    --yellow: #f9c846;
+    --mint: #5dd39e;
+    --black: #1a1512;
+    --cream: #fff7dd;
+    --muted: rgba(26, 21, 18, 0.68);
+    --display: "Bricolage Grotesque", Arial, sans-serif;
+    --body: "Instrument Sans", Arial, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--purple);
+    color: var(--black);
+    font-family: var(--body);
+    line-height: 1.55;
+  }
+
+  .page {
+    min-height: 100vh;
+    padding: 36px 16px 56px;
+    background:
+      radial-gradient(circle at 16% 10%, rgba(255, 90, 61, 0.48), transparent 28%),
+      radial-gradient(circle at 92% 18%, rgba(93, 211, 158, 0.32), transparent 26%),
+      linear-gradient(180deg, #23153f 0%, #1a1512 100%);
+  }
+
+  .email-shell {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    background: var(--cream);
+    border: 2px solid rgba(255, 247, 221, 0.24);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+  }
+
+  .preheader {
+    padding: 14px 24px;
+    background: var(--black);
+    color: rgba(255, 247, 221, 0.72);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .masthead {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 18px;
+    align-items: center;
+    padding: 28px 32px 24px;
+    background: var(--purple);
+    color: var(--cream);
+  }
+
+  .mark {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    background: var(--tomato);
+    color: var(--black);
+    overflow: hidden;
+  }
+
+  .mark svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .kicker {
+    margin: 0 0 6px;
+    color: var(--yellow);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .masthead h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+  }
+
+  .hero-note {
+    padding: 28px 32px;
+    background: var(--tomato);
+    color: var(--black);
+    font-family: var(--display);
+    font-size: clamp(24px, 4.5vw, 38px);
+    font-weight: 900;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+
+  .content {
+    padding: 36px 32px 42px;
+  }
+
+  p {
+    margin: 0 0 18px;
+    font-size: 18px;
+  }
+
+  .lead {
+    font-size: 22px;
+    line-height: 1.42;
+    color: rgba(26, 21, 18, 0.82);
+  }
+
+  h2 {
+    margin: 44px 0 14px;
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 46px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+
+  .callout {
+    margin: 28px 0;
+    padding: 24px;
+    background: var(--purple);
+    color: var(--cream);
+  }
+
+  .callout .label {
+    margin: 0 0 12px;
+    color: var(--yellow);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .prompt {
+    white-space: pre-wrap;
+    margin: 0;
+    padding: 18px;
+    background: rgba(255, 247, 221, 0.1);
+    border-left: 6px solid var(--mint);
+    color: rgba(255, 247, 221, 0.92);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .quote-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin: 24px 0;
+    background: rgba(26, 21, 18, 0.14);
+  }
+
+  .quote-card {
+    padding: 20px;
+    background: #fff3c6;
+  }
+
+  .quote-card strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--tomato);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .brand-accent {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 22px;
+    align-items: center;
+    margin: 30px 0;
+    padding: 22px;
+    background: var(--black);
+    color: var(--cream);
+  }
+
+  .brand-accent .accent-mark {
+    width: 76px;
+    height: 76px;
+    display: grid;
+    place-items: center;
+    background: var(--yellow);
+    color: var(--black);
+    overflow: hidden;
+  }
+
+  .brand-accent .accent-mark svg {
+    width: 86%;
+    height: 86%;
+    display: block;
+  }
+
+  .brand-accent p {
+    margin: 0;
+    color: rgba(255, 247, 221, 0.82);
+    font-size: 17px;
+  }
+
+  .tool-feature {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    gap: 20px;
+    align-items: start;
+    margin: 26px 0 2px;
+    padding: 24px;
+    background: #fff3c6;
+    border: 2px solid rgba(255, 90, 61, 0.4);
+  }
+
+  .tool-logo {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    background: var(--cream);
+    border: 1px solid rgba(26, 21, 18, 0.12);
+  }
+
+  .tool-logo img,
+  .tool-logo svg {
+    width: 38px;
+    height: 38px;
+    display: block;
+    object-fit: contain;
+  }
+
+  .tool-feature h3,
+  .tool h3 {
+    margin: 0 0 8px;
+    font-family: var(--display);
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  .tool-feature p,
+  .tool p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+  }
+
+  .google-apps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .app-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 9px;
+    background: rgba(26, 21, 18, 0.06);
+    color: rgba(26, 21, 18, 0.74);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .app-chip::before {
+    content: "";
+    width: 9px;
+    height: 9px;
+    background: var(--tomato);
+  }
+
+  .app-chip:nth-child(2)::before { background: #4285f4; }
+  .app-chip:nth-child(3)::before { background: #34a853; }
+  .app-chip:nth-child(4)::before { background: #0f9d58; }
+
+  .tool-strip {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+    margin: 0 0 26px;
+    background: rgba(26, 21, 18, 0.14);
+  }
+
+  .tool {
+    min-height: 170px;
+    padding: 20px;
+    background: #fff3c6;
+  }
+
+  .cta {
+    margin-top: 38px;
+    padding: 28px;
+    background: var(--yellow);
+    color: var(--black);
+  }
+
+  .cta h2 {
+    margin-top: 0;
+  }
+
+  .button {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 15px 18px;
+    background: var(--black);
+    color: var(--cream);
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .footer {
+    padding: 24px 32px 34px;
+    background: var(--black);
+    color: rgba(255, 247, 221, 0.66);
+    font-size: 13px;
+  }
+
+  .footer strong {
+    color: var(--cream);
+  }
+
+  @media (max-width: 620px) {
+    .page {
+      padding: 0;
+    }
+
+    .email-shell {
+      border: 0;
+    }
+
+    .masthead {
+      grid-template-columns: 1fr;
+      padding: 24px;
+    }
+
+    .hero-note,
+    .content,
+    .footer {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    p,
+    .lead {
+      font-size: 17px;
+    }
+
+    .quote-grid,
+    .tool-strip,
+    .tool-feature,
+    .brand-accent {
+      grid-template-columns: 1fr;
+    }
+
+    .brand-accent {
+      gap: 14px;
+    }
+
+    .brand-accent .accent-mark {
+      width: 64px;
+      height: 64px;
+      font-size: 25px;
+    }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <article class="email-shell">
+      <div class="preheader">Before you learn every tool, try AI on one real thing from your day.</div>
+
+      <header class="masthead">
+        <div class="mark" aria-label="1st Base logo mark">
+          <svg viewBox="0 0 1024 1024" role="img" aria-hidden="true">
+            <g transform="translate(130 -8) scale(1.15)">
+              <path d="M456.656,130.087c12.825,0.908 7.813,-1.505 16.674,4.878c4.084,13.428 2.579,118.991 2.585,138.98l-0.254,339.136c-49.215,36.962 -143.064,86.494 -199.108,114.602l1.054,-56.068c-0.159,-46.591 4.396,-252.794 -5.99,-283.233c-14.959,-12.634 -59.251,-9.274 -82.073,-9.839c18.554,-23.744 69.249,-67.324 93.17,-89.276c57.625,-53.445 115.611,-106.509 173.941,-159.179Z" fill="currentColor" />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <p class="kicker">1st Base Brief 01</p>
+          <h1>What should I even use this for?</h1>
+        </div>
+      </header>
+
+      <section class="hero-note">
+        You do not need a giant AI plan. Start with one annoying thing.
+      </section>
+
+      <section class="content">
+        <p class="lead">Most people do not get stuck because AI is too advanced. They get stuck because the starting point feels fake.</p>
+
+        <p>You open ChatGPT, Gemini, or Claude. You know it can do a lot. You ask it something vague, get something kind of bland back, and then the whole thing starts to feel like a trick you are supposed to understand already.</p>
+
+        <p>That is the wrong way in.</p>
+
+        <p>Start with one annoying thing from your actual day: a messy email, notes from a call, a confusing article, a list of tasks, or a project idea you keep circling but never start.</p>
+
+        <div class="brand-accent">
+          <div class="accent-mark" aria-label="1st Base 1B logo">
+            <svg viewBox="0 0 1024 1025" role="img" aria-hidden="true">
+              <path d="M811.595,501.421c27.498,9.776 52.575,25.331 73.555,45.62c37.514,36.606 53.286,80.854 53.871,132.609c1.061,55.548 -20.415,109.152 -59.524,148.603c-28.444,29.155 -64.593,49.628 -104.222,59.022c-45.27,10.684 -151.525,6.32 -203.008,6.428l-351.783,0.699c-43.727,-0.686 -91.538,1.099 -135.544,2.026c247.904,-95.076 514.317,-220.003 726.654,-395.007Z" fill="currentColor" />
+              <path d="M577.705,129.579c47.582,-0.368 97.705,-2.445 144.964,0.73c91.423,7.438 152.046,87.161 136.795,177.289c-12.443,73.574 -57.891,124.58 -116.139,167.164c-45.346,31.633 -138.79,81.063 -191.18,98.665c-1.105,-47.385 -4.573,-419.958 2.242,-438.658c7.305,-5.628 13.866,-4.719 23.318,-5.19Z" fill="currentColor" />
+              <path d="M456.656,130.087c12.825,0.908 7.813,-1.505 16.674,4.878c4.084,13.428 2.579,118.991 2.585,138.98l-0.254,339.136c-49.215,36.962 -143.064,86.494 -199.108,114.602l1.054,-56.068c-0.159,-46.591 4.396,-252.794 -5.99,-283.233c-14.959,-12.634 -59.251,-9.274 -82.073,-9.839c18.554,-23.744 69.249,-67.324 93.17,-89.276c57.625,-53.445 115.611,-106.509 173.941,-159.179Z" fill="currentColor" />
+            </svg>
+          </div>
+          <p>First base is not mastery. It is getting one useful rep in: one real task, one clear prompt, one next move.</p>
+        </div>
+
+        <h2>The mistake</h2>
+        <p>The common beginner move is trying to learn "AI" as a category. That gets heavy fast.</p>
+        <p>There are too many tools, too many videos, too many people saying this changes everything, and not enough moments where it helps with the thing sitting in front of you.</p>
+
+        <div class="quote-grid" aria-label="Better question">
+          <div class="quote-card">
+            <strong>Less useful</strong>
+            What can AI do?
+          </div>
+          <div class="quote-card">
+            <strong>More useful</strong>
+            What am I already trying to handle?
+          </div>
+        </div>
+
+        <h2>Try this today</h2>
+        <p>Pick one real thing. Paste it in. Then use this:</p>
+
+        <div class="callout">
+          <p class="label">Copy-paste prompt</p>
+          <pre class="prompt">I am new to using AI for practical work. Here is the thing I am trying to handle:
+
+[paste the email, notes, idea, task, or question]
+
+Help me understand what I have, what is missing, and what my next useful step should be. Do not overcomplicate it.</pre>
+        </div>
+
+        <p>Do not polish the input first. The mess is the point. You are learning how to bring a real situation into the tool and ask for a better next move.</p>
+
+        <h2>Tool note</h2>
+        <p>If you already live in Gmail, Calendar, Drive, Docs, or Sheets, start with Gemini. Familiar context lowers the wall.</p>
+
+        <div class="tool-feature">
+          <div class="tool-logo">
+            <img src="/logos/gemini.png" alt="Gemini logo" />
+          </div>
+          <div>
+            <h3>Gemini</h3>
+            <p>Best first stop for people whose work already lives in Google. The tool feels less abstract when it is next to the email, calendar, files, and spreadsheets they use every day.</p>
+            <div class="google-apps" aria-label="Google apps">
+              <span class="app-chip">Gmail</span>
+              <span class="app-chip">Calendar</span>
+              <span class="app-chip">Drive</span>
+              <span class="app-chip">Sheets</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-strip" aria-label="Tool notes">
+          <div class="tool">
+            <div class="tool-logo">
+              <img src="/logos/chatgpt.svg" alt="ChatGPT logo" />
+            </div>
+            <h3>ChatGPT</h3>
+            <p>Most familiar name, good general starting point, and easy for one-off help.</p>
+          </div>
+          <div class="tool">
+            <div class="tool-logo">
+              <img src="/logos/claude.png" alt="Claude logo" />
+            </div>
+            <h3>Claude</h3>
+            <p>Strong for writing, careful thinking, and longer material once someone is more comfortable.</p>
+          </div>
+        </div>
+
+        <h2>One thing to avoid</h2>
+        <p>Do not ask it to "make this better" and stop there. That usually gives you vague polish.</p>
+        <p>Ask it to explain what is there, what is missing, and what the next useful step should be. That is where it starts acting less like a content machine and more like a thinking partner.</p>
+
+        <div class="cta">
+          <h2>Before next time</h2>
+          <p>Try it on one thing you were already avoiding. Not the biggest thing. Not the perfect thing. One thing.</p>
+          <a class="button" href="/#close">Bring one messy thing</a>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <strong>1st Base AI</strong><br />
+        Plain-language AI for people who want to use the tools, not worship them.
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
